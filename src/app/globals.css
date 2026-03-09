@@ -1,0 +1,54 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 40 33% 98%;
+  --fg: 218 30% 12%;
+  --muted: 210 18% 96%;
+  --border: 210 14% 86%;
+  --card: 0 0% 100%;
+  --accent: 213 75% 33%;
+  --accent-soft: 212 75% 88%;
+}
+
+.dark {
+  --bg: 222 29% 8%;
+  --fg: 210 35% 96%;
+  --muted: 224 21% 13%;
+  --border: 221 14% 23%;
+  --card: 225 24% 10%;
+  --accent: 205 82% 64%;
+  --accent-soft: 212 60% 20%;
+}
+
+* {
+  @apply border-border;
+}
+
+html,
+body {
+  @apply min-h-full bg-bg text-fg antialiased;
+}
+
+body {
+  @apply bg-grain;
+}
+
+::selection {
+  @apply bg-accent/20 text-fg;
+}
+
+@layer utilities {
+  .glass {
+    @apply border border-border/70 bg-card/80 backdrop-blur;
+  }
+
+  .section-spacing {
+    @apply py-16 md:py-24;
+  }
+
+  .content-grid {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+}
