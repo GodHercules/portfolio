@@ -35,7 +35,7 @@ export function AboutSection({ dictionary }: { dictionary: Dictionary }) {
           </div>
         </Reveal>
 
-        <div className="space-y-4 lg:col-start-2 lg:row-start-2">
+        <div className="space-y-4 lg:col-start-2 lg:row-start-2 lg:self-center">
           {dictionary.about.points.map((point, index) => (
             <Reveal key={point} delay={index * 0.08}>
               <div className="glass rounded-2xl border border-border/70 p-5 text-sm leading-relaxed text-fg/75 transition hover:-translate-y-0.5 hover:border-accent/40 hover:text-fg sm:text-base">
