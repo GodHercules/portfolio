@@ -66,6 +66,7 @@ export type GithubProject = {
   title: string;
   summary: string;
   stack: string[];
+  cover?: string;
   githubUrl: string;
   liveUrl?: string;
   stars: number;

@@ -10,6 +10,11 @@ type GetGithubProjectsArgs = {
   username?: string;
 };
 
+function buildGithubCover(fullName: string, updatedAt: string) {
+  const hash = Date.parse(updatedAt) || Date.now();
+  return `https://opengraph.githubassets.com/${hash}/${fullName}`;
+}
+
 export async function getGithubProjects({ locale, username = DEFAULT_USERNAME }: GetGithubProjectsArgs) {
   const headers: HeadersInit = {
     Accept: 'application/vnd.github+json',
@@ -59,9 +64,11 @@ export async function getGithubProjects({ locale, username = DEFAULT_USERNAME }:
           stack: [repo.language ?? 'Code', ...repo.topics.slice(0, 2)],
           summary: repo.description ?? '',
           slug: repo.name.toLowerCase(),
+          cover: buildGithubCover(repo.full_name, repo.updated_at),
         }),
       );
   } catch {
     return [] as GithubProject[];
   }
 }
+
