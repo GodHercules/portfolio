@@ -1,10 +1,10 @@
-﻿import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
+import { DocumentLanguage } from '@/components/layout/document-language';
 import { Footer } from '@/components/layout/footer';
 import { Header } from '@/components/layout/header';
-import { ChatbotWidget } from '@/components/layout/chatbot-widget';
-import { DocumentLanguage } from '@/components/layout/document-language';
+import { LazyChatbot } from '@/components/layout/lazy-chatbot';
 import { PageTransition } from '@/components/providers/page-transition';
 import { isLocale, locales, type Locale } from '@/lib/i18n/config';
 import { getDictionary } from '@/lib/i18n/dictionaries';
@@ -49,9 +49,8 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
       <main>
         <PageTransition>{children}</PageTransition>
       </main>
-      <ChatbotWidget locale={locale as Locale} />
+      <LazyChatbot locale={locale as Locale} />
       <Footer dictionary={dictionary} />
     </>
   );
 }
-

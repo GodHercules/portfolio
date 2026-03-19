@@ -28,7 +28,7 @@ export function HomeTracksSection({ locale, dictionary, developmentProjects, des
                 key={project.id}
                 href={`/${locale}/development/${project.slug}`}
                 title={project.title[locale]}
-                summary={project.summary[locale]}
+                summary={project.proof.featuredOutcome[locale]}
                 image={project.cover}
                 stacks={project.stack}
               />

@@ -1,4 +1,4 @@
-﻿import Image from 'next/image';
+import Image from 'next/image';
 import { ArrowUpRight, Star } from 'lucide-react';
 
 import { Badge } from '@/components/ui/badge';
@@ -18,12 +18,35 @@ type GithubProjectsSectionProps = {
 export function GithubProjectsSection({ locale, dictionary, projects }: GithubProjectsSectionProps) {
   const coverAltPrefix =
     locale === 'en' ? 'Project cover' : locale === 'es' ? 'Portada del proyecto' : 'Capa do projeto';
+  const eyebrow = locale === 'en' ? 'Technical lab' : locale === 'es' ? 'Laboratorio tecnico' : 'Laboratorio tecnico';
+  const framing =
+    locale === 'en'
+      ? 'This layer combines live GitHub data with curated portfolio framing so the repositories read as technical evidence, not just activity.'
+      : locale === 'es'
+        ? 'Esta capa combina datos vivos de GitHub con curadoria de portafolio para que los repositorios funcionen como evidencia tecnica y no solo como actividad.'
+        : 'Esta camada combina dados vivos do GitHub com curadoria de portfolio para que os repositorios funcionem como evidencia tecnica, e nao apenas como atividade.';
+  const highlights =
+    locale === 'en'
+      ? ['Live API sync', 'Curated framing', 'Public engineering proof']
+      : locale === 'es'
+        ? ['Sync via API', 'Curadoria tecnica', 'Prueba publica']
+        : ['Sync via API', 'Curadoria tecnica', 'Prova publica'];
 
   return (
     <Section>
       <div className="content-grid">
+        <div className="mb-5 flex flex-wrap items-center gap-2">
+          <Badge>{eyebrow}</Badge>
+          {highlights.map((item) => (
+            <span key={item} className="rounded-full border border-border/70 bg-card px-3 py-1 text-[11px] uppercase tracking-[0.16em] text-fg/55">
+              {item}
+            </span>
+          ))}
+        </div>
+
         <SectionTitle>{dictionary.githubSection.title}</SectionTitle>
         <SectionLead>{dictionary.githubSection.description}</SectionLead>
+        <p className="mt-4 max-w-3xl text-sm leading-relaxed text-fg/65">{framing}</p>
 
         {projects.length === 0 ? (
           <p className="mt-8 rounded-2xl border border-dashed border-border p-6 text-fg/70">{dictionary.githubSection.empty}</p>
@@ -56,6 +79,34 @@ export function GithubProjectsSection({ locale, dictionary, projects }: GithubPr
                     </Badge>
                   </div>
                   <p className="text-sm text-fg/75">{project.summary}</p>
+
+                  <div className="mt-4 grid gap-3 rounded-2xl border border-border/70 bg-muted/60 p-4 text-sm text-fg/70 sm:grid-cols-2">
+                    <div>
+                      <p className="text-[11px] uppercase tracking-[0.18em] text-fg/45">
+                        {locale === 'en' ? 'Why it matters' : locale === 'es' ? 'Por que importa' : 'Por que importa'}
+                      </p>
+                      <p className="mt-2">
+                        {locale === 'en'
+                          ? 'Selected to show implementation quality, curation and public technical signal.'
+                          : locale === 'es'
+                            ? 'Seleccionado para mostrar calidad de implementacion, curadoria y senal tecnica publica.'
+                            : 'Selecionado para mostrar qualidade de implementacao, curadoria e sinal tecnico publico.'}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-[11px] uppercase tracking-[0.18em] text-fg/45">
+                        {locale === 'en' ? 'Freshness' : locale === 'es' ? 'Actualizacion' : 'Atualizacao'}
+                      </p>
+                      <p className="mt-2">
+                        {locale === 'en'
+                          ? `Updated ${formatDate(project.updatedAt, locale)} with ${project.stars} public stars.`
+                          : locale === 'es'
+                            ? `Actualizado ${formatDate(project.updatedAt, locale)} con ${project.stars} estrellas publicas.`
+                            : `Atualizado ${formatDate(project.updatedAt, locale)} com ${project.stars} estrelas publicas.`}
+                      </p>
+                    </div>
+                  </div>
+
                   <ul className="mt-4 flex flex-wrap gap-2">
                     {project.stack.map((stack) => (
                       <li key={stack} className="rounded-full bg-muted px-3 py-1 text-xs text-fg/75">
@@ -87,4 +138,3 @@ export function GithubProjectsSection({ locale, dictionary, projects }: GithubPr
     </Section>
   );
 }
-

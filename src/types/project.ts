@@ -1,6 +1,21 @@
-﻿import type { Locale } from '@/lib/i18n/config';
+import type { Locale } from '@/lib/i18n/config';
 
 export type LocalizedText = Record<Locale, string>;
+export type LocalizedList = Record<Locale, string[]>;
+
+export type ProjectProof = {
+  role: LocalizedText;
+  engagement: LocalizedText;
+  timeline: LocalizedText;
+  team: LocalizedText;
+  responsibilities: LocalizedList;
+  capabilities: string[];
+  constraints: LocalizedList;
+  outcomes: LocalizedList;
+  decisionSummary: LocalizedText;
+  architectureSummary: LocalizedText;
+  featuredOutcome: LocalizedText;
+};
 
 export type TechProject = {
   id: string;
@@ -13,16 +28,17 @@ export type TechProject = {
   githubUrl?: string;
   liveUrl?: string;
   featured?: boolean;
+  proof: ProjectProof;
   body: {
     context: LocalizedText;
     problem: LocalizedText;
     objective: LocalizedText;
-    features: Record<Locale, string[]>;
-    technicalChallenges: Record<Locale, string[]>;
-    architectureDecisions: Record<Locale, string[]>;
-    implementedSolutions: Record<Locale, string[]>;
-    learnings: Record<Locale, string[]>;
-    futureImprovements: Record<Locale, string[]>;
+    features: LocalizedList;
+    technicalChallenges: LocalizedList;
+    architectureDecisions: LocalizedList;
+    implementedSolutions: LocalizedList;
+    learnings: LocalizedList;
+    futureImprovements: LocalizedList;
   };
 };
 
@@ -38,7 +54,7 @@ export type DesignProject = {
   details: {
     context: LocalizedText;
     direction: LocalizedText;
-    results: Record<Locale, string[]>;
+    results: LocalizedList;
   };
 };
 

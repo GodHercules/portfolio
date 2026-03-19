@@ -1,6 +1,3 @@
-﻿'use client';
-
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -19,13 +16,7 @@ type ProjectCardProps = {
 
 export function ProjectCard({ href, title, summary, image, stacks, tag, className }: ProjectCardProps) {
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.4 }}
-      className={cn('group glass overflow-hidden rounded-3xl shadow-soft', className)}
-    >
+    <article className={cn('group glass overflow-hidden rounded-3xl shadow-soft', className)}>
       <Link href={href} className="block">
         <div className="relative aspect-[16/10] overflow-hidden bg-muted">
           <Image
@@ -49,6 +40,6 @@ export function ProjectCard({ href, title, summary, image, stacks, tag, classNam
           </ul>
         </div>
       </Link>
-    </motion.article>
+    </article>
   );
 }

@@ -11,7 +11,30 @@ type HeroSectionProps = {
   dictionary: Dictionary;
 };
 
+const proofBoard: Record<Locale, { label: string; value: string }[]> = {
+  'pt-BR': [
+    { label: 'Escopo', value: 'Produto, frontend e direção visual' },
+    { label: 'Entrega', value: 'Do conceito ao produto navegável' },
+    { label: 'Capacidade', value: 'i18n, integrações, UI systems e automação' },
+    { label: 'Formato', value: 'Projetos autorais, colaboração e evolução contínua' },
+  ],
+  en: [
+    { label: 'Scope', value: 'Product, frontend and visual direction' },
+    { label: 'Delivery', value: 'From concept to navigable product' },
+    { label: 'Capability', value: 'i18n, integrations, UI systems and automation' },
+    { label: 'Mode', value: 'Author-led work, collaboration and continuous evolution' },
+  ],
+  es: [
+    { label: 'Alcance', value: 'Producto, frontend y dirección visual' },
+    { label: 'Entrega', value: 'Del concepto al producto navegable' },
+    { label: 'Capacidad', value: 'i18n, integraciones, UI systems y automatización' },
+    { label: 'Formato', value: 'Trabajo autoral, colaboración y evolución continua' },
+  ],
+};
+
 export function HeroSection({ locale, dictionary }: HeroSectionProps) {
+  const board = proofBoard[locale];
+
   return (
     <section className="section-spacing pb-10">
       <div className="content-grid grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-end">
@@ -43,22 +66,12 @@ export function HeroSection({ locale, dictionary }: HeroSectionProps) {
             <p className="font-display text-2xl leading-tight tracking-tight">{dictionary.home.heroCardTitle}</p>
             <p className="text-sm leading-relaxed text-fg/75">{dictionary.home.heroCardDescription}</p>
             <div className="grid grid-cols-2 gap-3 text-sm">
-              <div className="rounded-2xl border border-border bg-muted p-4">
-                <p className="text-fg/60">{dictionary.home.heroStackLabel}</p>
-                <p className="mt-1 font-medium">{dictionary.home.heroStackValue}</p>
-              </div>
-              <div className="rounded-2xl border border-border bg-muted p-4">
-                <p className="text-fg/60">{dictionary.home.heroFocusLabel}</p>
-                <p className="mt-1 font-medium">{dictionary.home.heroFocusValue}</p>
-              </div>
-              <div className="rounded-2xl border border-border bg-muted p-4">
-                <p className="text-fg/60">{dictionary.home.heroCraftLabel}</p>
-                <p className="mt-1 font-medium">{dictionary.home.heroCraftValue}</p>
-              </div>
-              <div className="rounded-2xl border border-border bg-muted p-4">
-                <p className="text-fg/60">{dictionary.home.heroStyleLabel}</p>
-                <p className="mt-1 font-medium">{dictionary.home.heroStyleValue}</p>
-              </div>
+              {board.map((item) => (
+                <div key={item.label} className="rounded-2xl border border-border bg-muted p-4">
+                  <p className="text-fg/60">{item.label}</p>
+                  <p className="mt-1 font-medium">{item.value}</p>
+                </div>
+              ))}
             </div>
           </div>
         </Reveal>

@@ -1,9 +1,9 @@
-﻿'use client';
+'use client';
 
 import { MessageCircle, Send, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-import { profile } from '@/data/profile';
+import { getPortfolioAssistantReply } from '@/lib/portfolio-assistant';
 import type { Locale } from '@/lib/i18n/config';
 import { cn } from '@/lib/utils';
 
@@ -26,96 +26,69 @@ type BotCopy = {
   suggestions: string[];
   greeting: string;
   fallback: string;
+  relatedLabel: string;
 };
 
 const copy: Record<Locale, BotCopy> = {
   'pt-BR': {
     title: 'Assistente Hercules',
-    subtitle: 'Tire dúvidas rápidas sobre perfil, projetos e contato.',
+    subtitle: 'Consulte stack, projetos, processo, laboratorio GitHub e contato.',
     placeholder: 'Ex: quais stacks ele domina?',
     send: 'Enviar',
     open: 'Abrir chat',
-    suggestions: ['Quais tecnologias ele usa?', 'Como entrar em contato?', 'Ele faz design e desenvolvimento?'],
+    suggestions: ['Quais tecnologias ele usa?', 'Como ele costuma trabalhar?', 'Fale sobre Atlas Platform'],
     greeting:
-      'Olá. Posso responder dúvidas sobre a atuação do Hercules em desenvolvimento, produto digital e design gráfico.',
-    fallback:
-      'Boa pergunta. Posso detalhar tecnologias, projetos, processos e contato. Se preferir, fale direto por e-mail ou WhatsApp.',
+      'Ola. Este assistente consulta os dados do portfolio para responder sobre stack, projetos, processo, GitHub e contato.',
+    fallback: 'Boa pergunta. Posso detalhar tecnologias, projetos, processo, laboratorio GitHub e contato.',
+    relatedLabel: 'Perguntas sugeridas',
   },
   en: {
     title: 'Hercules Assistant',
-    subtitle: 'Ask quick questions about profile, projects and contact.',
+    subtitle: 'Ask about stack, projects, process, GitHub lab and contact.',
     placeholder: 'Ex: what tech stack does he use?',
     send: 'Send',
     open: 'Open chat',
-    suggestions: ['What technologies does he use?', 'How can I get in touch?', 'Does he do design and development?'],
-    greeting:
-      'Hello. I can answer questions about Hercules across software development, digital product and graphic design.',
-    fallback:
-      'Great question. I can explain technologies, projects, process and contact options. You can also reach him by email or WhatsApp.',
+    suggestions: ['What technologies does he use?', 'How does he usually work?', 'Tell me about Atlas Platform'],
+    greeting: 'Hello. This assistant reads portfolio data to answer about stack, projects, process, GitHub lab and contact.',
+    fallback: 'Good question. I can explain technologies, projects, process, GitHub lab and contact options.',
+    relatedLabel: 'Suggested follow-ups',
   },
   es: {
     title: 'Asistente Hercules',
-    subtitle: 'Haz preguntas rápidas sobre perfil, proyectos y contacto.',
-    placeholder: 'Ej: qué stack domina?',
+    subtitle: 'Pregunta por stack, proyectos, proceso, laboratorio GitHub y contacto.',
+    placeholder: 'Ej: que stack domina?',
     send: 'Enviar',
     open: 'Abrir chat',
-    suggestions: ['Qué tecnologías utiliza?', 'Cómo puedo contactarlo?', 'Hace diseño y desarrollo?'],
-    greeting:
-      'Hola. Puedo responder dudas sobre la actuación de Hercules en desarrollo, producto digital y diseño gráfico.',
-    fallback:
-      'Buena pregunta. Puedo detallar tecnologías, proyectos, proceso y contacto. También puedes hablar por correo o WhatsApp.',
+    suggestions: ['Que tecnologias utiliza?', 'Como suele trabajar?', 'Cuentame sobre Atlas Platform'],
+    greeting: 'Hola. Este asistente consulta los datos del portafolio para responder sobre stack, proyectos, proceso, GitHub y contacto.',
+    fallback: 'Buena pregunta. Puedo detallar tecnologias, proyectos, proceso, laboratorio GitHub y contacto.',
+    relatedLabel: 'Preguntas sugeridas',
   },
 };
-
-function replyFor(locale: Locale, question: string) {
-  const q = question.toLowerCase();
-
-  if (q.includes('stack') || q.includes('tecnolog') || q.includes('tech') || q.includes('ferrament')) {
-    if (locale === 'en') return 'He works mainly with React, Next.js, TypeScript, Tailwind CSS, Node.js and modern frontend architecture.';
-    if (locale === 'es') return 'Trabaja principalmente con React, Next.js, TypeScript, Tailwind CSS, Node.js y arquitectura frontend moderna.';
-    return 'Ele trabalha principalmente com React, Next.js, TypeScript, Tailwind CSS, Node.js e arquitetura frontend moderna.';
-  }
-
-  if (q.includes('contato') || q.includes('contact') || q.includes('email') || q.includes('whats') || q.includes('telefone')) {
-    if (locale === 'en') return `You can reach Hercules at ${profile.email} or by phone/WhatsApp at ${profile.phoneDisplay}.`;
-    if (locale === 'es') return `Puedes contactar a Hercules en ${profile.email} o por teléfono/WhatsApp en ${profile.phoneDisplay}.`;
-    return `Você pode falar com o Hercules pelo e-mail ${profile.email} ou no telefone/WhatsApp ${profile.phoneDisplay}.`;
-  }
-
-  if (q.includes('design') || q.includes('ui') || q.includes('ux') || q.includes('gráfico') || q.includes('grafico')) {
-    if (locale === 'en') return 'Yes. He has a hybrid profile combining software engineering, UI/UX and graphic design with premium visual direction.';
-    if (locale === 'es') return 'Sí. Tiene un perfil híbrido que combina ingeniería de software, UI/UX y diseño gráfico con dirección visual premium.';
-    return 'Sim. Ele tem perfil híbrido e combina engenharia de software, UI/UX e design gráfico com direção visual premium.';
-  }
-
-  if (q.includes('projeto') || q.includes('project') || q.includes('case')) {
-    if (locale === 'en') return 'His projects are organized into development and graphic design, with detailed case pages including context, challenges and solutions.';
-    if (locale === 'es') return 'Sus proyectos están organizados entre desarrollo y diseño gráfico, con casos detallados sobre contexto, desafíos y soluciones.';
-    return 'Os projetos dele são organizados em desenvolvimento e design gráfico, com páginas de case detalhando contexto, desafios e soluções.';
-  }
-
-  return copy[locale].fallback;
-}
 
 export function ChatbotWidget({ locale }: ChatbotProps) {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState<Message[]>([]);
+  const [relatedQuestions, setRelatedQuestions] = useState<string[]>([]);
   const t = copy[locale];
 
   useEffect(() => {
     if (messages.length === 0) {
       setMessages([{ id: 'greeting', role: 'bot', text: t.greeting }]);
+      setRelatedQuestions(t.suggestions);
     }
-  }, [messages.length, t.greeting]);
+  }, [messages.length, t.greeting, t.suggestions]);
 
   function sendMessage(text: string) {
     if (!text.trim()) return;
 
+    const answer = getPortfolioAssistantReply(locale, text);
     const userMessage: Message = { id: `${Date.now()}-u`, role: 'user', text };
-    const botMessage: Message = { id: `${Date.now()}-b`, role: 'bot', text: replyFor(locale, text) };
+    const botMessage: Message = { id: `${Date.now()}-b`, role: 'bot', text: answer.text || t.fallback };
 
     setMessages((prev) => [...prev, userMessage, botMessage]);
+    setRelatedQuestions(answer.related ?? t.suggestions);
     setInput('');
   }
 
@@ -132,7 +105,7 @@ export function ChatbotWidget({ locale }: ChatbotProps) {
 
       <div
         className={cn(
-          'absolute bottom-16 right-0 w-[min(92vw,380px)] overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition',
+          'absolute bottom-16 right-0 w-[min(92vw,400px)] overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition',
           open ? 'pointer-events-auto translate-y-0 opacity-100' : 'pointer-events-none translate-y-2 opacity-0',
         )}
       >
@@ -146,7 +119,7 @@ export function ChatbotWidget({ locale }: ChatbotProps) {
             <div
               key={message.id}
               className={cn(
-                'max-w-[90%] rounded-2xl px-3 py-2 text-sm',
+                'max-w-[90%] rounded-2xl px-3 py-2 text-sm leading-relaxed',
                 message.role === 'bot' ? 'bg-muted text-fg' : 'ml-auto bg-fg text-bg',
               )}
             >
@@ -156,8 +129,9 @@ export function ChatbotWidget({ locale }: ChatbotProps) {
         </div>
 
         <div className="space-y-2 border-t border-border p-3">
+          <p className="text-[11px] uppercase tracking-[0.18em] text-fg/45">{t.relatedLabel}</p>
           <div className="flex flex-wrap gap-2">
-            {t.suggestions.map((suggestion) => (
+            {relatedQuestions.map((suggestion) => (
               <button
                 key={suggestion}
                 type="button"

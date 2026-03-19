@@ -21,7 +21,7 @@ export function FeaturedProjectsSection({
     ...developmentProjects.filter((project) => project.featured).map((project) => ({
       href: `/${locale}/development/${project.slug}`,
       title: project.title[locale],
-      summary: project.summary[locale],
+      summary: project.proof.featuredOutcome[locale],
       image: project.cover,
       stack: project.stack,
       tag: dictionary.nav.development,

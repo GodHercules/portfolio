@@ -1,14 +1,18 @@
-﻿import { AboutSection } from '@/components/sections/about-section';
+import { notFound } from 'next/navigation';
+
+import { AboutSection } from '@/components/sections/about-section';
+import { CapabilityProofSection } from '@/components/sections/capability-proof-section';
+import { ClosingCtaSection } from '@/components/sections/closing-cta-section';
 import { FeaturedProjectsSection } from '@/components/sections/featured-projects-section';
 import { GithubProjectsSection } from '@/components/sections/github-projects-section';
 import { HeroSection } from '@/components/sections/hero-section';
 import { HomeTracksSection } from '@/components/sections/home-tracks-section';
+import { ProcessSection } from '@/components/sections/process-section';
 import { developmentProjects } from '@/data/development-projects';
 import { designProjects } from '@/data/design-projects';
 import { getGithubProjects } from '@/lib/github';
-import { getDictionary } from '@/lib/i18n/dictionaries';
 import { isLocale, type Locale } from '@/lib/i18n/config';
-import { notFound } from 'next/navigation';
+import { getDictionary } from '@/lib/i18n/dictionaries';
 
 type HomePageProps = {
   params: Promise<{ locale: string }>;
@@ -27,6 +31,8 @@ export default async function HomePage({ params }: HomePageProps) {
   return (
     <>
       <HeroSection locale={locale as Locale} dictionary={dictionary} />
+      <CapabilityProofSection locale={locale as Locale} />
+      <ProcessSection locale={locale as Locale} />
       <FeaturedProjectsSection
         locale={locale as Locale}
         dictionary={dictionary}
@@ -41,6 +47,7 @@ export default async function HomePage({ params }: HomePageProps) {
       />
       <GithubProjectsSection locale={locale as Locale} dictionary={dictionary} projects={githubProjects} />
       <AboutSection locale={locale as Locale} dictionary={dictionary} />
+      <ClosingCtaSection locale={locale as Locale} />
     </>
   );
 }
