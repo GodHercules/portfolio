@@ -44,6 +44,13 @@ const processCopy: Record<Locale, string> = {
   es: 'Suele trabajar desde discovery hasta la entrega: entendimiento del contexto, definicion de arquitectura, exploracion visual, implementacion, refinamiento y validacion del producto final.',
 };
 
+const teamCopy: Record<Locale, string> = {
+  'pt-BR':
+    'Com times, ele tende a reduzir atrito entre produto, design e engenharia: organiza alinhamento rapido, explicita prioridades, protege o escopo e deixa o handoff sustentavel para o squad.',
+  en: 'With teams, he reduces friction between product, design and engineering: he creates fast alignment, makes priorities explicit, protects scope and keeps handoff sustainable for the squad.',
+  es: 'Con equipos, reduce friccion entre producto, diseno e ingenieria: organiza alineacion rapida, explicita prioridades, protege el alcance y deja un handoff sostenible para el squad.',
+};
+
 const labCopy: Record<Locale, string> = {
   'pt-BR':
     'A camada de GitHub funciona como laboratorio tecnico: experimentos, estudos e projetos publicos entram como prova complementar de engenharia, nao apenas como feed.',
@@ -213,6 +220,18 @@ export function getPortfolioAssistantReply(locale: Locale, question: string): As
     };
   }
 
+  if (q.includes('time') || q.includes('team') || q.includes('squad') || q.includes('equipe') || q.includes('equipo') || q.includes('stakeholder') || q.includes('handoff') || q.includes('colabor')) {
+    return {
+      text: teamCopy[locale],
+      related:
+        locale === 'en'
+          ? ['How does he handle alignment?', 'What does his handoff look like?']
+          : locale === 'es'
+            ? ['Como maneja la alineacion?', 'Como se ve su handoff?']
+            : ['Como ele conduz alinhamento?', 'Como funciona o handoff com o time?'],
+    };
+  }
+
   if (q.includes('ia') || q.includes('ai') || q.includes('api') || q.includes('integrac') || q.includes('automation') || q.includes('automacao')) {
     if (locale === 'en') {
       return {
@@ -310,20 +329,20 @@ export function getPortfolioAssistantReply(locale: Locale, question: string): As
 
   if (locale === 'en') {
     return {
-      text: 'I can answer about stack, projects by name, process, GitHub lab, contact and how design connects with engineering. Try asking about a specific project or capability.',
-      related: ['What technologies does he use?', 'How does he usually work?', 'Tell me about Atlas Platform'],
+      text: 'I can answer about stack, projects by name, process, team collaboration, GitHub lab, contact and how design connects with engineering. Try asking about a specific project, capability or team scenario.',
+      related: ['What technologies does he use?', 'How does he usually work?', 'How does he work with teams?'],
     };
   }
 
   if (locale === 'es') {
     return {
-      text: 'Puedo responder sobre stack, proyectos por nombre, proceso, laboratorio GitHub, contacto y como conecta diseno con ingenieria. Prueba preguntando por un proyecto o capacidad concreta.',
-      related: ['Que tecnologias utiliza?', 'Como suele trabajar?', 'Cuentame sobre Atlas Platform'],
+      text: 'Puedo responder sobre stack, proyectos por nombre, proceso, colaboracion con equipos, laboratorio GitHub, contacto y como conecta diseno con ingenieria. Prueba preguntando por un proyecto, capacidad o escenario de equipo concreto.',
+      related: ['Que tecnologias utiliza?', 'Como suele trabajar?', 'Como trabaja con equipos?'],
     };
   }
 
   return {
-    text: 'Posso responder sobre stack, projetos por nome, processo, laboratorio GitHub, contato e como ele conecta design com engenharia. Tente perguntar por um projeto ou capacidade especifica.',
-    related: ['Quais tecnologias ele usa?', 'Como ele costuma trabalhar?', 'Fale sobre Atlas Platform'],
+    text: 'Posso responder sobre stack, projetos por nome, processo, colaboracao com times, laboratorio GitHub, contato e como ele conecta design com engenharia. Tente perguntar por um projeto, capacidade ou cenario de time especifico.',
+    related: ['Quais tecnologias ele usa?', 'Como ele costuma trabalhar?', 'Como ele atua com times?'],
   };
 }
