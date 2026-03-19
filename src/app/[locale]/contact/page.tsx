@@ -15,5 +15,5 @@ export default async function ContactPage({ params }: ContactPageProps) {
     notFound();
   }
 
-  return <ContactSection dictionary={getDictionary(locale as Locale)} />;
+  return <ContactSection locale={locale as Locale} dictionary={getDictionary(locale as Locale)} />;
 }

@@ -3,12 +3,24 @@
 import { buildWhatsAppUrl, profile } from '@/data/profile';
 import { ButtonLink } from '@/components/ui/button';
 import { Section, SectionLead, SectionTitle } from '@/components/ui/section';
+import type { Locale } from '@/lib/i18n/config';
 import type { Dictionary } from '@/lib/i18n/dictionaries';
 
-export function ContactSection({ dictionary }: { dictionary: Dictionary }) {
+const whatsappMessages: Record<Locale, string> = {
+  'pt-BR': 'Ola Hercules, vi seu portfolio e gostaria de conversar sobre um projeto.',
+  en: 'Hi Hercules, I saw your portfolio and would like to talk about a project.',
+  es: 'Hola Hercules, vi tu portafolio y me gustaria conversar sobre un proyecto.',
+};
+
+type ContactSectionProps = {
+  locale: Locale;
+  dictionary: Dictionary;
+};
+
+export function ContactSection({ locale, dictionary }: ContactSectionProps) {
   const whatsappLink = buildWhatsAppUrl(
     profile.phoneRaw,
-    'Olá Hercules, vi seu portfólio e gostaria de conversar sobre um projeto.',
+    whatsappMessages[locale],
   );
 
   return (

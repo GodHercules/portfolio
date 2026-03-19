@@ -1,6 +1,7 @@
 ﻿import { notFound } from 'next/navigation';
 
 import { DevelopmentGrid } from '@/components/sections/development-grid';
+import { developmentProjects } from '@/data/development-projects';
 import { getGithubProjects } from '@/lib/github';
 import { getDictionary } from '@/lib/i18n/dictionaries';
 import { isLocale, type Locale } from '@/lib/i18n/config';
@@ -22,7 +23,7 @@ export default async function DevelopmentPage({ params }: DevelopmentPageProps) 
     <DevelopmentGrid
       locale={locale as Locale}
       dictionary={getDictionary(locale as Locale)}
-      projects={[]}
+      projects={developmentProjects}
       githubProjects={githubProjects}
     />
   );

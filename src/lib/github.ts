@@ -28,7 +28,7 @@ export async function getGithubProjects({ locale, username = DEFAULT_USERNAME }:
 
   try {
     const endpoint = token
-      ? `${GITHUB_API}/user/repos?sort=updated&per_page=100&visibility=all&affiliation=owner`
+      ? `${GITHUB_API}/user/repos?sort=updated&per_page=100&visibility=public&affiliation=owner`
       : `${GITHUB_API}/users/${username}/repos?sort=updated&per_page=100`;
 
     let response = await fetch(endpoint, {
@@ -51,6 +51,7 @@ export async function getGithubProjects({ locale, username = DEFAULT_USERNAME }:
     const repositories = (await response.json()) as GithubRepository[];
 
     return repositories
+      .filter((repo) => !repo.private)
       .filter((repo) => !repo.fork && !repo.archived)
       .filter((repo) => repo.name.toLowerCase() !== 'portfolio')
       .slice(0, 6)

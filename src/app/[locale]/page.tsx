@@ -3,6 +3,7 @@ import { FeaturedProjectsSection } from '@/components/sections/featured-projects
 import { GithubProjectsSection } from '@/components/sections/github-projects-section';
 import { HeroSection } from '@/components/sections/hero-section';
 import { HomeTracksSection } from '@/components/sections/home-tracks-section';
+import { developmentProjects } from '@/data/development-projects';
 import { designProjects } from '@/data/design-projects';
 import { getGithubProjects } from '@/lib/github';
 import { getDictionary } from '@/lib/i18n/dictionaries';
@@ -29,17 +30,17 @@ export default async function HomePage({ params }: HomePageProps) {
       <FeaturedProjectsSection
         locale={locale as Locale}
         dictionary={dictionary}
-        developmentProjects={[]}
+        developmentProjects={developmentProjects}
         designProjects={designProjects}
       />
       <HomeTracksSection
         locale={locale as Locale}
         dictionary={dictionary}
-        developmentProjects={[]}
+        developmentProjects={developmentProjects}
         designProjects={designProjects}
       />
       <GithubProjectsSection locale={locale as Locale} dictionary={dictionary} projects={githubProjects} />
-      <AboutSection dictionary={dictionary} />
+      <AboutSection locale={locale as Locale} dictionary={dictionary} />
     </>
   );
 }

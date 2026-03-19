@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run typecheck",
     "dev": "next dev",
     "build": "next build --webpack",
     "start": "next start",
-    "lint": "eslint src --ext .ts,.tsx"
+    "lint": "eslint src --ext .ts,.tsx",
+    "typecheck": "tsc --noEmit",
+    "main-agent:verify": "npm run lint && npm run typecheck && npm run build"
   },
   "repository": {
     "type": "git",

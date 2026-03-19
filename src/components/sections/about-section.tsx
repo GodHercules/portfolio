@@ -2,9 +2,21 @@
 
 import { Reveal } from '@/components/ui/reveal';
 import { Section, SectionTitle } from '@/components/ui/section';
+import type { Locale } from '@/lib/i18n/config';
 import type { Dictionary } from '@/lib/i18n/dictionaries';
 
-export function AboutSection({ dictionary }: { dictionary: Dictionary }) {
+const roleByLocale: Record<Locale, string> = {
+  'pt-BR': 'Software, Produto e Direcao Visual',
+  en: 'Software, Product and Visual Direction',
+  es: 'Software, Producto y Direccion Visual',
+};
+
+type AboutSectionProps = {
+  locale: Locale;
+  dictionary: Dictionary;
+};
+
+export function AboutSection({ locale, dictionary }: AboutSectionProps) {
   return (
     <Section>
       <div className="content-grid grid gap-7 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-x-10 lg:gap-y-7">
@@ -29,7 +41,7 @@ export function AboutSection({ dictionary }: { dictionary: Dictionary }) {
               </div>
               <div className="border-t border-border/70 px-5 py-4">
                 <p className="font-display text-xl leading-none text-fg">Hercules de Oliveira</p>
-                <p className="mt-2 text-xs uppercase tracking-[0.18em] text-fg/60">Software, Produto e Direcao Visual</p>
+                <p className="mt-2 text-xs uppercase tracking-[0.18em] text-fg/60">{roleByLocale[locale]}</p>
               </div>
             </div>
           </div>

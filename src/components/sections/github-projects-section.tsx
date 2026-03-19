@@ -16,6 +16,9 @@ type GithubProjectsSectionProps = {
 };
 
 export function GithubProjectsSection({ locale, dictionary, projects }: GithubProjectsSectionProps) {
+  const coverAltPrefix =
+    locale === 'en' ? 'Project cover' : locale === 'es' ? 'Portada del proyecto' : 'Capa do projeto';
+
   return (
     <Section>
       <div className="content-grid">
@@ -32,7 +35,7 @@ export function GithubProjectsSection({ locale, dictionary, projects }: GithubPr
                   {project.cover ? (
                     <Image
                       src={project.cover}
-                      alt={`Capa do projeto ${project.title}`}
+                      alt={`${coverAltPrefix} ${project.title}`}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover"

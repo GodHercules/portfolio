@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { Footer } from '@/components/layout/footer';
 import { Header } from '@/components/layout/header';
 import { ChatbotWidget } from '@/components/layout/chatbot-widget';
+import { DocumentLanguage } from '@/components/layout/document-language';
 import { PageTransition } from '@/components/providers/page-transition';
 import { isLocale, locales, type Locale } from '@/lib/i18n/config';
 import { getDictionary } from '@/lib/i18n/dictionaries';
@@ -43,6 +44,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
 
   return (
     <>
+      <DocumentLanguage locale={locale as Locale} />
       <Header locale={locale as Locale} dictionary={dictionary} />
       <main>
         <PageTransition>{children}</PageTransition>

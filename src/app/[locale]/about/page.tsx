@@ -15,5 +15,5 @@ export default async function AboutPage({ params }: AboutPageProps) {
     notFound();
   }
 
-  return <AboutSection dictionary={getDictionary(locale as Locale)} />;
+  return <AboutSection locale={locale as Locale} dictionary={getDictionary(locale as Locale)} />;
 }
