@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 
 import { Badge } from '@/components/ui/badge';
+import { ButtonLink } from '@/components/ui/button';
 import { Reveal } from '@/components/ui/reveal';
 import { Section, SectionLead, SectionTitle } from '@/components/ui/section';
 import { labSignals } from '@/data/lab-signals';
@@ -9,6 +10,8 @@ import type { Locale } from '@/lib/i18n/config';
 
 type LabSignalsSectionProps = {
   locale: Locale;
+  ctaHref?: string;
+  ctaLabel?: string;
 };
 
 const copy: Record<
@@ -25,6 +28,7 @@ const copy: Record<
     lead: 'Uma camada para mostrar que o portfolio nao para em interface: ele tambem prova repertorio em logica, integracao, automacao e experiencia guiada por conteudo.',
     outcomeLabel: 'O que isso prova',
     linkLabel: 'Abrir frente',
+    // CTA label is reused on the home surface to invite deeper exploration.
   },
   en: {
     title: 'AI, integrations, and automation as real proof',
@@ -40,8 +44,10 @@ const copy: Record<
   },
 };
 
-export function LabSignalsSection({ locale }: LabSignalsSectionProps) {
+export function LabSignalsSection({ locale, ctaHref, ctaLabel }: LabSignalsSectionProps) {
   const section = copy[locale];
+  const actionHref = ctaHref ?? `/${locale}/lab`;
+  const actionLabel = ctaLabel ?? (locale === 'pt-BR' ? 'Abrir AI / Automation Lab' : locale === 'es' ? 'Abrir AI / Automation Lab' : 'Open AI / Automation Lab');
 
   return (
     <Section className="pt-8">
@@ -80,6 +86,10 @@ export function LabSignalsSection({ locale }: LabSignalsSectionProps) {
               </article>
             </Reveal>
           ))}
+        </div>
+
+        <div className="mt-8 flex flex-wrap gap-3">
+          <ButtonLink href={actionHref}>{actionLabel}</ButtonLink>
         </div>
       </div>
     </Section>

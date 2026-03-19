@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 
 import { Badge } from '@/components/ui/badge';
 import { ButtonLink } from '@/components/ui/button';
@@ -7,7 +8,7 @@ import { Section, SectionTitle } from '@/components/ui/section';
 import { developmentProjects } from '@/data/development-projects';
 import type { Locale } from '@/lib/i18n/config';
 import type { Dictionary } from '@/lib/i18n/dictionaries';
-import type { TechProject } from '@/types/project';
+import type { ProjectArchitecturePillar, ProjectMetric, TechProject } from '@/types/project';
 
 type DevelopmentCaseProps = {
   project: TechProject;
@@ -18,6 +19,11 @@ type DevelopmentCaseProps = {
 type LensBlock = {
   title: string;
   items: string[];
+};
+
+type MetricBlock = ProjectMetric & {
+  labelText: string;
+  detailText?: string;
 };
 
 function ListBlock({ title, items }: { title: string; items: string[] }) {
@@ -51,6 +57,8 @@ const proofCopy: Record<
     systemLensTitle: string;
     systemLensLead: string;
     relatedCasesTitle: string;
+    architectureMapTitle: string;
+    architectureMapLead: string;
   }
 > = {
   'pt-BR': {
@@ -69,6 +77,8 @@ const proofCopy: Record<
     systemLensTitle: 'Lente de sistema',
     systemLensLead: 'Uma leitura rapida de como a solucao se sustenta em arquitetura, implementacao e restricoes reais.',
     relatedCasesTitle: 'Casos relacionados',
+    architectureMapTitle: 'Mapa de arquitetura',
+    architectureMapLead: 'Uma leitura visual simples do fluxo principal e dos pilares que sustentam o case.',
   },
   en: {
     role: 'Role',
@@ -86,6 +96,8 @@ const proofCopy: Record<
     systemLensTitle: 'System lens',
     systemLensLead: 'A quick read of how the solution holds together across architecture, implementation, and real constraints.',
     relatedCasesTitle: 'Related cases',
+    architectureMapTitle: 'Architecture map',
+    architectureMapLead: 'A simple visual read of the main flow and the pillars that support the case.',
   },
   es: {
     role: 'Rol',
@@ -103,11 +115,19 @@ const proofCopy: Record<
     systemLensTitle: 'Lente de sistema',
     systemLensLead: 'Una lectura rapida de como se sostiene la solucion entre arquitectura, implementacion y restricciones reales.',
     relatedCasesTitle: 'Casos relacionados',
+    architectureMapTitle: 'Mapa de arquitectura',
+    architectureMapLead: 'Una lectura visual simple del flujo principal y de los pilares que sostienen el caso.',
   },
 };
 
 export function DevelopmentCase({ project, locale, dictionary }: DevelopmentCaseProps) {
   const t = proofCopy[locale] as (typeof proofCopy)[Locale];
+  const metrics: MetricBlock[] = project.proof.metrics.map((metric) => ({
+    ...metric,
+    labelText: metric.label[locale],
+    detailText: metric.detail?.[locale],
+  }));
+  const pillars = project.proof.architecturePillars as ProjectArchitecturePillar[];
   const lensBlocks: LensBlock[] = [
     {
       title: dictionary.projectPage.architectureDecisions,
@@ -221,6 +241,73 @@ export function DevelopmentCase({ project, locale, dictionary }: DevelopmentCase
           <ListBlock title={t.constraints} items={project.proof.constraints[locale]} />
           <ListBlock title={t.outcomes} items={project.proof.outcomes[locale]} />
           <ListBlock title={t.capabilities} items={project.proof.capabilities} />
+        </div>
+
+        <div className="mt-10">
+          <h3 className="font-display text-2xl leading-tight tracking-tight">{t.architectureMapTitle}</h3>
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-fg/75">{t.architectureMapLead}</p>
+        </div>
+
+        <div className="mt-6 rounded-[2rem] border border-border/70 bg-muted/30 p-5 sm:p-6">
+          <div className="grid gap-4 lg:grid-cols-[1.15fr_auto_1fr] lg:items-stretch">
+            <article className="glass rounded-3xl border border-border/70 p-5">
+              <p className="text-xs uppercase tracking-[0.18em] text-fg/45">{dictionary.projectPage.context}</p>
+              <p className="mt-3 text-sm leading-relaxed text-fg/75">{project.body.context[locale]}</p>
+              <p className="mt-4 text-xs uppercase tracking-[0.18em] text-accent">{t.decisionSummary}</p>
+              <p className="mt-2 text-sm leading-relaxed text-fg/75">{project.proof.decisionSummary[locale]}</p>
+            </article>
+
+            <div className="flex items-center justify-center px-3 py-2 text-accent">
+              <ArrowRight className="hidden lg:block" size={28} />
+              <ArrowRight className="lg:hidden" size={20} />
+            </div>
+
+            <article className="glass rounded-3xl border border-border/70 p-5">
+              <p className="text-xs uppercase tracking-[0.18em] text-fg/45">{t.architectureSummary}</p>
+              <p className="mt-3 text-sm leading-relaxed text-fg/75">{project.proof.architectureSummary[locale]}</p>
+              <div className="mt-4 grid gap-3 sm:grid-cols-3">
+                {pillars.map((pillar, index) => (
+                  <div key={pillar.title[locale]} className="rounded-2xl border border-border/70 bg-card px-4 py-3">
+                    <p className="text-xs uppercase tracking-[0.16em] text-fg/45">{index + 1}</p>
+                    <p className="mt-2 font-medium text-fg">{pillar.title[locale]}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-fg/70">{pillar.summary[locale]}</p>
+                  </div>
+                ))}
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div className="mt-8 grid gap-5 xl:grid-cols-[0.9fr_1.1fr]">
+          <article className="glass rounded-3xl border border-border/70 p-6">
+            <h3 className="font-display text-2xl leading-tight tracking-tight">Impacto e sinais</h3>
+            <p className="mt-3 text-sm leading-relaxed text-fg/75">
+              Sinais mais concretos do que o projeto entregou em termos de clareza, previsibilidade e governanca.
+            </p>
+            <div className="mt-5 grid gap-3 sm:grid-cols-3 xl:grid-cols-1">
+              {metrics.map((metric) => (
+                <div key={`${project.slug}-${metric.value}-${metric.labelText}`} className="rounded-2xl border border-border/70 bg-muted/70 px-4 py-4">
+                  <p className="font-display text-3xl leading-none">{metric.value}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-fg/75">{metric.labelText}</p>
+                  {metric.detailText ? <p className="mt-2 text-xs leading-relaxed text-fg/55">{metric.detailText}</p> : null}
+                </div>
+              ))}
+            </div>
+          </article>
+
+          <article className="glass rounded-3xl border border-border/70 p-6">
+            <h3 className="font-display text-2xl leading-tight tracking-tight">{t.architectureMapTitle}</h3>
+            <p className="mt-3 text-sm leading-relaxed text-fg/75">{t.architectureMapLead}</p>
+            <div className="mt-5 grid gap-3">
+              {pillars.map((pillar, index) => (
+                <div key={`${project.slug}-${pillar.title[locale]}`} className="rounded-2xl border border-border/70 bg-muted/70 px-4 py-4">
+                  <p className="text-xs uppercase tracking-[0.16em] text-fg/45">{index + 1}</p>
+                  <p className="mt-2 font-medium text-fg">{pillar.title[locale]}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-fg/75">{pillar.summary[locale]}</p>
+                </div>
+              ))}
+            </div>
+          </article>
         </div>
 
         <div className="mt-8 grid gap-5 lg:grid-cols-2">

@@ -26,8 +26,8 @@ export type ProjectProof = {
   decisionSummary: LocalizedText;
   architectureSummary: LocalizedText;
   featuredOutcome: LocalizedText;
-  metrics?: ProjectMetric[];
-  architecturePillars?: ProjectArchitecturePillar[];
+  metrics: ProjectMetric[];
+  architecturePillars: ProjectArchitecturePillar[];
 };
 
 export type TechProject = {
