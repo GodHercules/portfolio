@@ -213,6 +213,48 @@ export function getPortfolioAssistantReply(locale: Locale, question: string): As
     };
   }
 
+  if (q.includes('ia') || q.includes('ai') || q.includes('api') || q.includes('integrac') || q.includes('automation') || q.includes('automacao')) {
+    if (locale === 'en') {
+      return {
+        text: 'The portfolio shows AI and integration work as product layers, not isolated buzzwords: content-aware assistants, API-connected workflows, operational automation, and architecture shaped for observability and retries.',
+        related: ['Which project best shows automation?', 'How does he turn integration work into product value?'],
+      };
+    }
+
+    if (locale === 'es') {
+      return {
+        text: 'El portafolio muestra IA e integraciones como capas de producto y no como buzzwords aisladas: asistentes guiados por contenido, flujos conectados por API, automatizacion operativa y arquitectura pensada para observabilidad y reintentos.',
+        related: ['Que proyecto muestra mejor automatizacion?', 'Como convierte integraciones en valor de producto?'],
+      };
+    }
+
+    return {
+      text: 'O portfolio mostra IA e integracoes como camadas de produto, e nao como buzzwords isoladas: assistentes guiados por conteudo, fluxos conectados por API, automacao operacional e arquitetura pensada para observabilidade e retries.',
+      related: ['Qual projeto mostra melhor automacao?', 'Como ele transforma integracoes em valor de produto?'],
+    };
+  }
+
+  if (q.includes('impact') || q.includes('resultado') || q.includes('impacto') || q.includes('metric') || q.includes('metrica')) {
+    if (locale === 'en') {
+      return {
+        text: 'The impact layer focuses on operational clarity, recoverability, team autonomy, and architecture that supports evolution. The cases now surface quick metrics and architectural pillars so the work reads as product impact, not only implementation.',
+        related: ['Which case has the strongest impact proof?', 'What architecture pillars appear most often?'],
+      };
+    }
+
+    if (locale === 'es') {
+      return {
+        text: 'La capa de impacto se enfoca en claridad operativa, recuperacion, autonomia del equipo y arquitectura pensada para evolucionar. Los casos ahora muestran metricas rapidas y pilares arquitectonicos para que el trabajo se lea como impacto de producto y no solo como implementacion.',
+        related: ['Que caso tiene la prueba de impacto mas fuerte?', 'Que pilares de arquitectura aparecen con mas frecuencia?'],
+      };
+    }
+
+    return {
+      text: 'A camada de impacto foca em clareza operacional, retomada, autonomia do time e arquitetura pensada para evolucao. Os cases agora mostram metricas rapidas e pilares arquiteturais para que a entrega seja lida como impacto de produto, e nao so como implementacao.',
+      related: ['Qual case tem a prova de impacto mais forte?', 'Quais pilares de arquitetura aparecem com mais frequencia?'],
+    };
+  }
+
   if (q.includes('design') || q.includes('ui') || q.includes('ux') || q.includes('grafic') || q.includes('visual')) {
     if (locale === 'en') {
       return {

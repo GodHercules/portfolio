@@ -1,9 +1,10 @@
-﻿import Image from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { Badge } from '@/components/ui/badge';
 import { ButtonLink } from '@/components/ui/button';
 import { Section, SectionTitle } from '@/components/ui/section';
+import { developmentProjects } from '@/data/development-projects';
 import type { Locale } from '@/lib/i18n/config';
 import type { Dictionary } from '@/lib/i18n/dictionaries';
 import type { TechProject } from '@/types/project';
@@ -12,6 +13,11 @@ type DevelopmentCaseProps = {
   project: TechProject;
   locale: Locale;
   dictionary: Dictionary;
+};
+
+type LensBlock = {
+  title: string;
+  items: string[];
 };
 
 function ListBlock({ title, items }: { title: string; items: string[] }) {
@@ -42,6 +48,9 @@ const proofCopy: Record<
     architectureSummary: string;
     proofTitle: string;
     proofLead: string;
+    systemLensTitle: string;
+    systemLensLead: string;
+    relatedCasesTitle: string;
   }
 > = {
   'pt-BR': {
@@ -57,6 +66,9 @@ const proofCopy: Record<
     architectureSummary: 'Leitura arquitetural',
     proofTitle: 'Leitura executiva do case',
     proofLead: 'Uma camada de evidencia para mostrar papel, escopo, decisoes e resultado do projeto.',
+    systemLensTitle: 'Lente de sistema',
+    systemLensLead: 'Uma leitura rapida de como a solucao se sustenta em arquitetura, implementacao e restricoes reais.',
+    relatedCasesTitle: 'Casos relacionados',
   },
   en: {
     role: 'Role',
@@ -71,6 +83,9 @@ const proofCopy: Record<
     architectureSummary: 'Architecture readout',
     proofTitle: 'Executive case readout',
     proofLead: 'An evidence layer to show role, scope, decisions, and project outcome.',
+    systemLensTitle: 'System lens',
+    systemLensLead: 'A quick read of how the solution holds together across architecture, implementation, and real constraints.',
+    relatedCasesTitle: 'Related cases',
   },
   es: {
     role: 'Rol',
@@ -85,11 +100,36 @@ const proofCopy: Record<
     architectureSummary: 'Lectura arquitectonica',
     proofTitle: 'Lectura ejecutiva del caso',
     proofLead: 'Una capa de evidencia para mostrar rol, alcance, decisiones y resultado del proyecto.',
+    systemLensTitle: 'Lente de sistema',
+    systemLensLead: 'Una lectura rapida de como se sostiene la solucion entre arquitectura, implementacion y restricciones reales.',
+    relatedCasesTitle: 'Casos relacionados',
   },
 };
 
 export function DevelopmentCase({ project, locale, dictionary }: DevelopmentCaseProps) {
-  const t = proofCopy[locale];
+  const t = proofCopy[locale] as (typeof proofCopy)[Locale];
+  const lensBlocks: LensBlock[] = [
+    {
+      title: dictionary.projectPage.architectureDecisions,
+      items: project.body.architectureDecisions[locale].slice(0, 3),
+    },
+    {
+      title: dictionary.projectPage.implementedSolutions,
+      items: project.body.implementedSolutions[locale].slice(0, 3),
+    },
+    {
+      title: dictionary.projectPage.technicalChallenges,
+      items: project.body.technicalChallenges[locale].slice(0, 3),
+    },
+  ];
+  const relatedProjects = developmentProjects
+    .filter((candidate) => candidate.slug !== project.slug)
+    .filter(
+      (candidate) =>
+        candidate.category === project.category ||
+        candidate.proof.capabilities.some((capability) => project.proof.capabilities.includes(capability)),
+    )
+    .slice(0, 2);
 
   return (
     <Section>
@@ -194,6 +234,24 @@ export function DevelopmentCase({ project, locale, dictionary }: DevelopmentCase
           </div>
         </div>
 
+        <div className="mt-10">
+          <h3 className="font-display text-2xl leading-tight tracking-tight">{t.systemLensTitle}</h3>
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-fg/75">{t.systemLensLead}</p>
+        </div>
+
+        <div className="mt-6 grid gap-4 lg:grid-cols-3">
+          {lensBlocks.map((block) => (
+            <article key={block.title} className="glass rounded-2xl border border-border/70 p-5">
+              <h4 className="font-medium text-fg">{block.title}</h4>
+              <ul className="mt-4 space-y-2 text-sm leading-relaxed text-fg/75">
+                {block.items.map((item) => (
+                  <li key={item}>- {item}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+
         <div className="mt-8 grid gap-4 md:grid-cols-2">
           <ListBlock title={dictionary.projectPage.features} items={project.body.features[locale]} />
           <ListBlock title={dictionary.projectPage.technicalChallenges} items={project.body.technicalChallenges[locale]} />
@@ -202,6 +260,34 @@ export function DevelopmentCase({ project, locale, dictionary }: DevelopmentCase
           <ListBlock title={dictionary.projectPage.learnings} items={project.body.learnings[locale]} />
           <ListBlock title={dictionary.projectPage.futureImprovements} items={project.body.futureImprovements[locale]} />
         </div>
+
+        {relatedProjects.length > 0 ? (
+          <div className="mt-10">
+            <h3 className="font-display text-2xl leading-tight tracking-tight">{t.relatedCasesTitle}</h3>
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              {relatedProjects.map((related) => (
+                <Link
+                  key={related.slug}
+                  href={`/${locale}/development/${related.slug}`}
+                  className="glass rounded-3xl border border-border/70 p-6 transition hover:border-fg/35"
+                >
+                  <p className="text-xs uppercase tracking-[0.18em] text-fg/45">
+                    {dictionary.categories.development[related.category]}
+                  </p>
+                  <h4 className="mt-3 font-display text-2xl leading-tight tracking-tight text-fg">{related.title[locale]}</h4>
+                  <p className="mt-3 text-sm leading-relaxed text-fg/75">{related.proof.featuredOutcome[locale]}</p>
+                  <ul className="mt-4 flex flex-wrap gap-2">
+                    {related.proof.capabilities.slice(0, 3).map((capability) => (
+                      <li key={capability} className="rounded-full border border-border bg-muted px-3 py-1 text-xs text-fg/75">
+                        {capability}
+                      </li>
+                    ))}
+                  </ul>
+                </Link>
+              ))}
+            </div>
+          </div>
+        ) : null}
       </div>
     </Section>
   );

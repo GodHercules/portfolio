@@ -1,12 +1,15 @@
 import { notFound } from 'next/navigation';
 
 import { AboutSection } from '@/components/sections/about-section';
+import { BuildSurfacesSection } from '@/components/sections/build-surfaces-section';
 import { CapabilityProofSection } from '@/components/sections/capability-proof-section';
 import { ClosingCtaSection } from '@/components/sections/closing-cta-section';
+import { EvidenceStripSection } from '@/components/sections/evidence-strip-section';
 import { FeaturedProjectsSection } from '@/components/sections/featured-projects-section';
 import { GithubProjectsSection } from '@/components/sections/github-projects-section';
 import { HeroSection } from '@/components/sections/hero-section';
 import { HomeTracksSection } from '@/components/sections/home-tracks-section';
+import { LabSignalsSection } from '@/components/sections/lab-signals-section';
 import { ProcessSection } from '@/components/sections/process-section';
 import { developmentProjects } from '@/data/development-projects';
 import { designProjects } from '@/data/design-projects';
@@ -31,7 +34,10 @@ export default async function HomePage({ params }: HomePageProps) {
   return (
     <>
       <HeroSection locale={locale as Locale} dictionary={dictionary} />
+      <EvidenceStripSection locale={locale as Locale} projects={developmentProjects} />
       <CapabilityProofSection locale={locale as Locale} />
+      <BuildSurfacesSection locale={locale as Locale} projects={developmentProjects} />
+      <LabSignalsSection locale={locale as Locale} />
       <ProcessSection locale={locale as Locale} />
       <FeaturedProjectsSection
         locale={locale as Locale}

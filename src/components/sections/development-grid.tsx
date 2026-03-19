@@ -18,6 +18,7 @@ type DevelopmentGridProps = {
 
 export function DevelopmentGrid({ locale, dictionary, projects, githubProjects = [] }: DevelopmentGridProps) {
   const [activeCategory, setActiveCategory] = useState('all');
+  const [activeCapability, setActiveCapability] = useState('all');
 
   const categoryItems = useMemo(
     () => [
@@ -27,10 +28,25 @@ export function DevelopmentGrid({ locale, dictionary, projects, githubProjects =
     [dictionary],
   );
 
+  const capabilityItems = useMemo(() => {
+    const capabilities = [...new Set(projects.flatMap((project) => project.proof.capabilities))].sort();
+
+    return [{ id: 'all', label: dictionary.common.all }, ...capabilities.map((capability) => ({ id: capability, label: capability }))];
+  }, [dictionary.common.all, projects]);
+
   const filteredProjects = useMemo(
-    () => (activeCategory === 'all' ? projects : projects.filter((project) => project.category === activeCategory)),
-    [activeCategory, projects],
+    () =>
+      projects.filter((project) => {
+        const categoryMatch = activeCategory === 'all' || project.category === activeCategory;
+        const capabilityMatch = activeCapability === 'all' || project.proof.capabilities.includes(activeCapability);
+
+        return categoryMatch && capabilityMatch;
+      }),
+    [activeCapability, activeCategory, projects],
   );
+
+  const capabilityTitle =
+    locale === 'en' ? 'Capability filter' : locale === 'es' ? 'Filtro por capacidad' : 'Filtro por capacidade';
 
   return (
     <div className="content-grid section-spacing">
@@ -42,19 +58,33 @@ export function DevelopmentGrid({ locale, dictionary, projects, githubProjects =
           <div className="mt-8">
             <FilterPills items={categoryItems} activeId={activeCategory} onChange={setActiveCategory} />
           </div>
+          <div className="mt-5">
+            <p className="mb-3 text-xs uppercase tracking-[0.18em] text-fg/45">{capabilityTitle}</p>
+            <FilterPills items={capabilityItems} activeId={activeCapability} onChange={setActiveCapability} />
+          </div>
 
           <div className="mt-8 grid gap-6 md:grid-cols-2">
-            {filteredProjects.map((project) => (
-              <ProjectCard
-                key={project.id}
-                href={`/${locale}/development/${project.slug}`}
-                title={project.title[locale]}
-                summary={project.summary[locale]}
-                image={project.cover}
-                stacks={project.stack}
-                tag={dictionary.categories.development[project.category]}
-              />
-            ))}
+            {filteredProjects.length > 0 ? (
+              filteredProjects.map((project) => (
+                <ProjectCard
+                  key={project.id}
+                  href={`/${locale}/development/${project.slug}`}
+                  title={project.title[locale]}
+                  summary={project.proof.featuredOutcome[locale]}
+                  image={project.cover}
+                  stacks={project.stack}
+                  tag={dictionary.categories.development[project.category]}
+                />
+              ))
+            ) : (
+              <div className="glass rounded-3xl border border-border/70 p-6 text-sm leading-relaxed text-fg/70 md:col-span-2">
+                {locale === 'en'
+                  ? 'No case matches this combination yet. Try another category or capability to inspect a different proof surface.'
+                  : locale === 'es'
+                    ? 'Ningun caso coincide con esta combinacion por ahora. Prueba otra categoria o capacidad para ver otra superficie de prueba.'
+                    : 'Nenhum case combina com esse recorte por enquanto. Tente outra categoria ou capacidade para ver outra superficie de prova.'}
+              </div>
+            )}
           </div>
         </>
       ) : null}

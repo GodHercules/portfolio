@@ -1,4 +1,4 @@
-import type { TechProject } from '@/types/project';
+﻿import type { TechProject } from '@/types/project';
 
 export const developmentProjects: TechProject[] = [
   {
@@ -71,6 +71,75 @@ export const developmentProjects: TechProject[] = [
         en: 'Turns fragmented operations into product-readable workflows with context, priority, and visual governance.',
         es: 'Transforma una operación fragmentada en lectura de producto con contexto, prioridad y gobernanza visual.',
       },
+      metrics: [
+        {
+          value: '3x',
+          label: {
+            'pt-BR': 'menos contexto disperso',
+            en: 'less scattered context',
+            es: 'menos contexto disperso',
+          },
+          detail: {
+            'pt-BR': 'A leitura operacional saiu de planilhas e pontos soltos para uma camada unica de produto.',
+            en: 'Operational reading moved from spreadsheets and fragmented tools into one product layer.',
+            es: 'La lectura operativa salio de planillas y herramientas sueltas hacia una sola capa de producto.',
+          },
+        },
+        {
+          value: '1',
+          label: {
+            'pt-BR': 'fluxo central de governanca',
+            en: 'central governance flow',
+            es: 'flujo central de gobernanza',
+          },
+        },
+        {
+          value: '24/7',
+          label: {
+            'pt-BR': 'rastreabilidade operacional',
+            en: 'operational traceability',
+            es: 'trazabilidad operativa',
+          },
+        },
+      ],
+      architecturePillars: [
+        {
+          title: {
+            'pt-BR': 'Camada de dominio clara',
+            en: 'Clear domain layer',
+            es: 'Capa de dominio clara',
+          },
+          summary: {
+            'pt-BR': 'Separacao entre visualizacao, regras e eventos para manter crescimento sem colapsar a leitura.',
+            en: 'Visualization, rules, and events were split so growth would not collapse the reading model.',
+            es: 'Se separaron visualizacion, reglas y eventos para crecer sin romper el modelo de lectura.',
+          },
+        },
+        {
+          title: {
+            'pt-BR': 'Estado como linguagem do produto',
+            en: 'State as product language',
+            es: 'Estado como lenguaje del producto',
+          },
+          summary: {
+            'pt-BR': 'Os estados operacionais viraram o eixo de navegacao, auditoria e tomada de decisao.',
+            en: 'Operational states became the axis for navigation, auditing, and decision-making.',
+            es: 'Los estados operativos pasaron a ser el eje de navegacion, auditoria y decision.',
+          },
+        },
+        {
+          title: {
+            'pt-BR': 'Base pronta para evolucao',
+            en: 'Foundation ready for evolution',
+            es: 'Base lista para evolucion',
+          },
+          summary: {
+            'pt-BR': 'A estrutura foi pensada para observabilidade, novos modulos e refinamento progressivo.',
+            en: 'The structure was designed for observability, new modules, and progressive refinement.',
+            es: 'La estructura fue pensada para observabilidad, nuevos modulos y refinamiento progresivo.',
+          },
+        },
+      ],
     },
     body: {
       context: {
@@ -190,6 +259,70 @@ export const developmentProjects: TechProject[] = [
         en: 'Turns critical repetitive tasks into routines with control, predictability, and operational governance.',
         es: 'Convierte tareas críticas y repetitivas en rutinas con control, previsibilidad y gobernanza operativa.',
       },
+      metrics: [
+        {
+          value: '80%',
+          label: {
+            'pt-BR': 'menos dependencia manual',
+            en: 'less manual dependency',
+            es: 'menos dependencia manual',
+          },
+        },
+        {
+          value: '<5m',
+          label: {
+            'pt-BR': 'tempo para detectar falhas',
+            en: 'failure detection window',
+            es: 'ventana para detectar fallos',
+          },
+        },
+        {
+          value: '0',
+          label: {
+            'pt-BR': 'retrabalho massivo como padrao',
+            en: 'massive rework as default',
+            es: 'retrabajo masivo como norma',
+          },
+        },
+      ],
+      architecturePillars: [
+        {
+          title: {
+            'pt-BR': 'Fila com prioridade e retry',
+            en: 'Priority queue with retry',
+            es: 'Cola con prioridad y reintento',
+          },
+          summary: {
+            'pt-BR': 'As rotinas mais criticas ganharam ordenacao, idempotencia e recuperacao previsivel.',
+            en: 'The most critical routines gained ordering, idempotency, and predictable recovery.',
+            es: 'Las rutinas mas criticas ganaron orden, idempotencia y recuperacion previsible.',
+          },
+        },
+        {
+          title: {
+            'pt-BR': 'Visibilidade operacional real',
+            en: 'Real operational visibility',
+            es: 'Visibilidad operativa real',
+          },
+          summary: {
+            'pt-BR': 'Cada execucao passou a ter leitura de estado, alerta e trilha de reprocessamento.',
+            en: 'Each execution gained state visibility, alerting, and a reprocessing trail.',
+            es: 'Cada ejecucion paso a tener lectura de estado, alertas y rastro de reproceso.',
+          },
+        },
+        {
+          title: {
+            'pt-BR': 'Confiabilidade como produto',
+            en: 'Reliability as product',
+            es: 'Confiabilidad como producto',
+          },
+          summary: {
+            'pt-BR': 'A arquitetura foi desenhada para reduzir risco operacional, nao apenas automatizar tarefas.',
+            en: 'The architecture was designed to reduce operational risk, not just automate tasks.',
+            es: 'La arquitectura fue disenada para reducir riesgo operativo, no solo automatizar tareas.',
+          },
+        },
+      ],
     },
     body: {
       context: {
@@ -308,6 +441,70 @@ export const developmentProjects: TechProject[] = [
         en: 'Turns scattered documentation into an internal system with clear reading, useful navigation, and growing governance.',
         es: 'Transforma documentación dispersa en un sistema interno con lectura clara, navegación útil y gobernanza creciente.',
       },
+      metrics: [
+        {
+          value: '1 hub',
+          label: {
+            'pt-BR': 'para indicadores, processos e consulta',
+            en: 'for metrics, process, and consultation',
+            es: 'para metricas, procesos y consulta',
+          },
+        },
+        {
+          value: '5+',
+          label: {
+            'pt-BR': 'frentes internas organizadas por contexto',
+            en: 'internal fronts organized by context',
+            es: 'frentes internas organizadas por contexto',
+          },
+        },
+        {
+          value: 'Fast',
+          label: {
+            'pt-BR': 'descoberta de informacao critica',
+            en: 'critical information discovery',
+            es: 'descubrimiento de informacion critica',
+          },
+        },
+      ],
+      architecturePillars: [
+        {
+          title: {
+            'pt-BR': 'Informacao orientada por uso',
+            en: 'Usage-oriented information',
+            es: 'Informacion orientada por uso',
+          },
+          summary: {
+            'pt-BR': 'A arquitetura favorece descoberta util e nao apenas acumulo de documentacao.',
+            en: 'The architecture favors useful discovery instead of just document accumulation.',
+            es: 'La arquitectura favorece descubrimiento util y no solo acumulacion de documentacion.',
+          },
+        },
+        {
+          title: {
+            'pt-BR': 'Governanca sem atrito',
+            en: 'Low-friction governance',
+            es: 'Gobernanza sin friccion',
+          },
+          summary: {
+            'pt-BR': 'Permissoes, contratos e contexto foram desenhados para manter autonomia com consistencia.',
+            en: 'Permissions, contracts, and context were designed to keep autonomy with consistency.',
+            es: 'Permisos, contratos y contexto se disenaron para mantener autonomia con consistencia.',
+          },
+        },
+        {
+          title: {
+            'pt-BR': 'Busca como acelerador',
+            en: 'Search as accelerator',
+            es: 'Busqueda como acelerador',
+          },
+          summary: {
+            'pt-BR': 'A camada de busca foi tratada como mecanismo de decisao, nao so como utilitario.',
+            en: 'The search layer was treated as a decision mechanism, not just a utility.',
+            es: 'La capa de busqueda se trato como mecanismo de decision y no solo como utilidad.',
+          },
+        },
+      ],
     },
     body: {
       context: {
@@ -426,6 +623,70 @@ export const developmentProjects: TechProject[] = [
         en: 'Turns technical study into practical criteria for architecture, DX, and performance.',
         es: 'Transforma estudio técnico en criterio práctico para arquitectura, DX y rendimiento.',
       },
+      metrics: [
+        {
+          value: '4+',
+          label: {
+            'pt-BR': 'frentes de benchmark',
+            en: 'benchmark tracks',
+            es: 'frentes de benchmark',
+          },
+        },
+        {
+          value: '1 repo',
+          label: {
+            'pt-BR': 'para validar decisoes antes da producao',
+            en: 'to validate decisions before production',
+            es: 'para validar decisiones antes de produccion',
+          },
+        },
+        {
+          value: 'Less risk',
+          label: {
+            'pt-BR': 'na escolha de stack e padroes',
+            en: 'in stack and pattern choices',
+            es: 'en eleccion de stack y patrones',
+          },
+        },
+      ],
+      architecturePillars: [
+        {
+          title: {
+            'pt-BR': 'Experimento com criterio',
+            en: 'Experimentation with criteria',
+            es: 'Experimentacion con criterio',
+          },
+          summary: {
+            'pt-BR': 'Cada estudo parte de hipotese clara, escopo comparavel e leitura objetiva de tradeoff.',
+            en: 'Each study starts with a clear hypothesis, comparable scope, and objective tradeoff readout.',
+            es: 'Cada estudio parte de hipotesis clara, alcance comparable y lectura objetiva de tradeoff.',
+          },
+        },
+        {
+          title: {
+            'pt-BR': 'Benchmark reaproveitavel',
+            en: 'Reusable benchmark',
+            es: 'Benchmark reutilizable',
+          },
+          summary: {
+            'pt-BR': 'Os resultados viram repertorio para produto, arquitetura e experiencia de desenvolvimento.',
+            en: 'The results become reusable repertoire for product, architecture, and developer experience.',
+            es: 'Los resultados se convierten en repertorio reutilizable para producto, arquitectura y experiencia de desarrollo.',
+          },
+        },
+        {
+          title: {
+            'pt-BR': 'DX e performance como sistema',
+            en: 'DX and performance as a system',
+            es: 'DX y performance como sistema',
+          },
+          summary: {
+            'pt-BR': 'A avaliacao considera build, manutencao, DX e custo operacional na mesma decisao.',
+            en: 'The evaluation considers build, maintainability, DX, and operating cost in the same decision.',
+            es: 'La evaluacion considera build, mantenibilidad, DX y costo operativo en la misma decision.',
+          },
+        },
+      ],
     },
     body: {
       context: {

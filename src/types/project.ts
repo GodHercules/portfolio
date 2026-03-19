@@ -1,7 +1,18 @@
-import type { Locale } from '@/lib/i18n/config';
+﻿import type { Locale } from '@/lib/i18n/config';
 
 export type LocalizedText = Record<Locale, string>;
 export type LocalizedList = Record<Locale, string[]>;
+
+export type ProjectMetric = {
+  value: string;
+  label: LocalizedText;
+  detail?: LocalizedText;
+};
+
+export type ProjectArchitecturePillar = {
+  title: LocalizedText;
+  summary: LocalizedText;
+};
 
 export type ProjectProof = {
   role: LocalizedText;
@@ -15,6 +26,8 @@ export type ProjectProof = {
   decisionSummary: LocalizedText;
   architectureSummary: LocalizedText;
   featuredOutcome: LocalizedText;
+  metrics?: ProjectMetric[];
+  architecturePillars?: ProjectArchitecturePillar[];
 };
 
 export type TechProject = {
