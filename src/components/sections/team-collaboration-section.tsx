@@ -28,7 +28,7 @@ const copy: Record<
   'pt-BR': {
     title: 'Como eu atuo com times',
     lead:
-      'Eu entro para reduzir atrito entre produto, design e engenharia. O objetivo e dar clareza de decisao, manter ritmo de entrega e deixar o handoff simples de sustentar.',
+      'Eu entro para dar tracao onde produto, design e engenharia precisam virar uma mesma direcao. O objetivo e dar clareza de decisao, manter ritmo de entrega e deixar o handoff simples de sustentar.',
     badge: 'Colaboracao e senioridade',
     cards: [
       {

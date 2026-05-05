@@ -27,8 +27,8 @@ const content: Record<
   }
 > = {
   'pt-BR': {
-    title: 'O que eu consigo construir',
-    lead: 'Nao apenas interfaces bonitas. Aqui estao os tipos de sistema e entrega que este portfolio ja consegue sustentar com repertorio tecnico e leitura de produto.',
+    title: 'Produtos que eu posso liderar do zero a entrega',
+    lead: 'Nao apenas interfaces bonitas. Aqui estao os tipos de sistema e entrega que eu consigo sustentar com arquitetura, integracao, dados, repertorio tecnico e leitura de produto.',
     evidenceLabel: 'Projetos de prova',
     cards: [
       {
@@ -58,8 +58,8 @@ const content: Record<
     ],
   },
   en: {
-    title: 'What I can build',
-    lead: 'Not only polished interfaces. These are the system shapes and delivery surfaces this portfolio can already support with technical depth and product judgment.',
+    title: 'Products I can lead from zero to delivery',
+    lead: 'Not only polished interfaces. These are the system shapes and delivery surfaces I can support with architecture, integration, data, technical depth and product judgment.',
     evidenceLabel: 'Proof projects',
     cards: [
       {
@@ -89,8 +89,8 @@ const content: Record<
     ],
   },
   es: {
-    title: 'Lo que puedo construir',
-    lead: 'No solo interfaces pulidas. Estas son las superficies de sistema y entrega que este portafolio ya puede sostener con profundidad tecnica y criterio de producto.',
+    title: 'Productos que puedo liderar desde cero hasta la entrega',
+    lead: 'No solo interfaces pulidas. Estas son las superficies de sistema y entrega que puedo sostener con arquitectura, integracion, datos, profundidad tecnica y criterio de producto.',
     evidenceLabel: 'Proyectos de prueba',
     cards: [
       {

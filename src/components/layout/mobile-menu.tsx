@@ -14,12 +14,15 @@ type MobileMenuProps = {
 
 export function MobileMenu({ openLabel, closeLabel, items }: MobileMenuProps) {
   const [open, setOpen] = useState(false);
+  const menuId = 'mobile-navigation-menu';
 
   return (
     <div className="md:hidden">
       <button
         type="button"
         aria-label={open ? closeLabel : openLabel}
+        aria-expanded={open}
+        aria-controls={menuId}
         onClick={() => setOpen((value) => !value)}
         className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card"
       >
@@ -27,6 +30,9 @@ export function MobileMenu({ openLabel, closeLabel, items }: MobileMenuProps) {
       </button>
 
       <div
+        id={menuId}
+        hidden={!open}
+        aria-hidden={!open}
         className={cn(
           'absolute left-5 right-5 top-20 rounded-2xl border border-border bg-card p-4 shadow-soft transition',
           open ? 'pointer-events-auto translate-y-0 opacity-100' : 'pointer-events-none -translate-y-2 opacity-0',

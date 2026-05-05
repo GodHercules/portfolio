@@ -19,12 +19,12 @@ const content: Record<
   }
 > = {
   'pt-BR': {
-    title: 'Se voc\u00ea precisa de produto, interface e execu\u00e7\u00e3o t\u00e9cnica na mesma conversa, eu consigo entrar nesse ponto.',
+    title: 'Se voce tem um desafio de produto, sistema interno ou automacao, eu consigo transformar isso em escopo, arquitetura e entrega.',
     summary:
-      'Eu posso atuar em portf\u00f3lio institucional, produto digital, arquitetura frontend, automa\u00e7\u00e3o de fluxo e experi\u00eancias que exigem clareza visual com profundidade de implementa\u00e7\u00e3o.',
-    bullets: ['Projetos autorais e sob demanda', 'Colabora\u00e7\u00e3o com times de produto', 'Entrega com vis\u00e3o de produto, engenharia e design'],
-    primary: 'Falar sobre um projeto',
-    secondary: 'Ver frente de desenvolvimento',
+      'Me chame com contexto, objetivo e prazo. Eu organizo o melhor caminho entre produto, backend, frontend, integracoes e interface para chegar numa entrega clara e vendavel.',
+    bullets: ['Produtos digitais e SaaS', 'Sistemas internos e automacoes', 'Entrega com visao fullstack, produto e design'],
+    primary: 'Tenho um desafio de produto',
+    secondary: 'Ver cases fullstack',
   },
   en: {
     title: 'If you need product thinking, interface quality and technical execution in the same conversation, I can operate there.',

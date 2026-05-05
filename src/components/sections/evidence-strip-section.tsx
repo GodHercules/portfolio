@@ -1,4 +1,5 @@
 import { Section } from '@/components/ui/section';
+import { profile } from '@/data/profile';
 import type { Locale } from '@/lib/i18n/config';
 import type { TechProject } from '@/types/project';
 
@@ -18,71 +19,70 @@ const labels: Record<
   {
     cases: string;
     categories: string;
-    locales: string;
-    capabilities: string;
+    education: string;
+    stack: string;
     caseDetail: string;
     categoryDetail: string;
-    localeDetail: string;
-    capabilityDetail: string;
+    educationDetail: string;
+    stackDetail: string;
   }
 > = {
   'pt-BR': {
-    cases: 'cases tecnicos',
-    categories: 'frentes de solucao',
-    locales: 'idiomas ativos',
-    capabilities: 'clusters de capacidade',
-    caseDetail: 'Projetos com leitura de papel, decisao, restricao e resultado.',
-    categoryDetail: 'Aplicacoes, automacoes, sistemas internos e estudos tecnicos.',
-    localeDetail: 'Portfolio pronto para leitura em portugues, ingles e espanhol.',
-    capabilityDetail: 'Arquitetura, produto, automacao, performance, UX e integracoes.',
+    cases: 'anos de experiencia',
+    categories: 'experiencias profissionais',
+    education: 'formacoes tecnicas',
+    stack: 'grupos de stack',
+    caseDetail: 'Atuacao em desenvolvimento full stack desde estagio ate posicao atual.',
+    categoryDetail: 'MF Contabilidade e NG7 Consultoria com foco em software full stack.',
+    educationDetail: 'Engenharia de Software em andamento e tecnico em Desenvolvimento de Sistemas.',
+    stackDetail: 'Linguagens, front-end, back-end, bancos, ferramentas, DevOps, praticas e metodos.',
   },
   en: {
-    cases: 'technical cases',
-    categories: 'solution fronts',
-    locales: 'active locales',
-    capabilities: 'capability clusters',
-    caseDetail: 'Projects framed by role, decision, constraints, and outcome.',
-    categoryDetail: 'Applications, automations, internal systems, and technical studies.',
-    localeDetail: 'Portfolio ready in Portuguese, English, and Spanish.',
-    capabilityDetail: 'Architecture, product, automation, performance, UX, and integrations.',
+    cases: 'years of experience',
+    categories: 'professional experiences',
+    education: 'technical education paths',
+    stack: 'stack groups',
+    caseDetail: 'Full stack development experience from internship to current role.',
+    categoryDetail: 'MF Contabilidade and NG7 Consultoria with full stack software focus.',
+    educationDetail: 'Software Engineering in progress and technical degree in Systems Development.',
+    stackDetail: 'Languages, front-end, back-end, databases, tools, DevOps, practices and methods.',
   },
   es: {
-    cases: 'casos tecnicos',
-    categories: 'frentes de solucion',
-    locales: 'idiomas activos',
-    capabilities: 'clusters de capacidad',
-    caseDetail: 'Proyectos leidos por rol, decision, restricciones y resultado.',
-    categoryDetail: 'Aplicaciones, automatizaciones, sistemas internos y estudios tecnicos.',
-    localeDetail: 'Portafolio listo en portugues, ingles y espanol.',
-    capabilityDetail: 'Arquitectura, producto, automatizacion, performance, UX e integraciones.',
+    cases: 'anos de experiencia',
+    categories: 'experiencias profesionales',
+    education: 'formaciones tecnicas',
+    stack: 'grupos de stack',
+    caseDetail: 'Experiencia en desarrollo full stack desde practica hasta rol actual.',
+    categoryDetail: 'MF Contabilidade y NG7 Consultoria con foco en software full stack.',
+    educationDetail: 'Ingenieria de Software en curso y tecnico en Desarrollo de Sistemas.',
+    stackDetail: 'Lenguajes, front-end, back-end, bases, herramientas, DevOps, practicas y metodos.',
   },
 };
 
-export function EvidenceStripSection({ locale, projects }: EvidenceStripSectionProps) {
+export function EvidenceStripSection({ locale }: EvidenceStripSectionProps) {
   const copy = labels[locale];
-  const uniqueCategories = new Set(projects.map((project) => project.category));
-  const uniqueCapabilities = new Set(projects.flatMap((project) => project.proof.capabilities));
+  const skillGroupCount = Object.keys(profile.skillGroups).length;
 
   const stats: StatItem[] = [
     {
-      value: `${projects.length}`,
+      value: profile.experienceYears,
       label: copy.cases,
       detail: copy.caseDetail,
     },
     {
-      value: `${uniqueCategories.size}`,
+      value: `${profile.experience.length}`,
       label: copy.categories,
       detail: copy.categoryDetail,
     },
     {
-      value: '3',
-      label: copy.locales,
-      detail: copy.localeDetail,
+      value: `${profile.education.length}`,
+      label: copy.education,
+      detail: copy.educationDetail,
     },
     {
-      value: `${uniqueCapabilities.size}`,
-      label: copy.capabilities,
-      detail: copy.capabilityDetail,
+      value: `${skillGroupCount}`,
+      label: copy.stack,
+      detail: copy.stackDetail,
     },
   ];
 

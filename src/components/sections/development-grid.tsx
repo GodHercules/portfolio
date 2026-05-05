@@ -74,6 +74,14 @@ export function DevelopmentGrid({ locale, dictionary, projects, githubProjects =
                   image={project.cover}
                   stacks={project.stack}
                   tag={dictionary.categories.development[project.category]}
+                  proofItems={[
+                    { label: dictionary.projectPage.problem, value: project.body.problem[locale] },
+                    {
+                      label: locale === 'en' ? 'Decision' : locale === 'es' ? 'Decision' : 'Decisao',
+                      value: project.proof.decisionSummary[locale],
+                    },
+                    { label: dictionary.projectPage.results, value: project.proof.outcomes[locale][0] },
+                  ]}
                 />
               ))
             ) : (

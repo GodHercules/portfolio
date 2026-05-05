@@ -235,20 +235,20 @@ export function getPortfolioAssistantReply(locale: Locale, question: string): As
   if (q.includes('ia') || q.includes('ai') || q.includes('api') || q.includes('integrac') || q.includes('automation') || q.includes('automacao')) {
     if (locale === 'en') {
       return {
-        text: 'The portfolio shows AI and integration work as product layers, not isolated buzzwords: content-aware assistants, API-connected workflows, operational automation, and architecture shaped for observability and retries.',
+        text: 'The portfolio shows integrations and assistant-style experiences as product layers, not isolated buzzwords: content-aware local assistance, API-connected workflows, operational automation, and architecture shaped for observability and retries.',
         related: ['Which project best shows automation?', 'How does he turn integration work into product value?'],
       };
     }
 
     if (locale === 'es') {
       return {
-        text: 'El portafolio muestra IA e integraciones como capas de producto y no como buzzwords aisladas: asistentes guiados por contenido, flujos conectados por API, automatizacion operativa y arquitectura pensada para observabilidad y reintentos.',
+        text: 'El portafolio muestra integraciones y experiencias tipo asistente como capas de producto y no como buzzwords aisladas: asistencia local guiada por contenido, flujos conectados por API, automatizacion operativa y arquitectura pensada para observabilidad y reintentos.',
         related: ['Que proyecto muestra mejor automatizacion?', 'Como convierte integraciones en valor de producto?'],
       };
     }
 
     return {
-      text: 'O portfolio mostra IA e integracoes como camadas de produto, e nao como buzzwords isoladas: assistentes guiados por conteudo, fluxos conectados por API, automacao operacional e arquitetura pensada para observabilidade e retries.',
+      text: 'O portfolio mostra integracoes e experiencias do tipo assistente como camadas de produto, e nao como buzzwords isoladas: assistencia local guiada por conteudo, fluxos conectados por API, automacao operacional e arquitetura pensada para observabilidade e retries.',
       related: ['Qual projeto mostra melhor automacao?', 'Como ele transforma integracoes em valor de produto?'],
     };
   }

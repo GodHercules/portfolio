@@ -27,13 +27,13 @@ export function GithubProjectsSection({ locale, dictionary, projects }: GithubPr
         : 'Esta camada combina dados vivos do GitHub com curadoria de portfolio para que os repositorios funcionem como evidencia tecnica, e nao apenas como atividade.';
   const highlights =
     locale === 'en'
-      ? ['Live API sync', 'Curated framing', 'Public engineering proof']
+      ? ['GitHub REST API', '30 min ISR', 'Server token fallback']
       : locale === 'es'
-        ? ['Sync via API', 'Curadoria tecnica', 'Prueba publica']
-        : ['Sync via API', 'Curadoria tecnica', 'Prova publica'];
+        ? ['GitHub REST API', 'ISR 30 min', 'Fallback con token server']
+        : ['GitHub REST API', 'ISR 30 min', 'Fallback com token server'];
 
   return (
-    <Section>
+    <Section id="github-projects">
       <div className="content-grid">
         <div className="mb-5 flex flex-wrap items-center gap-2">
           <Badge>{eyebrow}</Badge>

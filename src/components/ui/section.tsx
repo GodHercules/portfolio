@@ -1,13 +1,19 @@
-﻿import type { PropsWithChildren } from 'react';
+import type { ComponentPropsWithoutRef, PropsWithChildren } from 'react';
 
 import { cn } from '@/lib/utils';
 
-type SectionProps = PropsWithChildren<{
-  className?: string;
-}>;
+type SectionProps = PropsWithChildren<
+  ComponentPropsWithoutRef<'section'> & {
+    className?: string;
+  }
+>;
 
-export function Section({ className, children }: SectionProps) {
-  return <section className={cn('section-spacing', className)}>{children}</section>;
+export function Section({ className, children, ...props }: SectionProps) {
+  return (
+    <section className={cn('section-spacing', className)} {...props}>
+      {children}
+    </section>
+  );
 }
 
 export function SectionTitle({ children }: PropsWithChildren) {

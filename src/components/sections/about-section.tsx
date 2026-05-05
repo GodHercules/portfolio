@@ -6,9 +6,9 @@ import type { Locale } from '@/lib/i18n/config';
 import type { Dictionary } from '@/lib/i18n/dictionaries';
 
 const roleByLocale: Record<Locale, string> = {
-  'pt-BR': 'Software, Produto e Direcao Visual',
-  en: 'Software, Product and Visual Direction',
-  es: 'Software, Producto y Direccion Visual',
+  'pt-BR': 'Desenvolvedor Full Stack Pleno',
+  en: 'Mid-level Full Stack Developer',
+  es: 'Desarrollador Full Stack Pleno',
 };
 
 type AboutSectionProps = {
@@ -36,7 +36,6 @@ export function AboutSection({ locale, dictionary }: AboutSectionProps) {
                   fill
                   sizes="(max-width: 768px) 92vw, 420px"
                   className="object-cover object-[50%_20%]"
-                  priority
                 />
               </div>
               <div className="border-t border-border/70 px-5 py-4">

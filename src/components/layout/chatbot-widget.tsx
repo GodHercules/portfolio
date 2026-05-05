@@ -32,14 +32,14 @@ type BotCopy = {
 const copy: Record<Locale, BotCopy> = {
   'pt-BR': {
     title: 'Assistente Hercules',
-    subtitle: 'Consulte stack, projetos, processo, como ele atua com times, integracoes, IA aplicada, laboratorio GitHub e contato.',
+    subtitle: 'Consulte stack, projetos, processo, como ele atua com times, integracoes, assistente local, laboratorio GitHub e contato.',
     placeholder: 'Ex: como ele atua com times?',
     send: 'Enviar',
     open: 'Abrir chat',
-    suggestions: ['Como ele atua com times?', 'Como ele costuma trabalhar?', 'Como ele usa IA e integracoes?', 'Fale sobre Atlas Platform'],
+    suggestions: ['Como ele atua com times?', 'Como ele costuma trabalhar?', 'Como ele usa integracoes?', 'Fale sobre Atlas Platform'],
     greeting:
-      'Ola. Este assistente consulta os dados do portfolio para responder sobre stack, projetos, processo, colaboracao com times, integracoes, IA aplicada, GitHub e contato.',
-    fallback: 'Boa pergunta. Posso detalhar tecnologias, projetos, processo, colaboracao com times, integracoes, IA aplicada, laboratorio GitHub e contato.',
+      'Ola. Este assistente local consulta os dados do portfolio para responder sobre stack, projetos, processo, colaboracao com times, integracoes, GitHub e contato.',
+    fallback: 'Boa pergunta. Posso detalhar tecnologias, projetos, processo, colaboracao com times, integracoes, laboratorio GitHub e contato.',
     relatedLabel: 'Perguntas sugeridas',
   },
   en: {
@@ -97,6 +97,8 @@ export function ChatbotWidget({ locale }: ChatbotProps) {
       <button
         type="button"
         onClick={() => setOpen((value) => !value)}
+        aria-expanded={open}
+        aria-controls="portfolio-assistant-panel"
         className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-fg text-bg shadow-soft transition hover:scale-[1.03]"
         aria-label={t.open}
       >
@@ -104,6 +106,9 @@ export function ChatbotWidget({ locale }: ChatbotProps) {
       </button>
 
       <div
+        id="portfolio-assistant-panel"
+        hidden={!open}
+        aria-hidden={!open}
         className={cn(
           'absolute bottom-16 right-0 w-[min(92vw,400px)] overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition',
           open ? 'pointer-events-auto translate-y-0 opacity-100' : 'pointer-events-none translate-y-2 opacity-0',
@@ -150,7 +155,11 @@ export function ChatbotWidget({ locale }: ChatbotProps) {
             }}
             className="flex gap-2"
           >
+            <label htmlFor="portfolio-assistant-input" className="sr-only">
+              {t.placeholder}
+            </label>
             <input
+              id="portfolio-assistant-input"
               value={input}
               onChange={(event) => setInput(event.target.value)}
               placeholder={t.placeholder}

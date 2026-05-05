@@ -99,9 +99,9 @@ export type Dictionary = {
 export const dictionaries: Record<Locale, Dictionary> = {
   'pt-BR': {
     meta: {
-      title: 'Hercules de Oliveira | Desenvolvimento e Design',
+      title: 'Hercules de Oliveira | Desenvolvedor Full Stack Pleno',
       description:
-        'Portfólio premium de Hercules de Oliveira, profissional híbrido em engenharia de software, produto digital e design gráfico.',
+        'Portfolio de Hercules de Oliveira, desenvolvedor Full Stack Pleno com +2 anos de experiencia em Python, JavaScript, TypeScript, React, Next.js, Node.js, NestJS, SQL e TailwindCSS.',
     },
     nav: {
       home: 'Início',
@@ -126,17 +126,17 @@ export const dictionaries: Record<Locale, Dictionary> = {
       darkMode: 'Ativar modo escuro',
     },
     home: {
-      badge: 'Produto digital, engenharia e direção visual',
-      headline: 'Construo produtos digitais com precisão técnica e acabamento visual premium.',
+      badge: 'Desenvolvedor Full Stack Pleno',
+      headline: 'Desenvolvo aplicacoes web modernas e escalaveis com engenharia, performance e codigo limpo.',
       subtitle:
-        'Sou Hercules de Oliveira. Uno software e design gráfico para transformar estratégia em experiências claras, elegantes e escaláveis.',
-      ctaPrimary: 'Vamos conversar',
-      ctaSecondary: 'Explorar projetos',
-      ctaTertiary: 'Meu GitHub',
-      heroCardTitle: 'Perfil híbrido orientado a produto',
+        'Sou Hercules de Oliveira. Tenho +2 anos de experiencia atuando do front-end ao back-end com Python, JavaScript, TypeScript, React, Next.js, Node.js, NestJS, SQL, Docker e boas praticas de desenvolvimento.',
+      ctaPrimary: 'Conversar sobre meu projeto',
+      ctaSecondary: 'Ver cases fullstack',
+      ctaTertiary: 'Prova tecnica publica',
+      heroCardTitle: 'Perfil pleno orientado a entrega',
       heroCardDescription:
-        'Arquitetura sólida, interface refinada e foco em resultados reais. Cada entrega equilibra tecnologia, design e clareza de negócio.',
-      heroBoardLabel: 'Painel de posicionamento',
+        'Experiencia em aplicacoes full stack, APIs REST, bancos relacionais, testes, metodologias ageis e entrega com foco em performance e escalabilidade.',
+      heroBoardLabel: 'Painel profissional',
       heroStackLabel: 'Stack principal',
       heroStackValue: 'Next.js + TypeScript',
       heroFocusLabel: 'Foco',
@@ -147,7 +147,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       heroStyleValue: 'Execução premium',
       featuredTitle: 'Projetos em destaque',
       featuredDescription:
-        'Cases selecionados que demonstram profundidade técnica, visão de produto e maturidade visual.',
+        'Cases selecionados que demonstram problema, decisao tecnica, arquitetura, impacto e maturidade visual.',
       devTitle: 'Frente de desenvolvimento',
       devDescription:
         'Aplicações, automações, sistemas e estudos técnicos com organização, performance e escalabilidade.',
@@ -158,17 +158,17 @@ export const dictionaries: Record<Locale, Dictionary> = {
     about: {
       title: 'Sobre',
       intro:
-        'Atuo de forma híbrida entre engenharia de software e design gráfico, com pensamento sistêmico e foco em produto.',
+        'Atuo como Desenvolvedor Full Stack com base em Engenharia de Software, conectando front-end, back-end, banco de dados e boas praticas para entregar aplicacoes web modernas.',
       points: [
-        'Conecto visão estratégica, execução técnica e linguagem visual para construir experiências digitais consistentes.',
-        'Trabalho com arquitetura frontend moderna, componentes reutilizáveis e boas práticas de manutenção.',
-        'No design, priorizo hierarquia, clareza e identidade visual autoral para elevar percepção de valor.',
+        'Tenho experiencia profissional na MF Contabilidade e NG7 Consultoria, atuando em projetos reais com funcionalidades front-end e back-end.',
+        'Trabalho com Python, JavaScript, TypeScript, React, Next.js, Node.js, NestJS, SQL, PostgreSQL, MySQL, Docker, Git, Postman e Jest.',
+        'Meu foco e codigo limpo, SOLID, performance, escalabilidade, testes unitarios e colaboracao em rotinas Scrum e Kanban.',
       ],
     },
     contact: {
       title: 'Contato',
       subtitle:
-        'Aberto para projetos, colaboração e oportunidades em produto digital, desenvolvimento e design.',
+        'Aberto para produtos digitais, sistemas internos, automacoes, interfaces premium e oportunidades fullstack orientadas a resultado.',
       emailLabel: 'E-mail',
       phoneLabel: 'Telefone',
       whatsappLabel: 'WhatsApp',
@@ -211,7 +211,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     githubSection: {
       title: 'Projetos do GitHub',
       description:
-        'Integração dinâmica para manter o portfólio atualizado com os repositórios mais relevantes.',
+        'Integracao server-side com GitHub API, cache incremental e curadoria para transformar repositorios publicos em prova tecnica.',
       empty: 'Nenhum repositório disponível no momento.',
     },
     footer: {
@@ -220,9 +220,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
   },
   en: {
     meta: {
-      title: 'Hercules de Oliveira | Software and Design',
+      title: 'Hercules de Oliveira | Mid-level Full Stack Developer',
       description:
-        'Premium portfolio of Hercules de Oliveira, a hybrid professional in software engineering, digital product and graphic design.',
+        'Portfolio of Hercules de Oliveira, a mid-level Full Stack Developer with 2+ years of experience in Python, JavaScript, TypeScript, React, Next.js, Node.js, NestJS, SQL and TailwindCSS.',
     },
     nav: {
       home: 'Home',
@@ -247,17 +247,17 @@ export const dictionaries: Record<Locale, Dictionary> = {
       darkMode: 'Enable dark mode',
     },
     home: {
-      badge: 'Digital product, engineering and visual direction',
-      headline: 'I build digital products with technical precision and premium visual execution.',
+      badge: 'Mid-level Full Stack Developer',
+      headline: 'I build modern scalable web applications with engineering, performance and clean code.',
       subtitle:
-        'I am Hercules de Oliveira. I combine software and graphic design to turn strategy into clear, elegant and scalable experiences.',
-      ctaPrimary: 'Let us talk',
-      ctaSecondary: 'Explore projects',
-      ctaTertiary: 'My GitHub',
-      heroCardTitle: 'Hybrid profile focused on product',
+        'I am Hercules de Oliveira. I have 2+ years of experience working from front-end to back-end with Python, JavaScript, TypeScript, React, Next.js, Node.js, NestJS, SQL, Docker and development best practices.',
+      ctaPrimary: 'Discuss my project',
+      ctaSecondary: 'See fullstack cases',
+      ctaTertiary: 'Public technical proof',
+      heroCardTitle: 'Delivery-oriented mid-level profile',
       heroCardDescription:
-        'Solid architecture, refined interface and real outcomes. Every delivery balances technology, design and business clarity.',
-      heroBoardLabel: 'Positioning board',
+        'Experience with full stack applications, REST APIs, relational databases, tests, agile methods and delivery focused on performance and scalability.',
+      heroBoardLabel: 'Professional board',
       heroStackLabel: 'Core stack',
       heroStackValue: 'Next.js + TypeScript',
       heroFocusLabel: 'Focus',
@@ -268,7 +268,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       heroStyleValue: 'Premium execution',
       featuredTitle: 'Featured projects',
       featuredDescription:
-        'Selected cases that showcase technical depth, product thinking and visual maturity.',
+        'Selected cases that show problem framing, technical decisions, architecture, impact and visual maturity.',
       devTitle: 'Development practice',
       devDescription:
         'Applications, automations, systems and technical studies built for organization, performance and scale.',
@@ -279,17 +279,17 @@ export const dictionaries: Record<Locale, Dictionary> = {
     about: {
       title: 'About',
       intro:
-        'I work as a hybrid professional across software engineering and graphic design, guided by product thinking.',
+        'I work as a Full Stack Developer with a Software Engineering foundation, connecting front-end, back-end, databases and best practices to deliver modern web applications.',
       points: [
-        'I connect strategy, technical execution and visual language to build coherent digital experiences.',
-        'I focus on modern frontend architecture, reusable components and maintainable engineering standards.',
-        'In design, I prioritize hierarchy, clarity and distinctive visual identity to elevate perceived value.',
+        'I have professional experience at MF Contabilidade and NG7 Consultoria, working on real projects with front-end and back-end features.',
+        'I work with Python, JavaScript, TypeScript, React, Next.js, Node.js, NestJS, SQL, PostgreSQL, MySQL, Docker, Git, Postman and Jest.',
+        'My focus is clean code, SOLID, performance, scalability, unit tests and collaboration in Scrum and Kanban routines.',
       ],
     },
     contact: {
       title: 'Contact',
       subtitle:
-        'Open to projects, collaborations and opportunities in digital product, development and design.',
+        'Open to digital products, internal systems, automations, premium interfaces and fullstack opportunities focused on outcomes.',
       emailLabel: 'Email',
       phoneLabel: 'Phone',
       whatsappLabel: 'WhatsApp',
@@ -332,7 +332,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     githubSection: {
       title: 'GitHub projects',
       description:
-        'Dynamic integration to keep the portfolio up to date with the most relevant repositories.',
+        'Server-side GitHub API integration, incremental cache and curation to turn public repositories into technical proof.',
       empty: 'No repositories available at the moment.',
     },
     footer: {
@@ -341,9 +341,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
   },
   es: {
     meta: {
-      title: 'Hercules de Oliveira | Desarrollo y Diseño',
+      title: 'Hercules de Oliveira | Desarrollador Full Stack Pleno',
       description:
-        'Portafolio premium de Hercules de Oliveira, profesional híbrido en ingeniería de software, producto digital y diseño gráfico.',
+        'Portafolio de Hercules de Oliveira, desarrollador Full Stack Pleno con mas de 2 anos de experiencia en Python, JavaScript, TypeScript, React, Next.js, Node.js, NestJS, SQL y TailwindCSS.',
     },
     nav: {
       home: 'Inicio',
@@ -368,17 +368,17 @@ export const dictionaries: Record<Locale, Dictionary> = {
       darkMode: 'Activar modo oscuro',
     },
     home: {
-      badge: 'Producto digital, ingeniería y dirección visual',
-      headline: 'Construyo productos digitales con precisión técnica y ejecución visual premium.',
+      badge: 'Desarrollador Full Stack Pleno',
+      headline: 'Desarrollo aplicaciones web modernas y escalables con ingenieria, performance y clean code.',
       subtitle:
-        'Soy Hercules de Oliveira. Uno software y diseño gráfico para transformar estrategia en experiencias claras, elegantes y escalables.',
-      ctaPrimary: 'Hablemos',
-      ctaSecondary: 'Explorar proyectos',
-      ctaTertiary: 'Mi GitHub',
-      heroCardTitle: 'Perfil híbrido orientado a producto',
+        'Soy Hercules de Oliveira. Tengo mas de 2 anos de experiencia trabajando del front-end al back-end con Python, JavaScript, TypeScript, React, Next.js, Node.js, NestJS, SQL, Docker y buenas practicas.',
+      ctaPrimary: 'Hablar sobre mi proyecto',
+      ctaSecondary: 'Ver casos fullstack',
+      ctaTertiary: 'Prueba tecnica publica',
+      heroCardTitle: 'Perfil pleno orientado a entrega',
       heroCardDescription:
-        'Arquitectura sólida, interfaz refinada y foco en resultados reales. Cada entrega equilibra tecnología, diseño y claridad de negocio.',
-      heroBoardLabel: 'Panel de posicionamiento',
+        'Experiencia con aplicaciones full stack, APIs REST, bases relacionales, pruebas, metodologias agiles y entrega enfocada en performance y escalabilidad.',
+      heroBoardLabel: 'Panel profesional',
       heroStackLabel: 'Stack principal',
       heroStackValue: 'Next.js + TypeScript',
       heroFocusLabel: 'Enfoque',
@@ -389,7 +389,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       heroStyleValue: 'Ejecución premium',
       featuredTitle: 'Proyectos destacados',
       featuredDescription:
-        'Casos seleccionados que muestran profundidad técnica, visión de producto y madurez visual.',
+        'Casos seleccionados que muestran problema, decision tecnica, arquitectura, impacto y madurez visual.',
       devTitle: 'Frente de desarrollo',
       devDescription:
         'Aplicaciones, automatizaciones, sistemas y estudios técnicos con organización, rendimiento y escalabilidad.',
@@ -400,17 +400,17 @@ export const dictionaries: Record<Locale, Dictionary> = {
     about: {
       title: 'Sobre mí',
       intro:
-        'Trabajo de forma híbrida entre ingeniería de software y diseño gráfico, con pensamiento sistémico y foco en producto.',
+        'Trabajo como Desarrollador Full Stack con base en Ingenieria de Software, conectando front-end, back-end, bases de datos y buenas practicas para entregar aplicaciones web modernas.',
       points: [
-        'Conecto visión estratégica, ejecución técnica y lenguaje visual para crear experiencias digitales coherentes.',
-        'Trabajo con arquitectura frontend moderna, componentes reutilizables y buenas prácticas de mantenimiento.',
-        'En diseño, priorizo jerarquía, claridad e identidad visual autoral para elevar la percepción de valor.',
+        'Tengo experiencia profesional en MF Contabilidade y NG7 Consultoria, trabajando en proyectos reales con funcionalidades front-end y back-end.',
+        'Trabajo con Python, JavaScript, TypeScript, React, Next.js, Node.js, NestJS, SQL, PostgreSQL, MySQL, Docker, Git, Postman y Jest.',
+        'Mi foco es clean code, SOLID, performance, escalabilidad, pruebas unitarias y colaboracion en rutinas Scrum y Kanban.',
       ],
     },
     contact: {
       title: 'Contacto',
       subtitle:
-        'Disponible para proyectos, colaboraciones y oportunidades en producto digital, desarrollo y diseño.',
+        'Disponible para productos digitales, sistemas internos, automatizaciones, interfaces premium y oportunidades fullstack orientadas a resultados.',
       emailLabel: 'Correo',
       phoneLabel: 'Teléfono',
       whatsappLabel: 'WhatsApp',
@@ -453,7 +453,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     githubSection: {
       title: 'Proyectos de GitHub',
       description:
-        'Integración dinámica para mantener el portafolio actualizado con los repositorios más relevantes.',
+        'Integracion server-side con GitHub API, cache incremental y curadoria para convertir repositorios publicos en prueba tecnica.',
       empty: 'No hay repositorios disponibles en este momento.',
     },
     footer: {
