@@ -15,7 +15,7 @@ export const profile = {
   phoneDisplay: envPhoneDisplay ?? DEFAULT_PHONE_DISPLAY,
   phoneRaw: envPhoneRaw ?? DEFAULT_PHONE_RAW,
   location: 'Salvador, Bahia',
-  experienceYears: '+2',
+  experienceYears: '+3',
   headline: {
     'pt-BR': 'Desenvolvedor Full Stack Pleno com engenharia de software aplicada ao produto.',
     en: 'Mid-level Full Stack Developer applying software engineering to product delivery.',
@@ -23,9 +23,9 @@ export const profile = {
   } satisfies Record<Locale, string>,
   summary: {
     'pt-BR':
-      'Desenvolvedor Full Stack com mais de 2 anos de experiencia criando aplicacoes web modernas e escalaveis com Python, JavaScript, TypeScript, React, Node.js, NestJS, Next.js, SQL e TailwindCSS.',
-    en: 'Full Stack Developer with 2+ years of experience building modern scalable web applications with Python, JavaScript, TypeScript, React, Node.js, NestJS, Next.js, SQL and TailwindCSS.',
-    es: 'Desarrollador Full Stack con mas de 2 anos de experiencia creando aplicaciones web modernas y escalables con Python, JavaScript, TypeScript, React, Node.js, NestJS, Next.js, SQL y TailwindCSS.',
+      'Desenvolvedor Full Stack com mais de 3 anos de experiencia criando aplicacoes web modernas e escalaveis com Python, JavaScript, TypeScript, React, Node.js, NestJS, Next.js, SQL e TailwindCSS.',
+    en: 'Full Stack Developer with 3+ years of experience building modern scalable web applications with Python, JavaScript, TypeScript, React, Node.js, NestJS, Next.js, SQL and TailwindCSS.',
+    es: 'Desarrollador Full Stack con mas de 3 anos de experiencia creando aplicaciones web modernas y escalables con Python, JavaScript, TypeScript, React, Node.js, NestJS, Next.js, SQL y TailwindCSS.',
   } satisfies Record<Locale, string>,
   availability: {
     'pt-BR': 'Disponivel para produtos digitais, sistemas internos, integracoes, automacoes e experiencias premium de interface.',

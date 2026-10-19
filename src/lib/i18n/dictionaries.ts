@@ -29,6 +29,7 @@ export type Dictionary = {
   };
   home: {
     badge: string;
+    availabilityLabel: string;
     headline: string;
     subtitle: string;
     ctaPrimary: string;
@@ -101,7 +102,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     meta: {
       title: 'Hercules de Oliveira | Desenvolvedor Full Stack Pleno',
       description:
-        'Portfolio de Hercules de Oliveira, desenvolvedor Full Stack Pleno com +2 anos de experiencia em Python, JavaScript, TypeScript, React, Next.js, Node.js, NestJS, SQL e TailwindCSS.',
+        'Portfolio de Hercules de Oliveira, desenvolvedor Full Stack Pleno com +3 anos de experiencia em Python, JavaScript, TypeScript, React, Next.js, Node.js, NestJS, SQL e TailwindCSS.',
     },
     nav: {
       home: 'Início',
@@ -127,9 +128,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     home: {
       badge: 'Desenvolvedor Full Stack Pleno',
+      availabilityLabel: 'Disponível para projetos selecionados',
       headline: 'Desenvolvo aplicacoes web modernas e escalaveis com engenharia, performance e codigo limpo.',
       subtitle:
-        'Sou Hercules de Oliveira. Tenho +2 anos de experiencia atuando do front-end ao back-end com Python, JavaScript, TypeScript, React, Next.js, Node.js, NestJS, SQL, Docker e boas praticas de desenvolvimento.',
+        'Sou Hercules de Oliveira. Tenho +3 anos de experiencia atuando do front-end ao back-end com Python, JavaScript, TypeScript, React, Next.js, Node.js, NestJS, SQL, Docker e boas praticas de desenvolvimento.',
       ctaPrimary: 'Conversar sobre meu projeto',
       ctaSecondary: 'Ver cases fullstack',
       ctaTertiary: 'Prova tecnica publica',
@@ -222,7 +224,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     meta: {
       title: 'Hercules de Oliveira | Mid-level Full Stack Developer',
       description:
-        'Portfolio of Hercules de Oliveira, a mid-level Full Stack Developer with 2+ years of experience in Python, JavaScript, TypeScript, React, Next.js, Node.js, NestJS, SQL and TailwindCSS.',
+        'Portfolio of Hercules de Oliveira, a mid-level Full Stack Developer with 3+ years of experience in Python, JavaScript, TypeScript, React, Next.js, Node.js, NestJS, SQL and TailwindCSS.',
     },
     nav: {
       home: 'Home',
@@ -248,9 +250,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     home: {
       badge: 'Mid-level Full Stack Developer',
+      availabilityLabel: 'Available for select work',
       headline: 'I build modern scalable web applications with engineering, performance and clean code.',
       subtitle:
-        'I am Hercules de Oliveira. I have 2+ years of experience working from front-end to back-end with Python, JavaScript, TypeScript, React, Next.js, Node.js, NestJS, SQL, Docker and development best practices.',
+        'I am Hercules de Oliveira. I have 3+ years of experience working from front-end to back-end with Python, JavaScript, TypeScript, React, Next.js, Node.js, NestJS, SQL, Docker and development best practices.',
       ctaPrimary: 'Discuss my project',
       ctaSecondary: 'See fullstack cases',
       ctaTertiary: 'Public technical proof',
@@ -343,7 +346,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     meta: {
       title: 'Hercules de Oliveira | Desarrollador Full Stack Pleno',
       description:
-        'Portafolio de Hercules de Oliveira, desarrollador Full Stack Pleno con mas de 2 anos de experiencia en Python, JavaScript, TypeScript, React, Next.js, Node.js, NestJS, SQL y TailwindCSS.',
+        'Portafolio de Hercules de Oliveira, desarrollador Full Stack Pleno con mas de 3 anos de experiencia en Python, JavaScript, TypeScript, React, Next.js, Node.js, NestJS, SQL y TailwindCSS.',
     },
     nav: {
       home: 'Inicio',
@@ -369,9 +372,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     home: {
       badge: 'Desarrollador Full Stack Pleno',
+      availabilityLabel: 'Disponible para proyectos seleccionados',
       headline: 'Desarrollo aplicaciones web modernas y escalables con ingenieria, performance y clean code.',
       subtitle:
-        'Soy Hercules de Oliveira. Tengo mas de 2 anos de experiencia trabajando del front-end al back-end con Python, JavaScript, TypeScript, React, Next.js, Node.js, NestJS, SQL, Docker y buenas practicas.',
+        'Soy Hercules de Oliveira. Tengo mas de 3 anos de experiencia trabajando del front-end al back-end con Python, JavaScript, TypeScript, React, Next.js, Node.js, NestJS, SQL, Docker y buenas practicas.',
       ctaPrimary: 'Hablar sobre mi proyecto',
       ctaSecondary: 'Ver casos fullstack',
       ctaTertiary: 'Prueba tecnica publica',

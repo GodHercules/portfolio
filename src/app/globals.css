@@ -3,23 +3,23 @@
 @tailwind utilities;
 
 :root {
-  --bg: 40 33% 98%;
-  --fg: 218 30% 12%;
-  --muted: 210 18% 96%;
-  --border: 210 14% 86%;
-  --card: 0 0% 100%;
-  --accent: 213 75% 33%;
-  --accent-soft: 212 75% 88%;
+  --bg: 0 0% 4%;
+  --fg: 0 0% 94%;
+  --muted: 0 0% 9%;
+  --border: 0 0% 20%;
+  --card: 0 0% 7%;
+  --accent: 243 94% 27%;
+  --accent-soft: 243 72% 14%;
 }
 
-.dark {
-  --bg: 222 29% 8%;
-  --fg: 210 35% 96%;
-  --muted: 224 21% 13%;
-  --border: 221 14% 23%;
-  --card: 225 24% 10%;
-  --accent: 205 82% 64%;
-  --accent-soft: 212 60% 20%;
+.light {
+  --bg: 0 0% 97%;
+  --fg: 0 0% 7%;
+  --muted: 0 0% 91%;
+  --border: 0 0% 77%;
+  --card: 0 0% 100%;
+  --accent: 243 94% 27%;
+  --accent-soft: 243 72% 91%;
 }
 
 * {
@@ -29,10 +29,40 @@
 html,
 body {
   @apply min-h-full bg-bg text-fg antialiased;
+  scroll-behavior: smooth;
+}
+
+html,
+.dark {
+  color-scheme: dark;
+}
+
+.light {
+  color-scheme: light;
+}
+
+.brand-mark {
+  display: block;
+  height: 2.75rem;
+  width: 2.75rem;
+  background: hsl(var(--accent));
+  -webkit-mask-image: url('/assets/brand/hdo-monogram.png');
+  mask-image: url('/assets/brand/hdo-monogram.png');
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 210%;
+  mask-size: 210%;
+}
+
+.light .brand-mark {
+  background: #080808;
 }
 
 body {
-  @apply bg-grain;
+  font-feature-settings: 'ss01' 1, 'ss02' 1;
+  background-image: radial-gradient(circle at 80% 10%, hsl(var(--accent) / 0.08), transparent 28rem);
 }
 
 ::selection {
@@ -41,14 +71,54 @@ body {
 
 @layer utilities {
   .glass {
-    @apply border border-border/70 bg-card/80 backdrop-blur;
+    @apply bg-card;
   }
 
   .section-spacing {
-    @apply py-16 md:py-24;
+    @apply py-20 md:py-32;
   }
 
   .content-grid {
-    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+    @apply mx-auto w-full max-w-[90rem] px-5 sm:px-8;
+  }
+
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .group:hover .project-reel,
+  .group:focus-within .project-reel {
+    animation: project-reel 3.6s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  }
+}
+
+@keyframes project-reel {
+  0%,
+  18% {
+    transform: translateX(0);
+  }
+  34%,
+  51% {
+    transform: translateX(-33.333%);
+  }
+  68%,
+  85% {
+    transform: translateX(-66.666%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }

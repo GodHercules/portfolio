@@ -21,10 +21,14 @@ export function Header({ locale, dictionary }: HeaderProps) {
   ];
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border/60 bg-bg/75 backdrop-blur-xl">
+    <header className="sticky top-0 z-40 bg-bg/95">
       <div className="content-grid flex h-20 items-center justify-between gap-4">
-        <Link href={`/${locale}`} className="font-display text-xl tracking-tight">
-          Hercules de Oliveira
+        <Link
+          href={`/${locale}`}
+          aria-label="Hercules de Oliveira — início"
+          className="focus-ring inline-flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden"
+        >
+          <span className="brand-mark" aria-hidden="true" />
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
@@ -32,7 +36,8 @@ export function Header({ locale, dictionary }: HeaderProps) {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-full px-3 py-2 text-sm text-fg/75 transition hover:bg-muted hover:text-fg"
+              aria-current={item.href === `/${locale}` ? 'page' : undefined}
+              className="focus-ring rounded-full px-3 py-2 text-sm text-fg/75 transition hover:bg-muted hover:text-fg"
             >
               {item.label}
             </Link>

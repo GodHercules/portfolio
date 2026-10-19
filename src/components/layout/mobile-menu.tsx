@@ -2,7 +2,7 @@
 
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { cn } from '@/lib/utils';
 
@@ -14,7 +14,19 @@ type MobileMenuProps = {
 
 export function MobileMenu({ openLabel, closeLabel, items }: MobileMenuProps) {
   const [open, setOpen] = useState(false);
+  const triggerRef = useRef<HTMLButtonElement>(null);
   const menuId = 'mobile-navigation-menu';
+
+  useEffect(() => {
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setOpen(false);
+        triggerRef.current?.focus();
+      }
+    };
+    window.addEventListener('keydown', closeOnEscape);
+    return () => window.removeEventListener('keydown', closeOnEscape);
+  }, []);
 
   return (
     <div className="md:hidden">
@@ -23,18 +35,19 @@ export function MobileMenu({ openLabel, closeLabel, items }: MobileMenuProps) {
         aria-label={open ? closeLabel : openLabel}
         aria-expanded={open}
         aria-controls={menuId}
+        ref={triggerRef}
         onClick={() => setOpen((value) => !value)}
-        className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card"
+        className="focus-ring inline-flex h-11 w-11 items-center justify-center rounded-full bg-card"
       >
         {open ? <X size={18} /> : <Menu size={18} />}
       </button>
 
       <div
         id={menuId}
-        hidden={!open}
         aria-hidden={!open}
+        inert={!open}
         className={cn(
-          'absolute left-5 right-5 top-20 rounded-2xl border border-border bg-card p-4 shadow-soft transition',
+          'absolute left-5 right-5 top-20 bg-card p-4 shadow-soft transition duration-300',
           open ? 'pointer-events-auto translate-y-0 opacity-100' : 'pointer-events-none -translate-y-2 opacity-0',
         )}
       >
@@ -43,7 +56,7 @@ export function MobileMenu({ openLabel, closeLabel, items }: MobileMenuProps) {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-xl px-3 py-2 text-sm text-fg/80 hover:bg-muted hover:text-fg"
+              className="focus-ring rounded-xl px-3 py-3 text-sm text-fg/80 hover:bg-muted hover:text-fg"
               onClick={() => setOpen(false)}
             >
               {item.label}

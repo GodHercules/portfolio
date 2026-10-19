@@ -22,9 +22,10 @@ export function FilterPills({ items, activeId, onChange }: FilterPillsProps) {
           <button
             key={item.id}
             type="button"
+            aria-pressed={active}
             onClick={() => onChange(item.id)}
             className={cn(
-              'rounded-full border px-4 py-2 text-sm transition',
+              'focus-ring rounded-full border px-4 py-2 text-sm transition',
               active
                 ? 'border-fg bg-fg text-bg'
                 : 'border-border bg-card text-fg/75 hover:border-fg/40 hover:text-fg',

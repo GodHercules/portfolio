@@ -32,7 +32,7 @@ const copy: Record<
     education: 'Formacao',
     stack: 'Stack e praticas',
     location: 'Base',
-    experienceLabel: '+2 anos full stack',
+    experienceLabel: '+3 anos full stack',
     skillGroups: {
       languages: 'Linguagens',
       frontend: 'Front-end',
@@ -51,7 +51,7 @@ const copy: Record<
     education: 'Education',
     stack: 'Stack and practices',
     location: 'Base',
-    experienceLabel: '2+ years full stack',
+    experienceLabel: '3+ years full stack',
     skillGroups: {
       languages: 'Languages',
       frontend: 'Front-end',
@@ -70,7 +70,7 @@ const copy: Record<
     education: 'Formacion',
     stack: 'Stack y practicas',
     location: 'Base',
-    experienceLabel: '+2 anos full stack',
+    experienceLabel: '+3 anos full stack',
     skillGroups: {
       languages: 'Lenguajes',
       frontend: 'Front-end',

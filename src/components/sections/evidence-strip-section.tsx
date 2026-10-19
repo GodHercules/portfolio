@@ -87,13 +87,13 @@ export function EvidenceStripSection({ locale }: EvidenceStripSectionProps) {
   ];
 
   return (
-    <Section className="pt-0">
+    <Section className="bg-bg py-10 sm:py-14">
       <div className="content-grid">
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        <div className="grid border-y border-border md:grid-cols-2 xl:grid-cols-4">
           {stats.map((item) => (
-            <article key={item.label} className="glass rounded-3xl border border-border/70 p-6">
-              <p className="font-display text-4xl leading-none tracking-tight text-fg">{item.value}</p>
-              <p className="mt-3 text-xs uppercase tracking-[0.18em] text-accent">{item.label}</p>
+            <article key={item.label} className="border-b border-border p-6 last:border-b-0 md:[&:nth-child(odd)]:border-r xl:border-b-0 xl:border-r xl:last:border-r-0">
+              <p className="font-display text-5xl leading-none tracking-tight text-fg">{item.value}</p>
+              <p className="mt-3 text-xs font-semibold uppercase tracking-[0.16em] text-accent">{item.label}</p>
               <p className="mt-4 text-sm leading-relaxed text-fg/70">{item.detail}</p>
             </article>
           ))}

@@ -92,7 +92,10 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
       <DocumentLanguage locale={locale as Locale} />
       <script type="application/ld+json" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <Header locale={locale as Locale} dictionary={dictionary} />
-      <main>
+      <a href="#main-content" className="focus-ring sr-only absolute left-5 top-5 z-50 rounded-full bg-fg px-4 py-3 text-sm font-semibold text-bg focus:not-sr-only">
+        Pular para o conteúdo
+      </a>
+      <main id="main-content" tabIndex={-1}>
         <PageTransition>{children}</PageTransition>
       </main>
       <LazyChatbot locale={locale as Locale} />
