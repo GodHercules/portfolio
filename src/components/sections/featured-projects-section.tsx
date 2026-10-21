@@ -31,7 +31,7 @@ export function FeaturedProjectsSection({
       tag: dictionary.nav.development,
       proofItems: [
         { label: dictionary.projectPage.problem, value: project.body.problem[locale] },
-        { label: locale === 'en' ? 'Decision' : locale === 'es' ? 'Decision' : 'Decisao', value: project.proof.decisionSummary[locale] },
+        { label: locale === 'en' ? 'Decision' : locale === 'es' ? 'Decision' : 'Decisão', value: project.proof.decisionSummary[locale] },
         { label: dictionary.projectPage.results, value: project.proof.outcomes[locale][0] },
       ],
     })),

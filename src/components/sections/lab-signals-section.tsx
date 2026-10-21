@@ -24,8 +24,8 @@ const copy: Record<
   }
 > = {
   'pt-BR': {
-    title: 'IA, integracoes e automacao como prova real',
-    lead: 'Uma camada para mostrar que o portfolio nao para em interface: ele tambem prova repertorio em logica, integracao, automacao e experiencia guiada por conteudo.',
+    title: 'IA, integrações e automação como prova real',
+    lead: 'Uma camada para mostrar que o portfólio não para em interface: ele também prova repertório em lógica, integração, automação e experiência guiada por conteúdo.',
     outcomeLabel: 'O que isso prova',
     linkLabel: 'Abrir frente',
     // CTA label is reused on the home surface to invite deeper exploration.
@@ -47,7 +47,7 @@ const copy: Record<
 export function LabSignalsSection({ locale, ctaHref, ctaLabel }: LabSignalsSectionProps) {
   const section = copy[locale];
   const actionHref = ctaHref ?? `/${locale}/lab`;
-  const actionLabel = ctaLabel ?? (locale === 'pt-BR' ? 'Abrir AI / Automation Lab' : locale === 'es' ? 'Abrir AI / Automation Lab' : 'Open AI / Automation Lab');
+const actionLabel = ctaLabel ?? (locale === 'pt-BR' ? 'Abrir laboratório de IA / automação' : locale === 'es' ? 'Abrir AI / Automation Lab' : 'Open AI / Automation Lab');
 
   return (
     <Section className="pt-8">

@@ -63,19 +63,19 @@ const proofCopy: Record<
 > = {
   'pt-BR': {
     role: 'Papel',
-    engagement: 'Escopo de atuacao',
+    engagement: 'Escopo de atuação',
     timeline: 'Ritmo de entrega',
-    team: 'Contexto de colaboracao',
+    team: 'Contexto de colaboração',
     responsibilities: 'Responsabilidades',
     capabilities: 'Capacidades acionadas',
-    constraints: 'Restricoes reais',
+    constraints: 'Restrições reais',
     outcomes: 'Resultados entregues',
-    decisionSummary: 'Decisao principal',
+    decisionSummary: 'Decisão principal',
     architectureSummary: 'Leitura arquitetural',
     proofTitle: 'Leitura executiva do case',
-    proofLead: 'Uma camada de evidencia para mostrar papel, escopo, decisoes e resultado do projeto.',
+    proofLead: 'Uma camada de evidência para mostrar papel, escopo, decisões e resultado do projeto.',
     systemLensTitle: 'Lente de sistema',
-    systemLensLead: 'Uma leitura rapida de como a solucao se sustenta em arquitetura, implementacao e restricoes reais.',
+    systemLensLead: 'Uma leitura rápida de como a solução se sustenta em arquitetura, implementação e restrições reais.',
     relatedCasesTitle: 'Casos relacionados',
     architectureMapTitle: 'Mapa de arquitetura',
     architectureMapLead: 'Uma leitura visual simples do fluxo principal e dos pilares que sustentam o case.',
@@ -282,7 +282,7 @@ export function DevelopmentCase({ project, locale, dictionary }: DevelopmentCase
           <article className="glass rounded-3xl border border-border/70 p-6">
             <h3 className="font-display text-2xl leading-tight tracking-tight">Impacto e sinais</h3>
             <p className="mt-3 text-sm leading-relaxed text-fg/75">
-              Sinais mais concretos do que o projeto entregou em termos de clareza, previsibilidade e governanca.
+              Sinais mais concretos do que o projeto entregou em termos de clareza, previsibilidade e governança.
             </p>
             <div className="mt-5 grid gap-3 sm:grid-cols-3 xl:grid-cols-1">
               {metrics.map((metric) => (

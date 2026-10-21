@@ -33,15 +33,15 @@ type BotCopy = {
 const copy: Record<Locale, BotCopy> = {
   'pt-BR': {
     title: 'Assistente Hercules',
-    subtitle: 'Consulte stack, projetos, processo, como ele atua com times, integracoes, assistente local, laboratorio GitHub e contato.',
+    subtitle: 'Consulte stack, projetos, processo, como ele atua com times, integrações, assistente local, laboratório GitHub e contato.',
     placeholder: 'Ex: como ele atua com times?',
     send: 'Enviar',
     open: 'Abrir chat',
   close: 'Fechar chat',
-    suggestions: ['Como ele atua com times?', 'Como ele costuma trabalhar?', 'Como ele usa integracoes?', 'Fale sobre Atlas Platform'],
+    suggestions: ['Como ele atua com times?', 'Como ele costuma trabalhar?', 'Como ele usa integrações?', 'Fale sobre Atlas Platform'],
     greeting:
-      'Ola. Este assistente local consulta os dados do portfolio para responder sobre stack, projetos, processo, colaboracao com times, integracoes, GitHub e contato.',
-    fallback: 'Boa pergunta. Posso detalhar tecnologias, projetos, processo, colaboracao com times, integracoes, laboratorio GitHub e contato.',
+      'Olá. Este assistente local consulta os dados do portfólio para responder sobre stack, projetos, processo, colaboração com times, integrações, GitHub e contato.',
+    fallback: 'Boa pergunta. Posso detalhar tecnologias, projetos, processo, colaboração com times, integrações, laboratório GitHub e contato.',
     relatedLabel: 'Perguntas sugeridas',
   },
   en: {

@@ -80,7 +80,7 @@ export const developmentProjects: TechProject[] = [
             es: 'menos contexto disperso',
           },
           detail: {
-            'pt-BR': 'A leitura operacional saiu de planilhas e pontos soltos para uma camada unica de produto.',
+'pt-BR': 'A leitura operacional saiu de planilhas e pontos soltos para uma camada única de produto.',
             en: 'Operational reading moved from spreadsheets and fragmented tools into one product layer.',
             es: 'La lectura operativa salio de planillas y herramientas sueltas hacia una sola capa de producto.',
           },
@@ -88,7 +88,7 @@ export const developmentProjects: TechProject[] = [
         {
           value: '1',
           label: {
-            'pt-BR': 'fluxo central de governanca',
+'pt-BR': 'Fluxo central de governança',
             en: 'central governance flow',
             es: 'flujo central de gobernanza',
           },
@@ -110,7 +110,7 @@ export const developmentProjects: TechProject[] = [
             es: 'Capa de dominio clara',
           },
           summary: {
-            'pt-BR': 'Separacao entre visualizacao, regras e eventos para manter crescimento sem colapsar a leitura.',
+'pt-BR': 'Separação entre visualização, regras e eventos para manter o crescimento sem colapsar a leitura.',
             en: 'Visualization, rules, and events were split so growth would not collapse the reading model.',
             es: 'Se separaron visualizacion, reglas y eventos para crecer sin romper el modelo de lectura.',
           },
@@ -122,19 +122,19 @@ export const developmentProjects: TechProject[] = [
             es: 'Estado como lenguaje del producto',
           },
           summary: {
-            'pt-BR': 'Os estados operacionais viraram o eixo de navegacao, auditoria e tomada de decisao.',
+'pt-BR': 'Os estados operacionais viraram o eixo de navegação, auditoria e tomada de decisão.',
             en: 'Operational states became the axis for navigation, auditing, and decision-making.',
             es: 'Los estados operativos pasaron a ser el eje de navegacion, auditoria y decision.',
           },
         },
         {
           title: {
-            'pt-BR': 'Base pronta para evolucao',
+            'pt-BR': 'Base pronta para evolução',
             en: 'Foundation ready for evolution',
             es: 'Base lista para evolucion',
           },
           summary: {
-            'pt-BR': 'A estrutura foi pensada para observabilidade, novos modulos e refinamento progressivo.',
+            'pt-BR': 'A estrutura foi pensada para observabilidade, novos módulos e refinamento progressivo.',
             en: 'The structure was designed for observability, new modules, and progressive refinement.',
             es: 'La estructura fue pensada para observabilidad, nuevos modulos y refinamiento progresivo.',
           },
@@ -263,7 +263,7 @@ export const developmentProjects: TechProject[] = [
         {
           value: '80%',
           label: {
-            'pt-BR': 'menos dependencia manual',
+        'pt-BR': 'menos dependência manual',
             en: 'less manual dependency',
             es: 'menos dependencia manual',
           },
@@ -279,7 +279,7 @@ export const developmentProjects: TechProject[] = [
         {
           value: '0',
           label: {
-            'pt-BR': 'retrabalho massivo como padrao',
+            'pt-BR': 'retrabalho massivo como padrão',
             en: 'massive rework as default',
             es: 'retrabajo masivo como norma',
           },
@@ -293,7 +293,7 @@ export const developmentProjects: TechProject[] = [
             es: 'Cola con prioridad y reintento',
           },
           summary: {
-            'pt-BR': 'As rotinas mais criticas ganharam ordenacao, idempotencia e recuperacao previsivel.',
+'pt-BR': 'As rotinas mais críticas ganharam ordenação, idempotência e recuperação previsível.',
             en: 'The most critical routines gained ordering, idempotency, and predictable recovery.',
             es: 'Las rutinas mas criticas ganaron orden, idempotencia y recuperacion previsible.',
           },
@@ -317,7 +317,7 @@ export const developmentProjects: TechProject[] = [
             es: 'Confiabilidad como producto',
           },
           summary: {
-            'pt-BR': 'A arquitetura foi desenhada para reduzir risco operacional, nao apenas automatizar tarefas.',
+'pt-BR': 'A arquitetura foi desenhada para reduzir risco operacional, não apenas automatizar tarefas.',
             en: 'The architecture was designed to reduce operational risk, not just automate tasks.',
             es: 'La arquitectura fue disenada para reducir riesgo operativo, no solo automatizar tareas.',
           },
@@ -401,7 +401,7 @@ export const developmentProjects: TechProject[] = [
         es: 'Mapeé necesidades por squad, estructuré la información y diseñé una navegación orientada a la autonomía.',
       },
       timeline: {
-        'pt-BR': 'Construção orientada a evolução contínua, começando por áreas de maior atrito informacional.',
+        'pt-BR': 'Construção orientada à evolução contínua, começando por áreas de maior atrito informacional.',
         en: 'Built for continuous evolution, starting with the highest-information-friction areas.',
         es: 'Construido para evolución continua, empezando por las áreas con mayor fricción informativa.',
       },
@@ -461,7 +461,7 @@ export const developmentProjects: TechProject[] = [
         {
           value: 'Fast',
           label: {
-            'pt-BR': 'descoberta de informacao critica',
+            'pt-BR': 'descoberta de informação crítica',
             en: 'critical information discovery',
             es: 'descubrimiento de informacion critica',
           },
@@ -470,24 +470,24 @@ export const developmentProjects: TechProject[] = [
       architecturePillars: [
         {
           title: {
-            'pt-BR': 'Informacao orientada por uso',
+            'pt-BR': 'Informação orientada por uso',
             en: 'Usage-oriented information',
             es: 'Informacion orientada por uso',
           },
           summary: {
-            'pt-BR': 'A arquitetura favorece descoberta util e nao apenas acumulo de documentacao.',
+'pt-BR': 'A arquitetura favorece descoberta útil e não apenas acúmulo de documentação.',
             en: 'The architecture favors useful discovery instead of just document accumulation.',
             es: 'La arquitectura favorece descubrimiento util y no solo acumulacion de documentacion.',
           },
         },
         {
           title: {
-            'pt-BR': 'Governanca sem atrito',
+'pt-BR': 'Governança sem atrito',
             en: 'Low-friction governance',
             es: 'Gobernanza sin friccion',
           },
           summary: {
-            'pt-BR': 'Permissoes, contratos e contexto foram desenhados para manter autonomia com consistencia.',
+        'pt-BR': 'Permissões, contratos e contexto foram desenhados para manter autonomia com consistência.',
             en: 'Permissions, contracts, and context were designed to keep autonomy with consistency.',
             es: 'Permisos, contratos y contexto se disenaron para mantener autonomia con consistencia.',
           },
@@ -499,7 +499,7 @@ export const developmentProjects: TechProject[] = [
             es: 'Busqueda como acelerador',
           },
           summary: {
-            'pt-BR': 'A camada de busca foi tratada como mecanismo de decisao, nao so como utilitario.',
+'pt-BR': 'A camada de busca foi tratada como mecanismo de decisão, não só como utilitário.',
             en: 'The search layer was treated as a decision mechanism, not just a utility.',
             es: 'La capa de busqueda se trato como mecanismo de decision y no solo como utilidad.',
           },
@@ -513,7 +513,7 @@ export const developmentProjects: TechProject[] = [
         es: 'Equipos distribuidos con información dispersa y baja estandarización de comunicación.',
       },
       problem: {
-        'pt-BR': 'Acesso lento a decisões e histórico de processos importantes.',
+        'pt-BR': 'Acesso lento a decisões e ao histórico de processos importantes.',
         en: 'Slow access to decisions and critical process history.',
         es: 'Acceso lento a decisiones e historial de procesos importantes.',
       },
@@ -578,7 +578,7 @@ export const developmentProjects: TechProject[] = [
         es: 'Investigación aplicada, benchmark de enfoques y documentación de decisiones técnicas.',
       },
       engagement: {
-        'pt-BR': 'Criação de ambiente controlado para testar padrões antes de adoção em produto real.',
+        'pt-BR': 'Criação de um ambiente controlado para testar padrões antes da adoção em produto real.',
         en: 'Creation of a controlled environment to test patterns before adopting them in real products.',
         es: 'Creación de un entorno controlado para probar patrones antes de adoptarlos en productos reales.',
       },
@@ -588,7 +588,7 @@ export const developmentProjects: TechProject[] = [
         es: 'Iniciativa continua impulsada por hipótesis técnicas y necesidades de evolución de producto.',
       },
       team: {
-        'pt-BR': 'Formato enxuto, orientado a decisão técnica e reaproveitamento de conhecimento.',
+        'pt-BR': 'Formato enxuto, orientado à decisão técnica e ao reaproveitamento de conhecimento.',
         en: 'Lean format oriented around technical decisions and knowledge reuse.',
         es: 'Formato ligero orientado a decisiones técnicas y reutilización de conocimiento.',
       },
@@ -635,7 +635,7 @@ export const developmentProjects: TechProject[] = [
         {
           value: '1 repo',
           label: {
-            'pt-BR': 'para validar decisoes antes da producao',
+            'pt-BR': 'para validar decisões antes da produção',
             en: 'to validate decisions before production',
             es: 'para validar decisiones antes de produccion',
           },
@@ -643,7 +643,7 @@ export const developmentProjects: TechProject[] = [
         {
           value: 'Less risk',
           label: {
-            'pt-BR': 'na escolha de stack e padroes',
+            'pt-BR': 'na escolha de stack e padrões',
             en: 'in stack and pattern choices',
             es: 'en eleccion de stack y patrones',
           },
@@ -652,24 +652,24 @@ export const developmentProjects: TechProject[] = [
       architecturePillars: [
         {
           title: {
-            'pt-BR': 'Experimento com criterio',
+            'pt-BR': 'Experimento com critério',
             en: 'Experimentation with criteria',
             es: 'Experimentacion con criterio',
           },
           summary: {
-            'pt-BR': 'Cada estudo parte de hipotese clara, escopo comparavel e leitura objetiva de tradeoff.',
+            'pt-BR': 'Cada estudo parte de hipótese clara, escopo comparável e leitura objetiva de trade-off.',
             en: 'Each study starts with a clear hypothesis, comparable scope, and objective tradeoff readout.',
             es: 'Cada estudio parte de hipotesis clara, alcance comparable y lectura objetiva de tradeoff.',
           },
         },
         {
           title: {
-            'pt-BR': 'Benchmark reaproveitavel',
+            'pt-BR': 'Benchmark reaproveitável',
             en: 'Reusable benchmark',
             es: 'Benchmark reutilizable',
           },
           summary: {
-            'pt-BR': 'Os resultados viram repertorio para produto, arquitetura e experiencia de desenvolvimento.',
+            'pt-BR': 'Os resultados viram repertório para produto, arquitetura e experiência de desenvolvimento.',
             en: 'The results become reusable repertoire for product, architecture, and developer experience.',
             es: 'Los resultados se convierten en repertorio reutilizable para producto, arquitectura y experiencia de desarrollo.',
           },
@@ -681,7 +681,7 @@ export const developmentProjects: TechProject[] = [
             es: 'DX y performance como sistema',
           },
           summary: {
-            'pt-BR': 'A avaliacao considera build, manutencao, DX e custo operacional na mesma decisao.',
+'pt-BR': 'A avaliação considera build, manutenção, DX e custo operacional na mesma decisão.',
             en: 'The evaluation considers build, maintainability, DX, and operating cost in the same decision.',
             es: 'La evaluacion considera build, mantenibilidad, DX y costo operativo en la misma decision.',
           },
@@ -720,7 +720,7 @@ export const developmentProjects: TechProject[] = [
         es: ['Repositorio modular de experimentos', 'Pipeline automatizado de benchmarks', 'Criterios explícitos para adopción o descarte'],
       },
       implementedSolutions: {
-        'pt-BR': ['Template padrão para estudos', 'Matriz comparativa de resultados', 'Documentação orientada a impacto e tradeoff'],
+        'pt-BR': ['Template padrão para estudos', 'Matriz comparativa de resultados', 'Documentação orientada a impacto e trade-off'],
         en: ['Standard template for studies', 'Comparative matrix of outcomes', 'Documentation focused on impact and tradeoffs'],
         es: ['Plantilla estándar para estudios', 'Matriz comparativa de resultados', 'Documentación orientada a impacto y tradeoffs'],
       },

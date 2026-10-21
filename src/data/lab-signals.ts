@@ -19,17 +19,17 @@ export const labSignals: LabSignal[] = [
       es: 'IA aplicada',
     },
     title: {
-      'pt-BR': 'Assistentes guiados por conteudo e contexto',
+      'pt-BR': 'Assistentes guiados por conteúdo e contexto',
       en: 'Assistants guided by content and context',
       es: 'Asistentes guiados por contenido y contexto',
     },
     summary: {
-      'pt-BR': 'Exploracao de UX para IA com respostas ancoradas no proprio portfolio, foco em clareza e uso real.',
+      'pt-BR': 'Exploração de UX para IA com respostas ancoradas no próprio portfólio, foco em clareza e uso real.',
       en: 'AI UX exploration with answers grounded in the portfolio itself, focused on clarity and real use.',
       es: 'Exploracion de UX para IA con respuestas ancladas en el propio portafolio, enfocada en claridad y uso real.',
     },
     outcome: {
-      'pt-BR': 'Mostra integracao entre conteudo estruturado, logica de resposta e experiencia conversacional.',
+      'pt-BR': 'Mostra integração entre conteúdo estruturado, lógica de resposta e experiência conversacional.',
       en: 'Shows integration between structured content, response logic, and conversational experience.',
       es: 'Muestra integracion entre contenido estructurado, logica de respuesta y experiencia conversacional.',
     },
@@ -39,12 +39,12 @@ export const labSignals: LabSignal[] = [
   {
     id: 'workflow-integrations',
     badge: {
-      'pt-BR': 'Integracoes',
+      'pt-BR': 'Integrações',
       en: 'Integrations',
       es: 'Integraciones',
     },
     title: {
-      'pt-BR': 'Automacao e orquestracao de fluxo',
+      'pt-BR': 'Automação e orquestração de fluxo',
       en: 'Workflow automation and orchestration',
       es: 'Automatizacion y orquestacion de flujo',
     },
@@ -54,7 +54,7 @@ export const labSignals: LabSignal[] = [
       es: 'Arquitecturas con colas, APIs, reintentos y observabilidad para reducir fragilidad operativa.',
     },
     outcome: {
-      'pt-BR': 'Converte dependencia manual em rotinas previsiveis e mensuraveis.',
+      'pt-BR': 'Converte dependência manual em rotinas previsíveis e mensuráveis.',
       en: 'Turns manual dependency into predictable and measurable routines.',
       es: 'Convierte la dependencia manual en rutinas previsibles y medibles.',
     },
@@ -64,22 +64,22 @@ export const labSignals: LabSignal[] = [
   {
     id: 'frontend-systems',
     badge: {
-      'pt-BR': 'Frontend systems',
+      'pt-BR': 'Sistemas frontend',
       en: 'Frontend systems',
       es: 'Frontend systems',
     },
     title: {
-      'pt-BR': 'Arquitetura escalavel para produto e interface',
+      'pt-BR': 'Arquitetura escalável para produto e interface',
       en: 'Scalable architecture for product and interface',
       es: 'Arquitectura escalable para producto e interfaz',
     },
     summary: {
-      'pt-BR': 'Composicao de App Router, i18n, componentes reutilizaveis e leitura de produto em camadas.',
+      'pt-BR': 'Composição de App Router, i18n, componentes reutilizáveis e leitura de produto em camadas.',
       en: 'Composition of App Router, i18n, reusable components, and layered product readouts.',
       es: 'Composicion de App Router, i18n, componentes reutilizables y lectura de producto por capas.',
     },
     outcome: {
-      'pt-BR': 'Explicita que a interface nao e so visual: ela carrega decisao arquitetural e criterio de manutencao.',
+      'pt-BR': 'Explicita que a interface não é só visual: ela carrega decisão arquitetural e critério de manutenção.',
       en: 'Makes clear that the interface is not just visual; it carries architectural decisions and maintenance criteria.',
       es: 'Deja claro que la interfaz no es solo visual; lleva decisiones arquitectonicas y criterio de mantenimiento.',
     },
@@ -94,17 +94,17 @@ export const labSignals: LabSignal[] = [
       es: 'Performance',
     },
     title: {
-      'pt-BR': 'Benchmarks, DX e criterio de adocao',
+      'pt-BR': 'Benchmarks, DX e critério de adoção',
       en: 'Benchmarks, DX, and adoption criteria',
       es: 'Benchmarks, DX y criterio de adopcion',
     },
     summary: {
-      'pt-BR': 'Estudos tecnicos usados para comparar abordagens antes de comprometer um produto com uma direcao.',
+      'pt-BR': 'Estudos técnicos usados para comparar abordagens antes de comprometer um produto com uma direção.',
       en: 'Technical studies used to compare approaches before committing a product to one direction.',
       es: 'Estudios tecnicos usados para comparar enfoques antes de comprometer un producto con una direccion.',
     },
     outcome: {
-      'pt-BR': 'Transforma experimentacao em criterio pratico para stack, build e experiencia do desenvolvedor.',
+      'pt-BR': 'Transforma experimentação em critério prático para stack, build e experiência do desenvolvedor.',
       en: 'Turns experimentation into practical criteria for stack, build, and developer experience.',
       es: 'Transforma la experimentacion en criterio practico para stack, build y experiencia de desarrollo.',
     },

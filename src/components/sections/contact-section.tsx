@@ -7,7 +7,7 @@ import type { Locale } from '@/lib/i18n/config';
 import type { Dictionary } from '@/lib/i18n/dictionaries';
 
 const whatsappMessages: Record<Locale, string> = {
-  'pt-BR': 'Ola Hercules, vi seu portfolio e gostaria de conversar sobre um projeto.',
+  'pt-BR': 'Olá Hercules, vi seu portfólio e gostaria de conversar sobre um projeto.',
   en: 'Hi Hercules, I saw your portfolio and would like to talk about a project.',
   es: 'Hola Hercules, vi tu portafolio y me gustaria conversar sobre un proyecto.',
 };
@@ -26,12 +26,12 @@ const conversionCopy: Record<
 > = {
   'pt-BR': {
     title: 'Melhor encaixe de projeto',
-    lead: 'Funciona melhor quando o desafio pede produto, engenharia e refinamento visual trabalhando como uma camada unica.',
-    modes: ['Produto digital ponta a ponta', 'Frontend premium e design systems', 'Automacoes, integracoes e interfaces orientadas a negocio'],
+    lead: 'Funciona melhor quando o desafio pede produto, engenharia e refinamento visual trabalhando como uma camada única.',
+    modes: ['Produto digital ponta a ponta', 'Frontend premium e design systems', 'Automações, integrações e interfaces orientadas ao negócio'],
     fitTitle: 'Onde eu agrego mais valor',
-    fitItems: ['Discovery + arquitetura + implementacao', 'Refino de produto com criterio tecnico', 'Projetos que precisam de clareza, escala e percepcao premium'],
-    responseTitle: 'Proximo passo',
-    responseText: 'Se o contexto fizer sentido, a conversa normalmente comeca com objetivo, restricoes e prazo. A partir disso eu organizo o melhor formato de atuacao.',
+    fitItems: ['Discovery + arquitetura + implementação', 'Refino de produto com critério técnico', 'Projetos que precisam de clareza, escala e percepção premium'],
+    responseTitle: 'Próximo passo',
+    responseText: 'Se o contexto fizer sentido, a conversa normalmente começa com objetivo, restrições e prazo. A partir disso, eu organizo o melhor formato de atuação.',
   },
   en: {
     title: 'Best project fit',

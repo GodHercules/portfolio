@@ -23,7 +23,7 @@ export function GithubProjectsSection({ locale, dictionary, projects }: GithubPr
       ? 'This layer combines live GitHub data with curated portfolio framing so the repositories read as technical evidence, not just activity.'
       : locale === 'es'
         ? 'Esta capa combina datos vivos de GitHub con curadoria de portafolio para que los repositorios funcionen como evidencia tecnica y no solo como actividad.'
-        : 'Esta camada combina dados vivos do GitHub com curadoria de portfolio para que os repositorios funcionem como evidencia tecnica, e nao apenas como atividade.';
+        : 'Esta camada combina dados vivos do GitHub com curadoria de portfólio para que os repositórios funcionem como evidência técnica, e não apenas como atividade.';
   const highlights =
     locale === 'en'
       ? ['GitHub REST API', '30 min ISR', 'Server token fallback']
@@ -88,19 +88,19 @@ export function GithubProjectsSection({ locale, dictionary, projects }: GithubPr
                           ? 'Selected to show implementation quality, curation and public technical signal.'
                           : locale === 'es'
                             ? 'Seleccionado para mostrar calidad de implementacion, curadoria y senal tecnica publica.'
-                            : 'Selecionado para mostrar qualidade de implementacao, curadoria e sinal tecnico publico.'}
+                            : 'Selecionado para mostrar qualidade de implementação, curadoria e sinal técnico público.'}
                       </p>
                     </div>
                     <div>
                       <p className="text-[11px] uppercase tracking-[0.18em] text-fg/45">
-                        {locale === 'en' ? 'Freshness' : locale === 'es' ? 'Actualizacion' : 'Atualizacao'}
+                        {locale === 'en' ? 'Freshness' : locale === 'es' ? 'Actualizacion' : 'Atualização'}
                       </p>
                       <p className="mt-2">
                         {locale === 'en'
                           ? `Updated ${formatDate(project.updatedAt, locale)} with ${project.stars} public stars.`
                           : locale === 'es'
                             ? `Actualizado ${formatDate(project.updatedAt, locale)} con ${project.stars} estrellas publicas.`
-                            : `Atualizado ${formatDate(project.updatedAt, locale)} com ${project.stars} estrelas publicas.`}
+                            : `Atualizado ${formatDate(project.updatedAt, locale)} com ${project.stars} estrelas públicas.`}
                       </p>
                     </div>
                   </div>

@@ -14,7 +14,7 @@ type HeroSectionProps = {
 
 const proofBoard: Record<Locale, { label: string; value: string }[]> = {
   'pt-BR': [
-    { label: 'Experiencia', value: '+3 anos em desenvolvimento full stack' },
+    { label: 'Experiência', value: '+3 anos em desenvolvimento full stack' },
     { label: 'Stack', value: 'Python, JS/TS, React, Next, Node e NestJS' },
     { label: 'Dados', value: 'SQL, PostgreSQL, MySQL e APIs REST' },
     { label: 'Entrega', value: 'Clean Code, SOLID, Docker, Jest, Scrum e Kanban' },

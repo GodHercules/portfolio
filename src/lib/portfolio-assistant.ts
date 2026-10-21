@@ -22,8 +22,8 @@ type MatchableProject = {
 const capabilityCopy: Record<Locale, string[]> = {
   'pt-BR': [
     'Arquitetura frontend com Next.js, TypeScript e i18n.',
-    'Design systems, direcao visual e interfaces premium.',
-    'Automacoes, integracoes com APIs e componentes orientados a produto.',
+    'Design systems, direção visual e interfaces premium.',
+    'Automações, integrações com APIs e componentes orientados a produto.',
   ],
   en: [
     'Frontend architecture with Next.js, TypeScript and i18n.',
@@ -39,21 +39,21 @@ const capabilityCopy: Record<Locale, string[]> = {
 
 const processCopy: Record<Locale, string> = {
   'pt-BR':
-    'Ele costuma atuar do discovery ate a entrega: entendimento de contexto, definicao da arquitetura, exploracao visual, implementacao, refinamento e validacao do produto final.',
+    'Ele costuma atuar do discovery até a entrega: entendimento de contexto, definição da arquitetura, exploração visual, implementação, refinamento e validação do produto final.',
   en: 'He usually works from discovery to delivery: context framing, architecture definition, visual exploration, implementation, refinement and validation of the final product.',
   es: 'Suele trabajar desde discovery hasta la entrega: entendimiento del contexto, definicion de arquitectura, exploracion visual, implementacion, refinamiento y validacion del producto final.',
 };
 
 const teamCopy: Record<Locale, string> = {
   'pt-BR':
-    'Com times, ele tende a reduzir atrito entre produto, design e engenharia: organiza alinhamento rapido, explicita prioridades, protege o escopo e deixa o handoff sustentavel para o squad.',
+    'Com times, ele tende a reduzir atrito entre produto, design e engenharia: organiza alinhamento rápido, explicita prioridades, protege o escopo e deixa o handoff sustentável para o squad.',
   en: 'With teams, he reduces friction between product, design and engineering: he creates fast alignment, makes priorities explicit, protects scope and keeps handoff sustainable for the squad.',
   es: 'Con equipos, reduce friccion entre producto, diseno e ingenieria: organiza alineacion rapida, explicita prioridades, protege el alcance y deja un handoff sostenible para el squad.',
 };
 
 const labCopy: Record<Locale, string> = {
   'pt-BR':
-    'A camada de GitHub funciona como laboratorio tecnico: experimentos, estudos e projetos publicos entram como prova complementar de engenharia, nao apenas como feed.',
+    'A camada de GitHub funciona como laboratório técnico: experimentos, estudos e projetos públicos entram como prova complementar de engenharia, não apenas como feed.',
   en: 'The GitHub layer works as a technical lab: experiments, studies and public projects complement the curated cases instead of acting as a generic feed.',
   es: 'La capa de GitHub funciona como laboratorio tecnico: experimentos, estudios y proyectos publicos complementan los casos curados en lugar de ser un feed generico.',
 };
@@ -124,7 +124,7 @@ function latestGithubRepo(locale: Locale) {
     return `Un buen ejemplo es ${fallback.repo}, presentado como un portafolio multilingue con arquitectura escalable, motion e integracion dinamica de proyectos.`;
   }
 
-  return `Um bom exemplo e ${fallback.repo}, apresentado como um portfolio multilingue com arquitetura escalavel, motion e integracao dinamica de projetos.`;
+  return `Um bom exemplo é ${fallback.repo}, apresentado como um portfólio multilíngue com arquitetura escalável, motion e integração dinâmica de projetos.`;
 }
 
 export function getPortfolioAssistantReply(locale: Locale, question: string): AssistantAnswer {
@@ -156,10 +156,10 @@ export function getPortfolioAssistantReply(locale: Locale, question: string): As
 
     return {
       text: `${matchedProject.title} faz parte da frente de ${matchedProject.kind === 'development' ? 'desenvolvimento' : 'design'}. O case destaca ${matchedProject.summary} ${
-        matchedProject.role ? `O foco de atuacao ali foi ${matchedProject.role} ` : ''
-      }${matchedProject.decisionSummary ? `Uma decisao chave foi: ${matchedProject.decisionSummary} ` : ''}${
-        matchedProject.outcomes?.length ? `Entre os resultados estao ${matchedProject.outcomes.slice(0, 2).join(' e ')}. ` : ''
-      }As principais tecnologias/sinais ali sao ${matchedProject.stack.join(', ')}.`,
+        matchedProject.role ? `O foco de atuação ali foi ${matchedProject.role} ` : ''
+      }${matchedProject.decisionSummary ? `Uma decisão-chave foi: ${matchedProject.decisionSummary} ` : ''}${
+        matchedProject.outcomes?.length ? `Entre os resultados estão ${matchedProject.outcomes.slice(0, 2).join(' e ')}. ` : ''
+      }As principais tecnologias/sinais ali são ${matchedProject.stack.join(', ')}.`,
       related: ['Quais tradeoffs apareceram nesse projeto?', 'Como isso se conecta com produto?'],
     };
   }
@@ -182,7 +182,7 @@ export function getPortfolioAssistantReply(locale: Locale, question: string): As
     }
 
     return {
-      text: `O portfolio se concentra em ${topStacks}. Alem das ferramentas, os sinais mais fortes estao em arquitetura frontend, UI orientada a produto, integracoes com APIs e sistemas visuais.`,
+      text: `O portfólio se concentra em ${topStacks}. Além das ferramentas, os sinais mais fortes estão em arquitetura frontend, UI orientada a produto, integrações com APIs e sistemas visuais.`,
       related: ['Que tipo de projeto combina com esse stack?', 'Como ele une design e engenharia?'],
     };
   }
@@ -203,7 +203,7 @@ export function getPortfolioAssistantReply(locale: Locale, question: string): As
     }
 
     return {
-      text: `Voce pode falar com o Hercules pelo e-mail ${profile.email} ou no telefone/WhatsApp ${profile.phoneDisplay}. A pagina de contato tambem explica melhor o encaixe de projeto e formatos de colaboracao.`,
+      text: `Você pode falar com o Hercules pelo e-mail ${profile.email} ou no telefone/WhatsApp ${profile.phoneDisplay}. A página de contato também explica melhor o encaixe de projeto e os formatos de colaboração.`,
       related: ['Que tipos de projeto fazem mais sentido?', 'Como ele costuma trabalhar?'],
     };
   }
@@ -248,8 +248,8 @@ export function getPortfolioAssistantReply(locale: Locale, question: string): As
     }
 
     return {
-      text: 'O portfolio mostra integracoes e experiencias do tipo assistente como camadas de produto, e nao como buzzwords isoladas: assistencia local guiada por conteudo, fluxos conectados por API, automacao operacional e arquitetura pensada para observabilidade e retries.',
-      related: ['Qual projeto mostra melhor automacao?', 'Como ele transforma integracoes em valor de produto?'],
+      text: 'O portfólio mostra integrações e experiências do tipo assistente como camadas de produto, e não como buzzwords isoladas: assistência local guiada por conteúdo, fluxos conectados por API, automação operacional e arquitetura pensada para observabilidade e retries.',
+      related: ['Qual projeto mostra melhor automação?', 'Como ele transforma integrações em valor de produto?'],
     };
   }
 
@@ -269,8 +269,8 @@ export function getPortfolioAssistantReply(locale: Locale, question: string): As
     }
 
     return {
-      text: 'A camada de impacto foca em clareza operacional, retomada, autonomia do time e arquitetura pensada para evolucao. Os cases agora mostram metricas rapidas e pilares arquiteturais para que a entrega seja lida como impacto de produto, e nao so como implementacao.',
-      related: ['Qual case tem a prova de impacto mais forte?', 'Quais pilares de arquitetura aparecem com mais frequencia?'],
+      text: 'A camada de impacto foca em clareza operacional, retomada, autonomia do time e arquitetura pensada para evolução. Os cases agora mostram métricas rápidas e pilares arquiteturais para que a entrega seja lida como impacto de produto, e não só como implementação.',
+      related: ['Qual case tem a prova de impacto mais forte?', 'Quais pilares de arquitetura aparecem com mais frequência?'],
     };
   }
 
@@ -290,8 +290,8 @@ export function getPortfolioAssistantReply(locale: Locale, question: string): As
     }
 
     return {
-      text: `Sim. O posicionamento hibrido e intencional: ${capabilityCopy['pt-BR'].join(' ')}`,
-      related: ['Qual e a diferenca entre as frentes de design e desenvolvimento?', 'Como isso ajuda na entrega do produto?'],
+      text: `Sim. O posicionamento híbrido é intencional: ${capabilityCopy['pt-BR'].join(' ')}`,
+      related: ['Qual é a diferença entre as frentes de design e desenvolvimento?', 'Como isso ajuda na entrega do produto?'],
     };
   }
 
@@ -305,7 +305,7 @@ export function getPortfolioAssistantReply(locale: Locale, question: string): As
           ? ['Why are those repositories relevant?', 'Which repo best shows frontend architecture?']
           : locale === 'es'
             ? ['Por que esos repositorios son relevantes?', 'Que repo muestra mejor arquitectura frontend?']
-            : ['Por que esses repositorios sao relevantes?', 'Qual repo mostra melhor arquitetura frontend?'],
+            : ['Por que esses repositórios são relevantes?', 'Qual repo mostra melhor arquitetura frontend?'],
     };
   }
 
@@ -323,7 +323,7 @@ export function getPortfolioAssistantReply(locale: Locale, question: string): As
     }
 
     return {
-      text: `As capacidades mais fortes estao em arquitetura frontend, interfaces orientadas a produto, integracoes com APIs, design systems e direcao visual. O portfolio esta sendo estruturado para deixar essas provas mais explicitas.`,
+        text: `As capacidades mais fortes estão em arquitetura frontend, interfaces orientadas a produto, integrações com APIs, design systems e direção visual. O portfólio está sendo estruturado para deixar essas provas mais explícitas.`,
     };
   }
 
@@ -342,7 +342,7 @@ export function getPortfolioAssistantReply(locale: Locale, question: string): As
   }
 
   return {
-    text: 'Posso responder sobre stack, projetos por nome, processo, colaboracao com times, laboratorio GitHub, contato e como ele conecta design com engenharia. Tente perguntar por um projeto, capacidade ou cenario de time especifico.',
+    text: 'Posso responder sobre stack, projetos por nome, processo, colaboração com times, laboratório GitHub, contato e como ele conecta design com engenharia. Tente perguntar por um projeto, capacidade ou cenário de time específico.',
     related: ['Quais tecnologias ele usa?', 'Como ele costuma trabalhar?', 'Como ele atua com times?'],
   };
 }

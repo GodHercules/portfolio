@@ -23,12 +23,12 @@ export const profile = {
   } satisfies Record<Locale, string>,
   summary: {
     'pt-BR':
-      'Desenvolvedor Full Stack com mais de 3 anos de experiencia criando aplicacoes web modernas e escalaveis com Python, JavaScript, TypeScript, React, Node.js, NestJS, Next.js, SQL e TailwindCSS.',
+      'Desenvolvedor Full Stack com mais de 3 anos de experiência criando aplicações web modernas e escaláveis com Python, JavaScript, TypeScript, React, Node.js, NestJS, Next.js, SQL e TailwindCSS.',
     en: 'Full Stack Developer with 3+ years of experience building modern scalable web applications with Python, JavaScript, TypeScript, React, Node.js, NestJS, Next.js, SQL and TailwindCSS.',
     es: 'Desarrollador Full Stack con mas de 3 anos de experiencia creando aplicaciones web modernas y escalables con Python, JavaScript, TypeScript, React, Node.js, NestJS, Next.js, SQL y TailwindCSS.',
   } satisfies Record<Locale, string>,
   availability: {
-    'pt-BR': 'Disponivel para produtos digitais, sistemas internos, integracoes, automacoes e experiencias premium de interface.',
+    'pt-BR': 'Disponível para produtos digitais, sistemas internos, integrações, automações e experiências premium de interface.',
     en: 'Available for digital products, internal systems, automations, and premium interface experiences.',
     es: 'Disponible para productos digitales, sistemas internos, integraciones, automatizaciones y experiencias premium de interfaz.',
   } satisfies Record<Locale, string>,
@@ -38,7 +38,7 @@ export const profile = {
     es: ['React y Next.js', 'Node.js y NestJS', 'Python y SQL', 'Docker, Git, Jest y APIs REST'],
   } satisfies Record<Locale, string[]>,
   workModes: {
-    'pt-BR': ['Aplicacoes full stack', 'Squads Scrum/Kanban', 'Performance, escalabilidade e codigo limpo'],
+    'pt-BR': ['Aplicações full stack', 'Squads Scrum/Kanban', 'Performance, escalabilidade e código limpo'],
     en: ['Full stack applications', 'Scrum/Kanban squads', 'Performance, scalability and clean code'],
     es: ['Aplicaciones full stack', 'Squads Scrum/Kanban', 'Performance, escalabilidad y clean code'],
   } satisfies Record<Locale, string[]>,
@@ -52,7 +52,7 @@ export const profile = {
         es: 'Desarrollador de Software Full Stack',
       } satisfies Record<Locale, string>,
       summary: {
-        'pt-BR': 'Atuacao full stack em solucoes de negocio, conectando interface, regras, dados e entrega continua.',
+        'pt-BR': 'Atuação full stack em soluções de negócio, conectando interface, regras, dados e entrega contínua.',
         en: 'Full stack work on business solutions, connecting interface, rules, data and continuous delivery.',
         es: 'Trabajo full stack en soluciones de negocio, conectando interfaz, reglas, datos y entrega continua.',
       } satisfies Record<Locale, string>,
@@ -66,7 +66,7 @@ export const profile = {
         es: 'Desarrollador de Software Full Stack',
       } satisfies Record<Locale, string>,
       summary: {
-        'pt-BR': 'Desenvolvimento de aplicacoes full stack com foco em performance, escalabilidade e boas praticas.',
+        'pt-BR': 'Desenvolvimento de aplicações full stack com foco em performance, escalabilidade e boas práticas.',
         en: 'Development of full stack applications focused on performance, scalability and best practices.',
         es: 'Desarrollo de aplicaciones full stack con foco en performance, escalabilidad y buenas practicas.',
       } satisfies Record<Locale, string>,
@@ -75,12 +75,12 @@ export const profile = {
       company: 'NG7 Consultoria',
       period: 'Jun 2023 - Dez 2024',
       role: {
-        'pt-BR': 'Estagiario em Desenvolvimento de Software',
+        'pt-BR': 'Estagiário em Desenvolvimento de Software',
         en: 'Software Development Intern',
         es: 'Practicante en Desarrollo de Software',
       } satisfies Record<Locale, string>,
       summary: {
-        'pt-BR': 'Participacao em projetos reais, contribuindo na criacao de funcionalidades front-end e back-end.',
+        'pt-BR': 'Participação em projetos reais, contribuindo na criação de funcionalidades front-end e back-end.',
         en: 'Participation in real projects, contributing to front-end and back-end feature delivery.',
         es: 'Participacion en proyectos reales, contribuyendo a funcionalidades front-end y back-end.',
       } satisfies Record<Locale, string>,
@@ -99,7 +99,7 @@ export const profile = {
     {
       institution: 'SENAI Cimatec',
       course: {
-        'pt-BR': 'Tecnico em Desenvolvimento de Sistemas',
+        'pt-BR': 'Técnico em Desenvolvimento de Sistemas',
         en: 'Technical Degree in Systems Development',
         es: 'Tecnico en Desarrollo de Sistemas',
       } satisfies Record<Locale, string>,
@@ -112,7 +112,7 @@ export const profile = {
     backend: ['Node.js', 'NestJS', 'RESTful APIs'],
     database: ['PostgreSQL', 'MySQL', 'SQL'],
     tools: ['Git', 'GitHub', 'Docker', 'Postman', 'Jest'],
-    methods: ['Clean Code', 'SOLID', 'Scrum', 'Kanban', 'Ingles tecnico intermediario'],
+    methods: ['Clean Code', 'SOLID', 'Scrum', 'Kanban', 'Inglês técnico intermediário'],
   },
 };
 

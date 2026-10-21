@@ -28,14 +28,14 @@ const labels: Record<
   }
 > = {
   'pt-BR': {
-    cases: 'anos de experiencia',
-    categories: 'experiencias profissionais',
-    education: 'formacoes tecnicas',
+    cases: 'anos de experiência',
+    categories: 'experiências profissionais',
+    education: 'formações técnicas',
     stack: 'grupos de stack',
-    caseDetail: 'Atuacao em desenvolvimento full stack desde estagio ate posicao atual.',
+    caseDetail: 'Atuação em desenvolvimento full stack desde o estágio até a posição atual.',
     categoryDetail: 'MF Contabilidade e NG7 Consultoria com foco em software full stack.',
-    educationDetail: 'Engenharia de Software em andamento e tecnico em Desenvolvimento de Sistemas.',
-    stackDetail: 'Linguagens, front-end, back-end, bancos, ferramentas, DevOps, praticas e metodos.',
+    educationDetail: 'Engenharia de Software em andamento e técnico em Desenvolvimento de Sistemas.',
+    stackDetail: 'Linguagens, front-end, back-end, bancos, ferramentas, DevOps, práticas e métodos.',
   },
   en: {
     cases: 'years of experience',

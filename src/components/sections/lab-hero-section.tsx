@@ -23,11 +23,11 @@ const copy: Record<
 > = {
   'pt-BR': {
     badge: 'AI / Automation Lab',
-    title: 'Um laboratorio para provar IA aplicada, automacao e criterio tecnico.',
-    lead: 'Aqui eu testo assistentes guiados por conteudo, orquestracao de fluxo, benchmarks de stack e narrativas tecnicas que ajudam o portfolio a vender senioridade de verdade.',
+    title: 'Um laboratório para provar IA aplicada, automação e critério técnico.',
+    lead: 'Aqui eu testo assistentes guiados por conteúdo, orquestração de fluxo, benchmarks de stack e narrativas técnicas que ajudam o portfólio a vender senioridade de verdade.',
     summary:
-      'A ideia e simples: transformar experimentos em sinal de produto, conectar demos a cases reais e deixar claro como eu penso, desenho e entrego com times.',
-    chips: ['Conteudo estruturado', 'Automacao confiavel', 'Diagramas leves', 'Links reais'],
+      'A ideia é simples: transformar experimentos em sinal de produto, conectar demos a cases reais e deixar claro como eu penso, desenho e entrego com times.',
+    chips: ['Conteúdo estruturado', 'Automação confiável', 'Diagramas leves', 'Links reais'],
     primary: 'Ver demos',
     secondary: 'Como eu atuo com times',
   },
@@ -77,7 +77,7 @@ export function LabHeroSection({ locale }: LabHeroSectionProps) {
         </div>
 
         <div className="glass rounded-[2rem] border border-border/70 p-6 sm:p-8">
-          <p className="text-xs uppercase tracking-[0.24em] text-fg/50">Lab signals</p>
+<p className="text-xs uppercase tracking-[0.24em] text-fg/50">{locale === 'pt-BR' ? 'Sinais do laboratório' : 'Lab signals'}</p>
           <div className="mt-5 grid gap-3 sm:grid-cols-2">
             {section.chips.map((chip) => (
               <div key={chip} className="rounded-2xl border border-border/70 bg-muted/70 px-4 py-3 text-sm text-fg/80">
@@ -86,13 +86,13 @@ export function LabHeroSection({ locale }: LabHeroSectionProps) {
             ))}
           </div>
           <div className="mt-6 rounded-3xl border border-border/70 bg-muted/50 p-5">
-            <p className="text-xs uppercase tracking-[0.18em] text-accent">Outcome</p>
+<p className="text-xs uppercase tracking-[0.18em] text-accent">{locale === 'pt-BR' ? 'Resultado' : 'Outcome'}</p>
             <p className="mt-3 text-sm leading-relaxed text-fg/75">
               {locale === 'en'
                 ? 'The lab turns prototypes into proof, so conversations about AI, automation and architecture feel grounded in real portfolio evidence.'
                 : locale === 'es'
                   ? 'El laboratorio convierte prototipos en prueba, para que las conversaciones sobre IA, automatizacion y arquitectura esten ancladas en evidencia real del portafolio.'
-                  : 'O laboratorio transforma prototipos em prova, para que conversas sobre IA, automacao e arquitetura fiquem ancoradas em evidencia real do portfolio.'}
+                  : 'O laboratório transforma protótipos em prova, para que conversas sobre IA, automação e arquitetura fiquem ancoradas em evidência real do portfólio.'}
             </p>
           </div>
         </div>

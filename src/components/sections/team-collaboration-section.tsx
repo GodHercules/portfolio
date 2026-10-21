@@ -28,35 +28,35 @@ const copy: Record<
   'pt-BR': {
     title: 'Como eu atuo com times',
     lead:
-      'Eu entro para dar tracao onde produto, design e engenharia precisam virar uma mesma direcao. O objetivo e dar clareza de decisao, manter ritmo de entrega e deixar o handoff simples de sustentar.',
-    badge: 'Colaboracao e senioridade',
+      'Eu entro para dar tração onde produto, design e engenharia precisam virar uma mesma direção. O objetivo é dar clareza de decisão, manter ritmo de entrega e deixar o handoff simples de sustentar.',
+    badge: 'Colaboração e senioridade',
     cards: [
       {
-        title: 'Alinhamento rapido',
+        title: 'Alinhamento rápido',
         summary:
-          'Eu transformo contexto difuso em prioridade, escopo e proximos passos para que o time avance sem retrabalho desnecessario.',
+          'Eu transformo contexto difuso em prioridade, escopo e próximos passos para que o time avance sem retrabalho desnecessário.',
         icon: MessageSquareMore,
       },
       {
-        title: 'Execucao coordenada',
+        title: 'Execução coordenada',
         summary:
-          'Eu organizo a entrega em blocos claros, com decisao de arquitetura, revisao visual e handoff previsivel entre areas.',
+          'Eu organizo a entrega em blocos claros, com decisão de arquitetura, revisão visual e handoff previsível entre áreas.',
         icon: Route,
       },
       {
-        title: 'Iteracao com criterio',
+        title: 'Iteração com critério',
         summary:
-          'Eu reforco feedback curto, validacao continua e criterio de qualidade para o produto evoluir sem perder consistencia.',
+          'Eu reforço feedback curto, validação contínua e critério de qualidade para o produto evoluir sem perder consistência.',
         icon: KanbanSquare,
       },
       {
         title: 'Parceria com o time',
         summary:
-          'Eu atuo como ponte entre negocio, produto e engenharia, preservando autonomia do squad e foco no resultado final.',
+          'Eu atuo como ponte entre negócio, produto e engenharia, preservando autonomia do squad e foco no resultado final.',
         icon: Handshake,
       },
     ],
-    closing: 'Formatos de atuacao que eu costumo sustentar: ' + profile.workModes['pt-BR'].join(' / '),
+    closing: 'Formatos de atuação que eu costumo sustentar: ' + profile.workModes['pt-BR'].join(' / '),
   },
   en: {
     title: 'How I work with teams',

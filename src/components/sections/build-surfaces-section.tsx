@@ -28,31 +28,31 @@ const content: Record<
 > = {
   'pt-BR': {
     title: 'Produtos que eu posso liderar do zero a entrega',
-    lead: 'Nao apenas interfaces bonitas. Aqui estao os tipos de sistema e entrega que eu consigo sustentar com arquitetura, integracao, dados, repertorio tecnico e leitura de produto.',
+    lead: 'Não apenas interfaces bonitas. Aqui estão os tipos de sistema e entrega que eu consigo sustentar com arquitetura, integração, dados, repertório técnico e leitura de produto.',
     evidenceLabel: 'Projetos de prova',
     cards: [
       {
         title: 'Plataformas e produtos operacionais',
-        summary: 'Produtos com dados, estados criticos, leitura analitica e evolucao modular.',
-        bullets: ['Arquitetura frontend', 'Leitura de fluxos', 'Governanca visual'],
+        summary: 'Produtos com dados, estados críticos, leitura analítica e evolução modular.',
+        bullets: ['Arquitetura frontend', 'Leitura de fluxos', 'Governança visual'],
         projectSlugs: ['atlas-platform'],
       },
       {
-        title: 'Automacao e confiabilidade operacional',
-        summary: 'Rotinas criticas transformadas em pipelines mais previsiveis, observaveis e reprocessaveis.',
-        bullets: ['Filas e retries', 'Observabilidade', 'Integracoes'],
+        title: 'Automação e confiabilidade operacional',
+        summary: 'Rotinas críticas transformadas em pipelines mais previsíveis, observáveis e reprocessáveis.',
+        bullets: ['Filas e retries', 'Observabilidade', 'Integrações'],
         projectSlugs: ['flow-ops-automation'],
       },
       {
         title: 'Sistemas internos e bases de conhecimento',
-        summary: 'Experiencias internas com contexto, busca, governanca e autonomia real para o time.',
-        bullets: ['Arquitetura da informacao', 'Search UX', 'Permissoes e contexto'],
+        summary: 'Experiências internas com contexto, busca, governança e autonomia real para o time.',
+        bullets: ['Arquitetura da informação', 'Search UX', 'Permissões e contexto'],
         projectSlugs: ['inside-hub'],
       },
       {
-        title: 'Pesquisa tecnica e experimentacao aplicada',
-        summary: 'Estudos que reduzem risco, validam stack e transformam benchmark em criterio de decisao.',
-        bullets: ['Performance', 'DX', 'Benchmarks reutilizaveis'],
+        title: 'Pesquisa técnica e experimentação aplicada',
+        summary: 'Estudos que reduzem risco, validam stack e transformam benchmark em critério de decisão.',
+        bullets: ['Performance', 'DX', 'Benchmarks reutilizáveis'],
         projectSlugs: ['dev-lab-studies'],
       },
     ],

@@ -25,13 +25,13 @@ export async function generateMetadata({ params }: LabPageProps) {
   }
 
   const titleByLocale: Record<Locale, string> = {
-    'pt-BR': 'AI / Automation Lab | Hercules de Oliveira',
+    'pt-BR': 'Laboratório de IA / Automação | Hercules de Oliveira',
     en: 'AI / Automation Lab | Hercules de Oliveira',
     es: 'AI / Automation Lab | Hercules de Oliveira',
   };
 
   const descriptionByLocale: Record<Locale, string> = {
-    'pt-BR': 'Laboratorio de IA, automacao e arquitetura para mostrar demos, diagramas leves e links para fluxos reais.',
+    'pt-BR': 'Laboratório de IA, automação e arquitetura para mostrar demos, diagramas leves e links para fluxos reais.',
     en: 'AI, automation and architecture lab to show demos, light diagrams and links to real flows.',
     es: 'Laboratorio de IA, automatizacion y arquitectura para mostrar demos, diagramas ligeros y links a flujos reales.',
   };

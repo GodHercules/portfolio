@@ -24,13 +24,13 @@ const copy: Record<
   }
 > = {
   'pt-BR': {
-    eyebrow: 'Baseado no curriculo',
-    title: 'Trajetoria full stack',
+eyebrow: 'Baseado no currículo',
+title: 'Trajetória full stack',
     lead:
-      'Uma leitura direta da experiencia profissional, formacao e stack para deixar claro que o portfolio representa um perfil de engenharia, produto e entrega real.',
-    experience: 'Experiencia profissional',
-    education: 'Formacao',
-    stack: 'Stack e praticas',
+'Uma leitura direta da experiência profissional, formação e stack para deixar claro que o portfólio representa um perfil de engenharia, produto e entrega real.',
+experience: 'Experiência profissional',
+education: 'Formação',
+    stack: 'Stack e práticas',
     location: 'Base',
     experienceLabel: '+3 anos full stack',
     skillGroups: {
@@ -39,7 +39,7 @@ const copy: Record<
       backend: 'Back-end',
       database: 'Banco de dados',
       tools: 'Ferramentas e DevOps',
-      methods: 'Praticas e metodos',
+methods: 'Práticas e métodos',
     },
   },
   en: {

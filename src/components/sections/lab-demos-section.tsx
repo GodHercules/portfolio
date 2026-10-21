@@ -23,7 +23,7 @@ const copy: Record<
 > = {
   'pt-BR': {
     title: 'Demos conceituais com diagramas leves',
-    lead: 'Cada demo mostra o fluxo principal da solucao, o tipo de prova que ela gera e os casos reais que sustentam a narrativa do laboratorio.',
+    lead: 'Cada demo mostra o fluxo principal da solução, o tipo de prova que ela gera e os casos reais que sustentam a narrativa do laboratório.',
     flowLabel: 'Fluxo da demo',
     linksLabel: 'Fluxos reais',
   },
@@ -76,7 +76,7 @@ export function LabDemosSection({ locale, demos }: LabDemosSectionProps) {
                   <p className="mt-4 text-xs uppercase tracking-[0.18em] text-fg/45">{section.flowLabel}</p>
                   <FlowDiagram steps={demo.diagram[locale]} />
                   <div className="mt-5 rounded-2xl border border-border/70 bg-muted/50 p-4">
-                    <p className="text-xs uppercase tracking-[0.18em] text-accent">Outcome</p>
+                  <p className="text-xs uppercase tracking-[0.18em] text-accent">{locale === 'pt-BR' ? 'Resultado' : 'Outcome'}</p>
                     <p className="mt-3 text-sm leading-relaxed text-fg/75">{demo.outcome[locale]}</p>
                   </div>
                   <ul className="mt-5 flex flex-wrap gap-2">

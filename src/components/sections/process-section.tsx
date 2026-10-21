@@ -22,27 +22,27 @@ const content: Record<
 > = {
   'pt-BR': {
     title: 'Como eu trabalho',
-    lead: 'Meu ponto forte \u00e9 conectar estrat\u00e9gia, arquitetura e execu\u00e7\u00e3o visual numa mesma linha de racioc\u00ednio.',
+    lead: 'Meu ponto forte é conectar estratégia, arquitetura e execução visual numa mesma linha de raciocínio.',
     steps: [
       {
         label: '01',
         title: 'Leitura do problema',
-        summary: 'Eu entendo contexto, restri\u00e7\u00f5es, prioridade e o que realmente precisa gerar valor antes de abrir solu\u00e7\u00e3o.',
+        summary: 'Eu entendo contexto, restrições, prioridade e o que realmente precisa gerar valor antes de abrir solução.',
       },
       {
         label: '02',
-        title: 'Estrutura e decis\u00e3o',
-        summary: 'Eu defino arquitetura, fluxos, escopo e tradeoffs para manter clareza t\u00e9cnica e velocidade.',
+        title: 'Estrutura e decisão',
+        summary: 'Eu defino arquitetura, fluxos, escopo e trade-offs para manter clareza técnica e velocidade.',
       },
       {
         label: '03',
         title: 'Interface e entrega',
-        summary: 'Eu transformo a decis\u00e3o em produto naveg\u00e1vel, consistente e visualmente forte sem perder manuten\u00e7\u00e3o.',
+        summary: 'Eu transformo a decisão em produto navegável, consistente e visualmente forte sem perder manutenção.',
       },
       {
         label: '04',
-        title: 'Valida\u00e7\u00e3o e evolu\u00e7\u00e3o',
-        summary: 'Eu fecho com refinamento, qualidade e pr\u00f3ximos passos para o produto continuar crescendo com crit\u00e9rio.',
+        title: 'Validação e evolução',
+        summary: 'Eu fecho com refinamento, qualidade e próximos passos para o produto continuar crescendo com critério.',
       },
     ],
   },

@@ -25,30 +25,30 @@ const content: Record<
 > = {
   'pt-BR': {
     title: 'Onde eu gero valor',
-    lead: 'Uma leitura rapida de como eu transformo problema de negocio em arquitetura, interface, integracao e entrega com criterio tecnico.',
+    lead: 'Uma leitura rápida de como eu transformo problema de negócio em arquitetura, interface, integração e entrega com critério técnico.',
     cards: [
       {
-        title: 'Arquitetura fullstack',
-        summary: 'Estruturo front-end, back-end, APIs e banco de dados para aplicacoes web modernas e escalaveis.',
+        title: 'Arquitetura full stack',
+        summary: 'Estruturo front-end, back-end, APIs e banco de dados para aplicações web modernas e escaláveis.',
         bullets: ['React e Next.js', 'Node.js e NestJS', 'PostgreSQL, MySQL e SQL'],
         icon: Layers3,
       },
       {
         title: 'Frontend premium',
-        summary: 'Transformo regra de negocio em interface clara, rapida, responsiva e visualmente forte.',
+        summary: 'Transformo regra de negócio em interface clara, rápida, responsiva e visualmente forte.',
         bullets: ['TypeScript e TailwindCSS', 'HTML5 e CSS3', 'Performance e responsividade'],
         icon: Sparkles,
       },
       {
-        title: 'Automacao e integracoes',
+        title: 'Automação e integrações',
         summary: 'Conecto sistemas, APIs REST e rotinas operacionais para reduzir trabalho manual e aumentar previsibilidade.',
         bullets: ['Python e JavaScript', 'Docker e Postman', 'Git e GitHub'],
         icon: Cpu,
       },
       {
-        title: 'Produto e decisao',
-        summary: 'Atuo com boas praticas para manter entrega sustentavel em times Scrum/Kanban.',
-        bullets: ['Clean Code e SOLID', 'Testes unitarios com Jest', 'Scrum e Kanban'],
+        title: 'Produto e decisão',
+        summary: 'Atuo com boas práticas para manter entrega sustentável em times Scrum/Kanban.',
+        bullets: ['Clean Code e SOLID', 'Testes unitários com Jest', 'Scrum e Kanban'],
         icon: Gauge,
       },
     ],

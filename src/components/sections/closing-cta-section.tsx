@@ -21,8 +21,8 @@ const content: Record<
   'pt-BR': {
   title: 'Transformo desafios complexos em produto, arquitetura e entrega.',
     summary:
-      'Me chame com contexto, objetivo e prazo. Eu organizo o melhor caminho entre produto, backend, frontend, integracoes e interface para chegar numa entrega clara e vendavel.',
-    bullets: ['Produtos digitais e SaaS', 'Sistemas internos e automacoes', 'Entrega com visao fullstack, produto e design'],
+      'Me chame com contexto, objetivo e prazo. Eu organizo o melhor caminho entre produto, back-end, front-end, integrações e interface para chegar a uma entrega clara e vendável.',
+    bullets: ['Produtos digitais e SaaS', 'Sistemas internos e automações', 'Entrega com visão full stack, produto e design'],
     primary: 'Tenho um desafio de produto',
     secondary: 'Ver cases fullstack',
   },
@@ -54,7 +54,7 @@ export function ClosingCtaSection({ locale }: ClosingCtaSectionProps) {
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] lg:items-end">
             <div>
               <p className="hidden">
-                {locale === 'pt-BR' ? 'Pr\u00f3ximo passo' : locale === 'es' ? 'Siguiente paso' : 'Next step'}
+                {locale === 'pt-BR' ? 'Próximo passo' : locale === 'es' ? 'Siguiente paso' : 'Next step'}
               </p>
               <h2 className="mt-4 max-w-3xl font-display text-3xl leading-tight tracking-tight sm:text-4xl">
                 {section.title}
