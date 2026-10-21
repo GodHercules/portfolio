@@ -132,7 +132,7 @@ export function TeamCollaborationSection({ locale }: TeamCollaborationSectionPro
   return (
     <Section className="pt-8">
       <div className="content-grid">
-        <p className="text-xs uppercase tracking-[0.22em] text-accent">{section.badge}</p>
+
         <SectionTitle>{section.title}</SectionTitle>
         <SectionLead>{section.lead}</SectionLead>
 
@@ -142,8 +142,8 @@ export function TeamCollaborationSection({ locale }: TeamCollaborationSectionPro
 
             return (
               <Reveal key={card.title} delay={index * 0.05}>
-                <article className="glass h-full rounded-3xl border border-border/70 p-6">
-                  <div className="inline-flex rounded-2xl bg-accent/10 p-3 text-accent">
+                <article className="glass h-full rounded-3xl bg-card/60 p-6">
+                  <div className="inline-flex text-accent">
                     <Icon size={18} />
                   </div>
                   <h3 className="mt-5 font-display text-2xl leading-tight tracking-tight">{card.title}</h3>
@@ -154,8 +154,8 @@ export function TeamCollaborationSection({ locale }: TeamCollaborationSectionPro
           })}
         </div>
 
-        <div className="mt-8 glass rounded-3xl border border-border/70 p-6">
-          <p className="text-sm leading-relaxed text-fg/75">{section.closing}</p>
+        <div className="mt-8 bg-accent px-6 py-5 text-white">
+          <p className="text-base leading-relaxed text-white/90">{section.closing}</p>
         </div>
       </div>
     </Section>

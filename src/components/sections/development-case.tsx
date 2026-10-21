@@ -166,7 +166,7 @@ export function DevelopmentCase({ project, locale, dictionary }: DevelopmentCase
         </p>
 
         <div className="relative mt-8 aspect-[16/8] overflow-hidden rounded-3xl border border-border bg-muted">
-          <Image src={project.cover} alt={project.title[locale]} fill className="object-cover" sizes="100vw" />
+          <Image src={project.cover} alt={project.title[locale]} fill loading="lazy" className="object-cover" sizes="100vw" />
         </div>
 
         <div className="mt-8 grid gap-5 lg:grid-cols-3">
@@ -249,7 +249,7 @@ export function DevelopmentCase({ project, locale, dictionary }: DevelopmentCase
         </div>
 
         <div className="mt-6 rounded-[2rem] border border-border/70 bg-muted/30 p-5 sm:p-6">
-          <div className="grid gap-4 lg:grid-cols-[1.15fr_auto_1fr] lg:items-stretch">
+          <div className="grid gap-4 lg:grid-cols-[minmax(0,1.15fr)_auto_minmax(0,1fr)] lg:items-stretch">
             <article className="glass rounded-3xl border border-border/70 p-5">
               <p className="text-xs uppercase tracking-[0.18em] text-fg/45">{dictionary.projectPage.context}</p>
               <p className="mt-3 text-sm leading-relaxed text-fg/75">{project.body.context[locale]}</p>
@@ -278,7 +278,7 @@ export function DevelopmentCase({ project, locale, dictionary }: DevelopmentCase
           </div>
         </div>
 
-        <div className="mt-8 grid gap-5 xl:grid-cols-[0.9fr_1.1fr]">
+        <div className="mt-8 grid gap-5 xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
           <article className="glass rounded-3xl border border-border/70 p-6">
             <h3 className="font-display text-2xl leading-tight tracking-tight">Impacto e sinais</h3>
             <p className="mt-3 text-sm leading-relaxed text-fg/75">

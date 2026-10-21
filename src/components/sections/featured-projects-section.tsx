@@ -59,14 +59,14 @@ export function FeaturedProjectsSection({
       <div className="content-grid">
         <div className="grid gap-5 border-b border-border pb-7 md:grid-cols-[1fr_auto] md:items-end">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-accent">Selected work</p>
-            <SectionTitle>{dictionary.home.featuredTitle}</SectionTitle>
+
+            <SectionTitle className="sm:text-2xl lg:text-4xl">{dictionary.home.featuredTitle}</SectionTitle>
           </div>
           <SectionLead>{dictionary.home.featuredDescription}</SectionLead>
         </div>
 
         <div className="mt-8 grid gap-x-6 gap-y-10 md:grid-cols-2">
-          {featured.map((project, index) => (
+          {featured.map((project) => (
             <ProjectCard
               key={project.href}
               href={project.href}
@@ -77,7 +77,6 @@ export function FeaturedProjectsSection({
               stacks={project.stack}
               tag={project.tag}
               proofItems={project.proofItems}
-              index={index + 1}
             />
           ))}
         </div>

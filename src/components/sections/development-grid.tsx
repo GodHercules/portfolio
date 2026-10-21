@@ -50,7 +50,7 @@ export function DevelopmentGrid({ locale, dictionary, projects, githubProjects =
 
   return (
     <div className="content-grid section-spacing">
-      <SectionTitle>{dictionary.nav.development}</SectionTitle>
+      <SectionTitle as="h1">{dictionary.nav.development}</SectionTitle>
       <SectionLead>{dictionary.home.devDescription}</SectionLead>
 
       {projects.length > 0 ? (

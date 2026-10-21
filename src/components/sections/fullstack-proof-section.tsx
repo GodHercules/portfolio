@@ -29,7 +29,7 @@ const content: Record<
 > = {
   'pt-BR': {
     eyebrow: 'Prova fullstack',
-    title: 'Front, back, dados e entrega no mesmo raciocinio',
+    title: 'Front, back, dados e entrega',
     lead:
       'A base do curriculo mostra atuacao full stack real: front-end, back-end, SQL, APIs REST, testes, Docker e metodologias ageis aplicados em projetos profissionais e autorais.',
     cards: [
@@ -67,7 +67,7 @@ const content: Record<
   },
   en: {
     eyebrow: 'Fullstack proof',
-    title: 'Back, front, data and product in the same reasoning',
+    title: 'Front, back, data and delivery',
     lead:
       'This repository is a localized frontend, but the cases make the complete system thinking explicit: data contracts, integrations, reliability, permissions, cache and final experience.',
     cards: [
@@ -105,7 +105,7 @@ const content: Record<
   },
   es: {
     eyebrow: 'Prueba fullstack',
-    title: 'Back, front, datos y producto en el mismo razonamiento',
+    title: 'Front, back, datos y entrega',
     lead:
       'Este repositorio es un frontend localizado, pero los casos explicitan pensamiento de sistema completo: contratos de datos, integraciones, confiabilidad, permisos, cache y experiencia final.',
     cards: [
@@ -149,7 +149,7 @@ export function FullstackProofSection({ locale }: FullstackProofSectionProps) {
   return (
     <Section className="pt-8">
       <div className="content-grid">
-        <p className="text-xs uppercase tracking-[0.22em] text-accent">{section.eyebrow}</p>
+
         <SectionTitle>{section.title}</SectionTitle>
         <SectionLead>{section.lead}</SectionLead>
 
@@ -160,13 +160,13 @@ export function FullstackProofSection({ locale }: FullstackProofSectionProps) {
 
             return (
               <Reveal key={card.title} delay={index * 0.06}>
-                <Link href={href} className="glass block h-full rounded-3xl border border-border/70 p-6 transition hover:-translate-y-0.5 hover:border-accent/50">
-                  <div className="inline-flex rounded-2xl bg-accent/10 p-3 text-accent">
+                <Link href={href} className="glass block h-full rounded-3xl bg-card/60 p-6 transition hover:-translate-y-0.5 hover:bg-muted">
+                  <div className="inline-flex text-accent">
                     <Icon size={18} />
                   </div>
                   <h3 className="mt-5 font-display text-2xl leading-tight tracking-tight">{card.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-fg/75">{card.summary}</p>
-                  <p className="mt-5 rounded-2xl border border-border/70 bg-muted/70 p-4 text-sm leading-relaxed text-fg/70">
+                  <p className="mt-5 bg-muted/70 p-4 text-base leading-relaxed text-fg/75">
                     {card.evidence}
                   </p>
                 </Link>

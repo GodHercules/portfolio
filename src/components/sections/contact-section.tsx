@@ -65,10 +65,10 @@ export function ContactSection({ locale, dictionary }: ContactSectionProps) {
   return (
     <Section>
       <div className="content-grid">
-        <SectionTitle>{dictionary.contact.title}</SectionTitle>
+        <SectionTitle as="h1">{dictionary.contact.title}</SectionTitle>
         <SectionLead>{dictionary.contact.subtitle}</SectionLead>
 
-        <div className="mt-8 grid gap-5 lg:grid-cols-[1.3fr_1fr]">
+        <div className="mt-8 grid gap-5 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
           <article className="glass rounded-3xl p-6 sm:p-8">
             <p className="text-xs uppercase tracking-[0.18em] text-fg/45">{conversion.title}</p>
             <p className="mt-4 max-w-2xl font-display text-2xl leading-tight tracking-tight text-fg sm:text-3xl">{conversion.lead}</p>

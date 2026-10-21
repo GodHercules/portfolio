@@ -23,6 +23,7 @@ type BotCopy = {
   placeholder: string;
   send: string;
   open: string;
+  close: string;
   suggestions: string[];
   greeting: string;
   fallback: string;
@@ -36,6 +37,7 @@ const copy: Record<Locale, BotCopy> = {
     placeholder: 'Ex: como ele atua com times?',
     send: 'Enviar',
     open: 'Abrir chat',
+  close: 'Fechar chat',
     suggestions: ['Como ele atua com times?', 'Como ele costuma trabalhar?', 'Como ele usa integracoes?', 'Fale sobre Atlas Platform'],
     greeting:
       'Ola. Este assistente local consulta os dados do portfolio para responder sobre stack, projetos, processo, colaboracao com times, integracoes, GitHub e contato.',
@@ -48,6 +50,7 @@ const copy: Record<Locale, BotCopy> = {
     placeholder: 'Ex: how does he work with teams?',
     send: 'Send',
     open: 'Open chat',
+  close: 'Close chat',
     suggestions: ['How does he work with teams?', 'How does he usually work?', 'How does he use AI and integrations?', 'Tell me about Atlas Platform'],
     greeting: 'Hello. This assistant reads portfolio data to answer about stack, projects, process, team collaboration, integrations, applied AI, GitHub lab and contact.',
     fallback: 'Good question. I can explain technologies, projects, process, team collaboration, integrations, applied AI, GitHub lab and contact options.',
@@ -59,6 +62,7 @@ const copy: Record<Locale, BotCopy> = {
     placeholder: 'Ej: como trabaja con equipos?',
     send: 'Enviar',
     open: 'Abrir chat',
+  close: 'Cerrar chat',
     suggestions: ['Como trabaja con equipos?', 'Como suele trabajar?', 'Como usa IA e integraciones?', 'Cuentame sobre Atlas Platform'],
     greeting: 'Hola. Este asistente consulta los datos del portafolio para responder sobre stack, proyectos, proceso, colaboracion con equipos, integraciones, IA aplicada, GitHub y contacto.',
     fallback: 'Buena pregunta. Puedo detallar tecnologias, proyectos, proceso, colaboracion con equipos, integraciones, IA aplicada, laboratorio GitHub y contacto.',
@@ -100,7 +104,7 @@ export function ChatbotWidget({ locale }: ChatbotProps) {
         aria-expanded={open}
         aria-controls="portfolio-assistant-panel"
         className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-fg text-bg shadow-soft transition hover:scale-[1.03]"
-        aria-label={t.open}
+aria-label={open ? t.close : t.open}
       >
         {open ? <X size={18} /> : <MessageCircle size={18} />}
       </button>
@@ -119,7 +123,7 @@ export function ChatbotWidget({ locale }: ChatbotProps) {
           <p className="mt-1 text-xs text-fg/65">{t.subtitle}</p>
         </div>
 
-        <div className="max-h-[320px] space-y-3 overflow-y-auto p-4">
+        <div className="max-h-[320px] space-y-3 overflow-y-auto p-4" role="log" aria-live="polite" aria-relevant="additions">
           {messages.map((message) => (
             <div
               key={message.id}
@@ -160,6 +164,8 @@ export function ChatbotWidget({ locale }: ChatbotProps) {
             </label>
             <input
               id="portfolio-assistant-input"
+              name="portfolio-assistant-input"
+              autoComplete="off"
               value={input}
               onChange={(event) => setInput(event.target.value)}
               placeholder={t.placeholder}

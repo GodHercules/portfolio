@@ -40,34 +40,30 @@ export function HeroSection({ locale, dictionary }: HeroSectionProps) {
     <section className="relative overflow-hidden pb-10 pt-4 sm:pb-16 sm:pt-8">
       <div className="content-grid">
         <Reveal className="overflow-hidden border-y border-border">
-          <div className="flex items-center justify-between gap-4 text-xs font-semibold uppercase tracking-[0.14em] text-fg/60">
-            <p className="p-5 sm:p-6">{dictionary.home.badge}</p>
-            <p className="p-5 text-accent sm:p-6">{dictionary.home.availabilityLabel}</p>
-          </div>
-          <div className="grid lg:grid-cols-[minmax(0,1.45fr)_minmax(20rem,0.55fr)]">
-            <div className="flex flex-col justify-between px-5 pb-8 pt-8 sm:px-8 sm:pb-10 sm:pt-12 lg:min-h-[39rem]">
-              <h1 className="font-display text-[clamp(3.7rem,16vw,5.5rem)] font-semibold leading-[0.7] tracking-[-0.08em] text-accent lg:text-[clamp(5.1rem,11.5vw,11.5rem)]">
+          <div className="grid xl:grid-cols-[minmax(0,1.45fr)_minmax(24rem,0.55fr)]">
+            <div className="flex flex-col justify-between px-5 pb-8 pt-8 sm:px-8 sm:pb-10 sm:pt-12 xl:min-h-[39rem]">
+              <h1 className="font-display text-[clamp(3rem,14vw,5.5rem)] font-semibold leading-[0.82] tracking-[-0.04em] text-accent xl:text-[clamp(5.1rem,11.5vw,11.5rem)]">
                 HERCULES
               </h1>
-              <div className="mt-2 flex items-end gap-4 sm:gap-7">
-                <p className="font-display text-[clamp(2.7rem,6.4vw,6.7rem)] font-semibold leading-[0.76] tracking-[-0.06em]">DE OLIVEIRA</p>
+              <div className="mt-3 flex items-end gap-4 sm:gap-7">
+                <p className="font-display text-[clamp(2.5rem,6.2vw,6.7rem)] font-semibold leading-[0.86] tracking-[-0.04em]">DE OLIVEIRA</p>
               </div>
               <div className="mt-10 grid gap-5 border-t border-border pt-5 sm:grid-cols-[1fr_auto] sm:items-end">
                 <div>
-                  <p className="max-w-xl font-display text-2xl leading-[1.08] sm:text-3xl">{dictionary.home.headline}</p>
-                  <p className="mt-4 max-w-xl text-sm leading-relaxed text-fg/70 sm:text-base">{dictionary.home.subtitle}</p>
+                  <p className="max-w-xl font-display text-xl leading-[1.12] sm:text-2xl lg:text-3xl">{dictionary.home.headline}</p>
+                  <p className="mt-4 max-w-xl text-base leading-relaxed text-fg/75">{dictionary.home.subtitle}</p>
                 </div>
                 <ButtonLink href={`/${locale}/contact`} className="w-fit bg-accent text-white hover:bg-accent/85">
                   {dictionary.home.ctaPrimary}
                 </ButtonLink>
               </div>
             </div>
-            <div className="relative min-h-[28rem] bg-muted lg:min-h-0">
+            <div className="relative min-h-[28rem] bg-muted xl:min-h-0">
               <Image
                 src="/assets/profile/hercules-profile.png"
                 alt={profile.name}
                 fill
-                loading="eager"
+                priority
                 sizes="(max-width: 1024px) 100vw, 34vw"
                 className="object-cover object-[50%_12%] saturate-100 transition duration-700 ease-out hover:scale-[1.04] hover:saturate-[1.2] hover:contrast-110"
               />
@@ -81,7 +77,7 @@ export function HeroSection({ locale, dictionary }: HeroSectionProps) {
 
         <Reveal delay={0.08} className="grid gap-8 border-b border-border bg-bg px-6 py-8 text-fg sm:grid-cols-[0.8fr_1.2fr] sm:px-10 sm:py-10">
           <div>
-            <p className="font-display text-3xl leading-none sm:text-5xl">{dictionary.home.heroCardTitle}</p>
+            <p className="font-display text-2xl leading-tight sm:text-2xl lg:text-5xl">{dictionary.home.heroCardTitle}</p>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-fg/70 sm:text-base">{profile.summary[locale]}</p>
             <ButtonLink href="https://github.com/GodHercules" variant="ghost" external className="mt-7 border border-fg text-fg hover:bg-fg hover:text-bg">
               {dictionary.home.ctaTertiary}

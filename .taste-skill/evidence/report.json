@@ -1,0 +1,83 @@
+{
+  "contract": "Fluid editorial portfolio: the frame must use the available viewport width at 320, 390, 768, 1024, 1440, and 1920 CSS pixels; text remains readable through local measures, media can reach the far edge, and no horizontal overflow or clipped interactive content is allowed. Direction: name-as-monument. Scope: localized homepage and shared layout components.",
+  "targetViewports": [
+    "320x844",
+    "390x844",
+    "768x900",
+    "1024x900",
+    "1440x900",
+    "1920x1000"
+  ],
+  "accessibility": {
+    "status": "pass",
+    "evidence": "Playwright snapshots exposed landmark structure, one h1, localized navigation, skip link, visible theme/menu/chat labels, aria-current, readable controls, and no console errors."
+  },
+  "responsive": {
+    "status": "pass",
+    "evidence": "Rendered QA covered six viewport classes; the 1024px hero switches to a single full-width composition, the 768px header uses the mobile menu, headings remain visible, and measured horizontal overflow is false at every target."
+  },
+  "contentStates": {
+    "loading": {
+      "status": "not-applicable",
+      "reason": "The audited homepage has no user-facing loading state in the reviewed route."
+    },
+    "empty": {
+      "status": "not-applicable",
+      "reason": "The audited homepage renders curated portfolio content and has no empty state in the reviewed route."
+    },
+    "error": {
+      "status": "not-applicable",
+      "reason": "No error state is exposed by the reviewed homepage render."
+    },
+    "partial": {
+      "status": "pass",
+      "evidence": "The GitHub section remains structurally complete when dynamic repository data is sparse and keeps the page composition intact."
+    },
+    "success": {
+      "status": "pass",
+      "evidence": "The localized homepage renders its full editorial content, project cases, GitHub proof, CTA, footer, and interactive controls at all target widths."
+    },
+    "permission": {
+      "status": "not-applicable",
+      "reason": "The reviewed public portfolio route has no permission-gated surface."
+    }
+  },
+  "renderedEvidence": [
+    {
+      "artifact": "mobile-320.png",
+      "viewport": "320x844",
+      "state": "success",
+      "observation": "Smallest supported viewport with readable title, reachable CTA, mobile controls, and no horizontal overflow."
+    },
+    {
+      "artifact": "mobile-390.png",
+      "viewport": "390x844",
+      "state": "success",
+      "observation": "Mobile editorial composition with compact gutters, full-width media, and stable one-column reading flow."
+    },
+    {
+      "artifact": "tablet-768.png",
+      "viewport": "768x900",
+      "state": "success",
+      "observation": "Tablet composition uses the mobile header before navigation labels become cramped and keeps the hero headline intact."
+    },
+    {
+      "artifact": "tablet-1024.png",
+      "viewport": "1024x900",
+      "state": "success",
+      "observation": "Tablet-wide composition keeps the hero in a readable vertical flow and gives the portrait the full visual width available."
+    },
+    {
+      "artifact": "desktop-1440.png",
+      "viewport": "1440x900",
+      "state": "success",
+      "observation": "Desktop layout uses the viewport frame with asymmetrical editorial columns and readable local text measures."
+    },
+    {
+      "artifact": "desktop-1920.png",
+      "viewport": "1920x1000",
+      "state": "success",
+      "observation": "Ultrawide layout uses the available frame instead of a centered 90rem shell; the nameplate and portrait reach the lateral composition without clipping."
+    }
+  ]
+}

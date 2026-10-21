@@ -19,7 +19,7 @@ const content: Record<
   }
 > = {
   'pt-BR': {
-    title: 'Se voce tem um desafio de produto, sistema interno ou automacao, eu consigo transformar isso em escopo, arquitetura e entrega.',
+  title: 'Transformo desafios complexos em produto, arquitetura e entrega.',
     summary:
       'Me chame com contexto, objetivo e prazo. Eu organizo o melhor caminho entre produto, backend, frontend, integracoes e interface para chegar numa entrega clara e vendavel.',
     bullets: ['Produtos digitais e SaaS', 'Sistemas internos e automacoes', 'Entrega com visao fullstack, produto e design'],
@@ -50,21 +50,21 @@ export function ClosingCtaSection({ locale }: ClosingCtaSectionProps) {
   return (
     <Section>
       <div className="content-grid">
-        <div className="glass rounded-[2rem] border border-border/70 p-8 sm:p-10">
-          <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-end">
+        <div className="glass rounded-[2rem] bg-card/60 p-8 sm:p-10">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] lg:items-end">
             <div>
-              <p className="text-xs uppercase tracking-[0.24em] text-accent">
+              <p className="hidden">
                 {locale === 'pt-BR' ? 'Pr\u00f3ximo passo' : locale === 'es' ? 'Siguiente paso' : 'Next step'}
               </p>
               <h2 className="mt-4 max-w-3xl font-display text-3xl leading-tight tracking-tight sm:text-4xl">
                 {section.title}
               </h2>
-              <p className="mt-5 max-w-2xl text-sm leading-relaxed text-fg/75 sm:text-base">{section.summary}</p>
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-fg/80">{section.summary}</p>
             </div>
 
             <div className="space-y-3">
               {section.bullets.map((bullet) => (
-                <div key={bullet} className="rounded-2xl border border-border/70 bg-muted/70 px-4 py-3 text-sm text-fg/75">
+                <div key={bullet} className="bg-muted/70 px-4 py-3 text-base text-fg/80">
                   {bullet}
                 </div>
               ))}

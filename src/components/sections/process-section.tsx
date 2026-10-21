@@ -113,8 +113,7 @@ export function ProcessSection({ locale }: ProcessSectionProps) {
           {section.steps.map((step, index) => (
             <Reveal key={step.label} delay={index * 0.08}>
               <article className="glass h-full rounded-3xl border border-border/70 p-6">
-                <p className="text-xs uppercase tracking-[0.22em] text-accent">{step.label}</p>
-                <h3 className="mt-4 font-display text-2xl leading-tight tracking-tight">{step.title}</h3>
+                <h3 className="font-display text-2xl leading-tight tracking-tight">{step.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-fg/75">{step.summary}</p>
               </article>
             </Reveal>

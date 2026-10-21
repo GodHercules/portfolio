@@ -134,19 +134,19 @@ export function BuildSurfacesSection({ locale, projects }: BuildSurfacesSectionP
         <div className="mt-10 grid gap-5 md:grid-cols-2">
           {section.cards.map((card, index) => (
             <Reveal key={card.title} delay={index * 0.06}>
-              <article className="glass h-full rounded-3xl border border-border/70 p-6">
+              <article className="glass h-full rounded-3xl bg-card/60 p-6">
                 <h3 className="font-display text-2xl leading-tight tracking-tight">{card.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-fg/75">{card.summary}</p>
 
                 <ul className="mt-5 flex flex-wrap gap-2">
                   {card.bullets.map((bullet) => (
-                    <li key={bullet} className="rounded-full border border-border/70 bg-muted/70 px-3 py-1 text-xs text-fg/75">
+                    <li key={bullet} className="bg-muted/70 px-3 py-1 text-sm text-fg/80">
                       {bullet}
                     </li>
                   ))}
                 </ul>
 
-                <div className="mt-6 rounded-2xl border border-border/70 bg-muted/50 p-4">
+                <div className="mt-6 bg-muted/50 p-4">
                   <p className="text-[11px] uppercase tracking-[0.18em] text-fg/45">{section.evidenceLabel}</p>
                   <div className="mt-3 flex flex-wrap gap-2">
                     {card.projectSlugs.map((slug) => {
@@ -160,7 +160,7 @@ export function BuildSurfacesSection({ locale, projects }: BuildSurfacesSectionP
                         <Link
                           key={slug}
                           href={`/${locale}/development/${slug}`}
-                          className="rounded-full border border-border bg-card px-3 py-2 text-sm text-fg/80 transition hover:border-fg/40 hover:text-fg"
+                          className="bg-card px-3 py-2 text-sm text-fg/80 transition hover:bg-fg hover:text-bg"
                         >
                           {project.title[locale]}
                         </Link>

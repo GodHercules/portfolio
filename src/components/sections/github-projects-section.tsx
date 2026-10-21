@@ -18,7 +18,6 @@ type GithubProjectsSectionProps = {
 export function GithubProjectsSection({ locale, dictionary, projects }: GithubProjectsSectionProps) {
   const coverAltPrefix =
     locale === 'en' ? 'Project cover' : locale === 'es' ? 'Portada del proyecto' : 'Capa do projeto';
-  const eyebrow = locale === 'en' ? 'Technical lab' : locale === 'es' ? 'Laboratorio tecnico' : 'Laboratorio tecnico';
   const framing =
     locale === 'en'
       ? 'This layer combines live GitHub data with curated portfolio framing so the repositories read as technical evidence, not just activity.'
@@ -35,18 +34,16 @@ export function GithubProjectsSection({ locale, dictionary, projects }: GithubPr
   return (
     <Section id="github-projects">
       <div className="content-grid">
-        <div className="mb-5 flex flex-wrap items-center gap-2">
-          <Badge>{eyebrow}</Badge>
+        <SectionTitle>{dictionary.githubSection.title}</SectionTitle>
+        <SectionLead>{dictionary.githubSection.description}</SectionLead>
+        <p className="mt-4 max-w-3xl text-sm leading-relaxed text-fg/65">{framing}</p>
+        <div className="mt-6 flex flex-wrap gap-2">
           {highlights.map((item) => (
-            <span key={item} className="rounded-full border border-border/70 bg-card px-3 py-1 text-[11px] uppercase tracking-[0.16em] text-fg/55">
+            <span key={item} className="bg-card px-3 py-1 text-sm text-fg/70">
               {item}
             </span>
           ))}
         </div>
-
-        <SectionTitle>{dictionary.githubSection.title}</SectionTitle>
-        <SectionLead>{dictionary.githubSection.description}</SectionLead>
-        <p className="mt-4 max-w-3xl text-sm leading-relaxed text-fg/65">{framing}</p>
 
         {projects.length === 0 ? (
           <p className="mt-8 rounded-2xl border border-dashed border-border p-6 text-fg/70">{dictionary.githubSection.empty}</p>
@@ -60,6 +57,7 @@ export function GithubProjectsSection({ locale, dictionary, projects }: GithubPr
                       src={project.cover}
                       alt={`${coverAltPrefix} ${project.title}`}
                       fill
+                      loading="lazy"
                       sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover"
                     />

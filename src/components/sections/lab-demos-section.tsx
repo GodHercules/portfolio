@@ -43,7 +43,7 @@ const copy: Record<
 
 function FlowDiagram({ steps }: { steps: string[] }) {
   return (
-    <div className="mt-4 grid gap-2 sm:grid-cols-[repeat(5,minmax(0,1fr))]">
+    <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[repeat(5,minmax(0,1fr))]">
       {steps.map((step, index) => (
         <div key={step} className="flex items-center gap-2 sm:block">
           <div className="flex-1 rounded-2xl border border-border/70 bg-card px-3 py-3 text-center text-xs uppercase tracking-[0.16em] text-fg/70">

@@ -33,7 +33,7 @@ export function DesignGrid({ locale, dictionary, projects }: DesignGridProps) {
 
   return (
     <div className="content-grid section-spacing">
-      <SectionTitle>{dictionary.nav.design}</SectionTitle>
+      <SectionTitle as="h1">{dictionary.nav.design}</SectionTitle>
       <SectionLead>{dictionary.home.designDescription}</SectionLead>
 
       <div className="mt-8">

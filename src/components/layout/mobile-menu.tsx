@@ -29,7 +29,7 @@ export function MobileMenu({ openLabel, closeLabel, items }: MobileMenuProps) {
   }, []);
 
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       <button
         type="button"
         aria-label={open ? closeLabel : openLabel}
@@ -47,7 +47,7 @@ export function MobileMenu({ openLabel, closeLabel, items }: MobileMenuProps) {
         aria-hidden={!open}
         inert={!open}
         className={cn(
-          'absolute left-5 right-5 top-20 bg-card p-4 shadow-soft transition duration-300',
+          'absolute left-5 right-5 top-full bg-card p-4 transition duration-300',
           open ? 'pointer-events-auto translate-y-0 opacity-100' : 'pointer-events-none -translate-y-2 opacity-0',
         )}
       >

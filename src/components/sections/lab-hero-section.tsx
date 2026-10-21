@@ -58,7 +58,7 @@ export function LabHeroSection({ locale }: LabHeroSectionProps) {
 
   return (
     <Section className="pb-6">
-      <div className="content-grid grid gap-10 lg:grid-cols-[1.35fr_0.95fr] lg:items-end">
+      <div className="content-grid grid gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.95fr)] lg:items-end">
         <div>
           <Badge className="mb-5">{section.badge}</Badge>
           <h1 className="font-display text-4xl leading-[1.02] tracking-tight sm:text-5xl lg:text-7xl">{section.title}</h1>

@@ -130,15 +130,15 @@ export function CapabilityProofSection({ locale }: CapabilityProofSectionProps) 
 
             return (
               <Reveal key={card.title} delay={index * 0.06}>
-                <article className="glass h-full rounded-3xl border border-border/70 p-6">
-                  <div className="inline-flex rounded-2xl bg-accent/10 p-3 text-accent">
+                <article className="glass h-full rounded-3xl bg-card/60 p-6">
+                  <div className="inline-flex text-accent">
                     <Icon size={18} />
                   </div>
                   <h3 className="mt-5 font-display text-2xl leading-tight tracking-tight">{card.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-fg/75">{card.summary}</p>
                   <ul className="mt-5 space-y-2 text-sm text-fg/75">
                     {card.bullets.map((bullet) => (
-                      <li key={bullet} className="rounded-2xl border border-border/70 bg-muted/60 px-3 py-2">
+                      <li key={bullet} className="bg-muted/60 px-3 py-2">
                         {bullet}
                       </li>
                     ))}

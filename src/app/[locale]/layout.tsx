@@ -6,6 +6,7 @@ import { Footer } from '@/components/layout/footer';
 import { Header } from '@/components/layout/header';
 import { LazyChatbot } from '@/components/layout/lazy-chatbot';
 import { PageTransition } from '@/components/providers/page-transition';
+import { RouteProgress } from '@/components/providers/route-progress';
 import { profile } from '@/data/profile';
 import { isLocale, locales, type Locale } from '@/lib/i18n/config';
 import { getDictionary } from '@/lib/i18n/dictionaries';
@@ -93,9 +94,10 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
       <script type="application/ld+json" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <Header locale={locale as Locale} dictionary={dictionary} />
       <a href="#main-content" className="focus-ring sr-only absolute left-5 top-5 z-50 rounded-full bg-fg px-4 py-3 text-sm font-semibold text-bg focus:not-sr-only">
-        Pular para o conteúdo
+        {locale === 'en' ? 'Skip to content' : locale === 'es' ? 'Saltar al contenido' : 'Pular para o conteúdo'}
       </a>
       <main id="main-content" tabIndex={-1}>
+<RouteProgress />
         <PageTransition>{children}</PageTransition>
       </main>
       <LazyChatbot locale={locale as Locale} />

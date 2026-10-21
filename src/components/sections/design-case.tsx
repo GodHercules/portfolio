@@ -26,10 +26,10 @@ export function DesignCase({ project, locale, dictionary }: DesignCaseProps) {
         <p className="mt-4 max-w-3xl text-sm text-fg/75 sm:text-base">{project.summary[locale]}</p>
 
         <div className="relative mt-8 aspect-[16/8] overflow-hidden rounded-3xl border border-border bg-muted">
-          <Image src={project.cover} alt={project.title[locale]} fill className="object-cover" sizes="100vw" />
+          <Image src={project.cover} alt={project.title[locale]} fill loading="lazy" className="object-cover" sizes="100vw" />
         </div>
 
-        <div className="mt-8 grid gap-5 lg:grid-cols-[1.3fr_1fr]">
+        <div className="mt-8 grid gap-5 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
           <article className="space-y-5">
             <div className="glass rounded-2xl p-5">
               <h3 className="font-medium">{dictionary.projectPage.context}</h3>

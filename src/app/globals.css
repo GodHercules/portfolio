@@ -8,7 +8,8 @@
   --muted: 0 0% 9%;
   --border: 0 0% 20%;
   --card: 0 0% 7%;
-  --accent: 243 94% 27%;
+--accent: 243 94% 34%;
+--accent-text: 242 90% 76%;
   --accent-soft: 243 72% 14%;
 }
 
@@ -18,7 +19,8 @@
   --muted: 0 0% 91%;
   --border: 0 0% 77%;
   --card: 0 0% 100%;
-  --accent: 243 94% 27%;
+--accent: 243 94% 34%;
+--accent-text: 243 86% 35%;
   --accent-soft: 243 72% 91%;
 }
 
@@ -62,7 +64,7 @@ html,
 
 body {
   font-feature-settings: 'ss01' 1, 'ss02' 1;
-  background-image: radial-gradient(circle at 80% 10%, hsl(var(--accent) / 0.08), transparent 28rem);
+  background-image: none;
 }
 
 ::selection {
@@ -72,19 +74,91 @@ body {
 @layer utilities {
   .glass {
     @apply bg-card;
+    border: 0 !important;
+    box-shadow: none !important;
   }
 
   .section-spacing {
-    @apply py-20 md:py-32;
+    @apply py-14 md:py-20;
   }
 
   .content-grid {
-    @apply mx-auto w-full max-w-[90rem] px-5 sm:px-8;
+    @apply w-full px-5 sm:px-8 md:px-10 lg:px-12 xl:px-14 2xl:px-16;
   }
 
   .focus-ring {
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg;
   }
+
+  .text-accent {
+    color: hsl(var(--accent-text)) !important;
+  }
+
+  [class~="text-fg/45"] { color: hsl(var(--fg) / 0.68) !important; }
+  [class~="text-fg/50"] { color: hsl(var(--fg) / 0.72) !important; }
+  [class~="text-fg/55"] { color: hsl(var(--fg) / 0.76) !important; }
+  [class~="text-fg/60"] { color: hsl(var(--fg) / 0.8) !important; }
+  [class~="text-fg/65"] { color: hsl(var(--fg) / 0.82) !important; }
+  [class~="text-fg/70"] { color: hsl(var(--fg) / 0.84) !important; }
+  [class~="text-fg/75"] { color: hsl(var(--fg) / 0.88) !important; }
+
+  .text-sm {
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .text-xs {
+    font-size: 0.8125rem;
+    line-height: 1.45;
+  }
+
+  [class~="text-[10px]"],
+  [class~="text-[11px]"] {
+    font-size: 0.8125rem !important;
+    line-height: 1.45 !important;
+  }
+
+  .uppercase {
+    text-transform: none !important;
+  }
+
+  :where(.border-border, .border-border\/70) {
+    border-style: none !important;
+    border-width: 0 !important;
+  }
+
+  [class*="bg-gradient"] {
+    background-image: none !important;
+  }
+}
+
+html {
+  overflow-x: clip;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  min-width: 320px;
+  overflow-x: clip;
+}
+
+a,
+button {
+  touch-action: manipulation;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+section[id],
+h1[id],
+h2[id],
+h3[id] {
+  scroll-margin-top: 6rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
