@@ -90,6 +90,23 @@ body {
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg;
   }
 
+.locale-switcher {
+  @apply flex w-fit items-center gap-1 rounded-full bg-card/60 p-1;
+}
+
+.locale-switcher__option {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg inline-flex min-h-9 items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold transition-colors duration-200 max-sm:px-2;
+}
+
+.locale-switcher__option--active {
+  background-color: hsl(var(--accent-text));
+  color: hsl(var(--bg));
+}
+
+.locale-switcher__option--active:hover {
+  background-color: hsl(var(--accent-text) / 0.88);
+}
+
   .text-accent {
     color: hsl(var(--accent-text)) !important;
   }
