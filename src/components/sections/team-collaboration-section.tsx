@@ -154,8 +154,8 @@ export function TeamCollaborationSection({ locale }: TeamCollaborationSectionPro
           })}
         </div>
 
-        <div className="mt-8 bg-accent px-6 py-5 text-white">
-          <p className="text-base leading-relaxed text-white/90">{section.closing}</p>
+        <div className="mt-8 bg-accent px-6 py-5 text-[hsl(var(--surface-inverse-text))]">
+          <p className="text-base leading-relaxed text-[hsl(var(--surface-inverse-text)/0.9)]">{section.closing}</p>
         </div>
       </div>
     </Section>

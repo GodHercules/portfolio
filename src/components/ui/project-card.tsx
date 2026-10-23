@@ -40,7 +40,7 @@ export function ProjectCard({ href, title, summary, image, previewImages, stacks
               </div>
             ))}
           </div>
-          <span className="absolute bottom-0 right-0 inline-flex h-11 w-11 items-center justify-center bg-accent text-white transition duration-300 group-hover:bg-fg group-hover:text-bg group-focus-within:bg-fg group-focus-within:text-bg" aria-hidden="true">
+          <span className="absolute bottom-0 right-0 inline-flex h-11 w-11 items-center justify-center bg-accent text-[hsl(var(--surface-inverse-text))] transition duration-300 group-hover:bg-fg group-hover:text-bg group-focus-within:bg-fg group-focus-within:text-bg" aria-hidden="true">
             <ArrowUpRight size={18} />
           </span>
         </div>

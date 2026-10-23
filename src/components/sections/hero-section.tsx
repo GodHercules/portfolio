@@ -1,6 +1,8 @@
 import { ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
 
+import { GradientAscii } from '@/components/premium/gradient-ascii';
+import { FoldText } from '@/components/premium/masked-heading';
 import { ButtonLink } from '@/components/ui/button';
 import { Reveal } from '@/components/ui/reveal';
 import { profile } from '@/data/profile';
@@ -37,23 +39,32 @@ export function HeroSection({ locale, dictionary }: HeroSectionProps) {
   const board = proofBoard[locale];
 
   return (
-    <section className="relative overflow-hidden pb-10 pt-4 sm:pb-16 sm:pt-8">
+    <section className="relative isolate overflow-hidden pb-10 pt-4 sm:pb-16 sm:pt-8">
+      <GradientAscii
+        data-testid="hero-ascii"
+        className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[34rem] opacity-80 sm:h-[42rem]"
+        colors={['#7c3aed', '#f6f8ff', '#a855f7', '#6366f1']}
+        density={0.92}
+        speed={0.28}
+        label=""
+      />
+      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[34rem] bg-gradient-to-b from-bg/20 via-bg/75 to-bg sm:h-[42rem]" aria-hidden="true" />
       <div className="content-grid">
         <Reveal className="overflow-hidden border-y border-border">
           <div className="grid xl:grid-cols-[minmax(0,1.45fr)_minmax(24rem,0.55fr)]">
             <div className="flex flex-col justify-between px-5 pb-8 pt-8 sm:px-8 sm:pb-10 sm:pt-12 xl:min-h-[39rem]">
-              <h1 className="font-display text-[clamp(3rem,14vw,5.5rem)] font-semibold leading-[0.82] tracking-[-0.04em] text-accent xl:text-[clamp(5.1rem,11.5vw,11.5rem)]">
-                HERCULES
+              <h1 className="relative z-10 font-display text-[clamp(3.25rem,14vw,5.5rem)] font-semibold leading-[0.82] tracking-[-0.06em] text-accent xl:text-[clamp(5.1rem,11.5vw,11.5rem)]">
+                <FoldText as="span" trigger="mount" className="block whitespace-nowrap" aria-label="Hercules">
+                  HERCULES
+                </FoldText>
+                <span className="mt-3 block whitespace-nowrap text-fg">DE OLIVEIRA</span>
               </h1>
-              <div className="mt-3 flex items-end gap-4 sm:gap-7">
-                <p className="font-display text-[clamp(2.5rem,6.2vw,6.7rem)] font-semibold leading-[0.86] tracking-[-0.04em]">DE OLIVEIRA</p>
-              </div>
               <div className="mt-10 grid gap-5 border-t border-border pt-5 sm:grid-cols-[1fr_auto] sm:items-end">
                 <div>
                   <p className="max-w-xl font-display text-xl leading-[1.12] sm:text-2xl lg:text-3xl">{dictionary.home.headline}</p>
                   <p className="mt-4 max-w-xl text-base leading-relaxed text-fg/75">{dictionary.home.subtitle}</p>
                 </div>
-                <ButtonLink href={`/${locale}/contact`} className="w-fit bg-accent text-white hover:bg-accent/85">
+                <ButtonLink href={`/${locale}/contact`} className="w-fit bg-accent text-[hsl(var(--surface-inverse-text))] hover:bg-accent/85">
                   {dictionary.home.ctaPrimary}
                 </ButtonLink>
               </div>
@@ -67,8 +78,8 @@ export function HeroSection({ locale, dictionary }: HeroSectionProps) {
                 sizes="(max-width: 1024px) 100vw, 34vw"
                 className="object-cover object-[50%_12%] saturate-100 transition duration-700 ease-out hover:scale-[1.04] hover:saturate-[1.2] hover:contrast-110"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-accent p-5 text-white sm:p-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-white/70">{dictionary.home.heroCardTitle}</p>
+              <div className="absolute inset-x-0 bottom-0 bg-accent p-5 text-[hsl(var(--surface-inverse-text))] sm:p-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[hsl(var(--surface-inverse-text)/0.72)]">{dictionary.home.heroCardTitle}</p>
                 <p className="mt-2 text-sm leading-relaxed">{profile.summary[locale]}</p>
               </div>
             </div>

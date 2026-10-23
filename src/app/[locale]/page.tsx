@@ -12,6 +12,7 @@ import { GithubProjectsSection } from '@/components/sections/github-projects-sec
 import { HeroSection } from '@/components/sections/hero-section';
 import { HomeTracksSection } from '@/components/sections/home-tracks-section';
 import { LabSignalsSection } from '@/components/sections/lab-signals-section';
+import { PremiumShowcaseSection } from '@/components/sections/premium-showcase-section';
 import { ProcessSection } from '@/components/sections/process-section';
 import { TeamCollaborationSection } from '@/components/sections/team-collaboration-section';
 import { developmentProjects } from '@/data/development-projects';
@@ -37,6 +38,7 @@ export default async function HomePage({ params }: HomePageProps) {
   return (
     <>
       <HeroSection locale={locale as Locale} dictionary={dictionary} />
+      <PremiumShowcaseSection locale={locale as Locale} dictionary={dictionary} />
       <EvidenceStripSection locale={locale as Locale} projects={developmentProjects} />
       <FeaturedProjectsSection
         locale={locale as Locale}

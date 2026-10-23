@@ -1,0 +1,412 @@
+.gallery {
+  --gallery-ink: hsl(var(--fg));
+  --gallery-muted: hsl(var(--fg) / 0.68);
+  --gallery-line: hsl(var(--border) / 0.78);
+  --gallery-accent: hsl(var(--accent-text));
+  --gallery-surface: hsl(var(--card));
+  --gallery-raised: hsl(var(--surface-raised));
+  --carousel-radius: clamp(7.5rem, 23vw, 17rem);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  max-width: 74rem;
+  margin: 0 auto;
+  padding: clamp(1.1rem, 3vw, 2rem);
+  color: var(--gallery-ink);
+  background:
+    radial-gradient(circle at 50% 36%, hsl(var(--accent) / 0.14), transparent 34%),
+    linear-gradient(145deg, var(--gallery-raised), hsl(var(--bg) / 0.96) 68%);
+  border: 1px solid var(--gallery-line);
+  border-radius: 1.5rem;
+  box-shadow: 0 2rem 5rem hsl(var(--bg) / 0.28);
+}
+
+.gallery::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  opacity: 0.4;
+  background-image: linear-gradient(hsl(var(--fg) / 0.025) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--fg) / 0.025) 1px, transparent 1px);
+  background-size: 2.5rem 2.5rem;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+
+.header,
+.lightboxToolbar,
+.controls,
+.lightboxNavigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.header {
+  position: relative;
+  z-index: 4;
+}
+
+.eyebrow,
+.cardCategory,
+.lightboxCategory {
+  margin: 0;
+  color: var(--gallery-accent);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.heading {
+  max-width: 32rem;
+  margin: 0.25rem 0 0;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  letter-spacing: -0.04em;
+}
+
+.counter,
+.swipeHint,
+.lightboxNavigation > span {
+  color: var(--gallery-muted);
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.viewport {
+  position: relative;
+  min-height: clamp(25rem, 65vw, 37rem);
+  margin: 0.5rem -1rem 0;
+  perspective: 1400px;
+  outline: none;
+  touch-action: pan-y;
+}
+
+.viewport:focus-visible {
+  border-radius: 1rem;
+  box-shadow: 0 0 0 3px var(--gallery-accent);
+}
+
+.orbit {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+}
+
+.orbit::before {
+  position: absolute;
+  top: 51%;
+  left: 50%;
+  width: min(68vw, 34rem);
+  aspect-ratio: 1;
+  content: "";
+  border: 1px solid hsl(var(--accent) / 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotateX(68deg) translateZ(-2rem);
+  box-shadow: 0 0 5rem hsl(var(--accent) / 0.1), inset 0 0 2rem hsl(var(--accent) / 0.06);
+}
+
+.cardShell {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: clamp(12.5rem, 29vw, 18rem);
+  height: clamp(19rem, 42vw, 26rem);
+  margin: calc(clamp(19rem, 42vw, 26rem) / -2) 0 0 calc(clamp(12.5rem, 29vw, 18rem) / -2);
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}
+
+.card {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  color: var(--gallery-ink);
+  text-align: left;
+  cursor: pointer;
+  background: var(--gallery-surface);
+  border: 1px solid hsl(var(--fg) / 0.16);
+  border-radius: 1.2rem;
+  box-shadow: 0 1.4rem 3rem hsl(var(--bg) / 0.38);
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.card:hover,
+.card:focus-visible,
+.cardActive {
+  border-color: var(--gallery-accent);
+  box-shadow: 0 1.5rem 3rem hsl(var(--bg) / 0.44), 0 0 2.4rem hsl(var(--accent) / 0.18);
+}
+
+.card:focus-visible,
+.controlButton:focus-visible,
+.secondaryButton:focus-visible {
+  outline: 3px solid var(--gallery-accent);
+  outline-offset: 3px;
+}
+
+.imageFrame {
+  position: relative;
+  display: block;
+  flex: 0 0 55%;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--gallery-raised);
+}
+
+.image,
+.lightboxImage {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.image {
+  transition: transform 500ms ease;
+}
+
+.card:hover .image,
+.card:focus-visible .image {
+  transform: scale(1.04);
+}
+
+.imageShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 45%, hsl(var(--bg) / 0.76));
+}
+
+.cardCategory,
+.featured {
+  position: absolute;
+  top: 1rem;
+  z-index: 1;
+  padding: 0.36rem 0.5rem;
+  border-radius: 999px;
+  background: hsl(var(--bg) / 0.72);
+  backdrop-filter: blur(8px);
+}
+
+.cardCategory {
+  left: 1rem;
+}
+
+.featured {
+  right: 1rem;
+  color: hsl(var(--surface-inverse-text));
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--gallery-accent);
+}
+
+.cardContent {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 1rem;
+}
+
+.cardContent strong {
+  font-size: 1.02rem;
+  letter-spacing: -0.025em;
+}
+
+.cardContent > span:not(.openHint) {
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--gallery-muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.openHint {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: auto;
+  color: var(--gallery-accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.controls {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 5;
+  justify-content: center;
+}
+
+.controlButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gallery-ink);
+  cursor: pointer;
+  background: hsl(var(--fg) / 0.1);
+  border: 1px solid var(--gallery-line);
+  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.controlButton {
+  width: 2.65rem;
+  height: 2.65rem;
+  border-radius: 50%;
+}
+
+.controlButton:hover,
+.secondaryButton:hover {
+  background: hsl(var(--accent) / 0.18);
+  border-color: hsl(var(--accent) / 0.72);
+}
+
+.controlButton:active,
+.secondaryButton:active {
+  transform: scale(0.95);
+}
+
+.summary {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  max-width: 44rem;
+  margin: -0.35rem auto 0;
+  color: var(--gallery-muted);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.summary span {
+  flex: 0 0 auto;
+  color: var(--gallery-accent);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.lightboxBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: hsl(var(--bg) / 0.84);
+  backdrop-filter: blur(12px);
+}
+
+.lightbox {
+  width: min(100%, 42rem);
+  max-height: min(90vh, 48rem);
+  overflow: auto;
+  color: var(--gallery-ink);
+  background: var(--gallery-raised);
+  border: 1px solid hsl(var(--fg) / 0.18);
+  border-radius: 1.25rem;
+  box-shadow: 0 2rem 7rem hsl(var(--bg) / 0.56);
+}
+
+.lightboxToolbar {
+  padding: 0.75rem 0.75rem 0.75rem 1.25rem;
+}
+
+.lightboxImage {
+  object-position: center;
+}
+
+.lightboxImageFrame {
+  position: relative;
+  width: 100%;
+  height: min(48vh, 24rem);
+  background: var(--gallery-surface);
+}
+
+.lightboxCopy {
+  padding: 1.25rem 1.25rem 0.5rem;
+}
+
+.lightboxCopy h3 {
+  margin: 0;
+  font-size: clamp(1.35rem, 4vw, 2rem);
+  letter-spacing: -0.04em;
+}
+
+.lightboxCopy p {
+  margin: 0.65rem 0 0;
+  color: var(--gallery-muted);
+  line-height: 1.65;
+}
+
+.lightboxNavigation {
+  justify-content: space-between;
+  padding: 1rem 1.25rem 1.25rem;
+}
+
+.secondaryButton {
+  gap: 0.35rem;
+  min-height: 2.45rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.7rem;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.emptyState {
+  margin: 0;
+  padding: 2rem;
+  color: var(--gallery-muted);
+  text-align: center;
+}
+
+@media (max-width: 38rem) {
+  .gallery {
+    --carousel-radius: clamp(6.5rem, 25vw, 9rem);
+    border-radius: 1rem;
+  }
+
+  .viewport {
+    min-height: 28rem;
+  }
+
+  .cardShell {
+    width: min(68vw, 15rem);
+    height: 21rem;
+    margin: -10.5rem 0 0 min(-34vw, -7.5rem);
+  }
+
+  .summary {
+    align-items: center;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-top: 0;
+  }
+
+  .swipeHint {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery *,
+  .gallery *::before,
+  .gallery *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}
